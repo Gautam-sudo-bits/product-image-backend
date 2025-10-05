@@ -9,10 +9,12 @@ import google.generativeai as genai
 from PIL import Image
 from io import BytesIO
 import requests
+from flask_cors import CORS
 
 # --- Configuration ---
 load_dotenv()
 app = Flask(__name__)
+CORS(app)
 
 cloudinary.config(
     cloud_name=os.getenv("CLOUDINARY_CLOUD_NAME"),
@@ -47,19 +49,18 @@ def generate_endpoint():
         """
         print(f"Generated Prompt: {prompt}")
 
-        # --- NEW & CORRECTED GEMINI LOGIC ---
-
         # 3. Fetch the input image from Cloudinary to create a local copy in memory
         print("Fetching image from Cloudinary URL for Gemini...")
         image_response = requests.get(input_image_url)
+
         # Ensure the request was successful
         image_response.raise_for_status() 
+
         # Open the image from the raw byte content
         input_image_for_gemini = Image.open(BytesIO(image_response.content))
         print("Successfully prepared input image for the model.")
 
         # 4. Initialize the correct model and prepare the contents list
-        # Using the standard genai.GenerativeModel approach
         model = genai.GenerativeModel('gemini-2.5-flash-image')
         
         # The 'contents' list must contain the prompt and the image object, in order.
