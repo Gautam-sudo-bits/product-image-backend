@@ -34,9 +34,9 @@ def create_prompt_jobs(form_data):
 
     if category == 'Fashion':
         if options.get('humanModel'):
-            jobs.append({'type': 'human', 'prompt': f"Full-shot of a {ethnicity} model wearing the product, professional studio lighting, captured from a front angle."})
-            jobs.append({'type': 'human', 'prompt': f"Waist-up shot of a {ethnicity} model wearing the product, dynamic pose, outdoor natural lighting, from a 45-degree angle."})
-            jobs.append({'type': 'human', 'prompt': f"Detailed close-up shot focusing on the product's texture and fit on a {ethnicity} model, soft lighting."})
+            jobs.append({'type': 'human', 'prompt': "Full,long-shot of a photorealistic human model wearing the product, professional studio lighting, from a front angle."})
+            jobs.append({'type': 'human', 'prompt': "Waist-up shot of a photorealistic human model wearing the product, dynamic pose, outdoor, lifestyle natural lighting, 45-degree angle."})
+            #jobs.append({'type': 'human', 'prompt': "Detailed close-up of the product's texture and fit on a photorealistic human model, with soft lighting."})
         if options.get('mannequin'):
             jobs.append({'type': 'mannequin', 'prompt': "Product displayed on a sleek, featureless white mannequin, clean studio background, perfect for a product listing."})
         if options.get('creative'):
