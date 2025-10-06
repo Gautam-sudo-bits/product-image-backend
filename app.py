@@ -30,7 +30,6 @@ def create_prompt_jobs(form_data):
     jobs = []
     category = form_data.get('category')
     options = form_data.get('selectedOptions', {})
-    ethnicity = form_data.get('ethnicity')
 
     if category == 'Fashion':
         if options.get('humanModel'):
