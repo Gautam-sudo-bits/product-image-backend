@@ -50,7 +50,7 @@ def create_prompt_jobs(form_data):
     if category == 'Fashion':
         if options.get('humanModel'):
             jobs.append({"type": "human_long_shot", "prompt_json": {
-            "objective": "Generate an ultra-realistic full-body e-commerce photo showing the product from image 1 being worn by a human model.",
+            "objective": "Generate an ultra-realistic full-body e-commerce photo showing the product from image 1(product only image) being worn by a human model.",
             "composition": "Centered, full-body long shot with the model standing naturally.",
             "environment": "Bright and elegant lifestyle background such as a modern city street, minimalist indoor studio, or upscale cafe setting.",
             "lighting": "Soft, natural daylight with even exposure across the frame.",
@@ -65,7 +65,7 @@ def create_prompt_jobs(form_data):
         }
         })
             jobs.append({"type": "human_close_up", "prompt_json": {
-                "objective": "Create a high-detail close-up of the product from image 1 being worn by a model.",
+                "objective": "Create a high-detail close-up of the product from image 1(product only image) being worn by the model human on the second image.",
                 "composition": "Waist-up shot emphasizing fabric quality, fit, and product texture.",
                 "environment": "Clean, neutral, and minimally distracting background.",
                 "lighting": "Softbox studio lighting setup with subtle shadow gradients for depth.",
@@ -79,7 +79,7 @@ def create_prompt_jobs(form_data):
         if options.get('mannequin'):
             jobs.append({"type": "mannequin", "prompt_json": {
                 "objective": "Generate a clean, studio-style e-commerce photo displaying the product from image 1 on a mannequin.",
-                "composition": "Centered, head-on view with the full mannequin body visible.",
+                "composition": "Centered, head-on view with the full mannequin body visible. Mannequin should be neutral in color (white, gray) to avoid distractions.",
                 "environment": "Solid light-gray or white seamless studio background.",
                 "lighting": "Even, bright studio lighting with soft shadows to highlight product contours.",
                 "camera": "Shot on tripod, 70mm focal length for accurate proportions.",
@@ -94,7 +94,7 @@ def create_prompt_jobs(form_data):
             }})
         if options.get('creative'):
             jobs.append({"type": "creative_fashion", "prompt_json": {
-                "objective": "Design a vibrant, eye-catching fashion marketing banner for the product from image 1.",
+                "objective": "Design a vibrant, eye-catching fashion marketing banner for the product from image 1, that focuses only on the product image.",
                 "composition": "Dynamic composition where the product is the central focus.",
                 "environment": "Abstract or colorful backdrop with stylish graphic overlays.",
                 "visuals": "Incorporate bold typography that reads '50% OFF – Limited Time!' with clean layout balance.",
