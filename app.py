@@ -71,10 +71,10 @@ def create_prompt_jobs(form_data):
                 "lighting": "Softbox studio lighting setup with subtle shadow gradients for depth.",
                 "camera": "Captured with a Canon EOS R5, 85mm lens, f/3.2 aperture.",
                 "style": "ultra-realistic, 4k, professional e-commerce photography, high-detail, clean, premium",
-                "constraints":"Keep the product fully visible and in sharp focus.",
+                "constraints":["Keep the product fully visible and in sharp focus.",
                 "Maintain accurate texture and color tones.",
                 "Avoid reflections or overexposed areas.",
-                "No heavy post-processing or artificial effects."
+                "No heavy post-processing or artificial effects."]
             }})
         if options.get('mannequin'):
             jobs.append({"type": "mannequin", "prompt_json": {
