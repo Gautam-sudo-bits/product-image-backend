@@ -23,6 +23,20 @@ cloudinary.config(
 )
 genai.configure(api_key=os.getenv("GEMINI_API_KEY"))
 
+# app.py (add this new function)
+
+def flatten_prompt_json(prompt_json):
+    """Converts our structured prompt JSON into a single, detailed string."""
+    lines = []
+    for key, value in prompt_json.items():
+        # Format constraints as a list for better readability
+        if key == 'constraints' and isinstance(value, list):
+            constraints_str = ", ".join(value)
+            lines.append(f"- {key}: {constraints_str}")
+        else:
+            lines.append(f"- {key}: {value}")
+    return "Execute the following instructions for the provided images:\n" + "\n".join(lines)
+    
 # --- NEW: Production-Grade JSON Prompt Factory ---
 def create_prompt_jobs(form_data):
     jobs = []
