@@ -64,7 +64,7 @@ def create_prompt_jobs(form_data):
         if options.get('mannequin'):
             jobs.append({"type": "mannequin", "prompt_json": {
                 "task": "Display the product from image 1 on a featureless, abstract mannequin.",
-                "composition": "Centered, three-quarter view of the mannequin.",
+                "composition": "Centered, three-quarter view of the mannequin. Cover the entire product on a full body mannequin.",
                 "environment": "Solid light-grey or white studio background.",
                 "lighting": "Even, bright studio lighting.", "style": base_style, "constraints": base_constraints
             }})
@@ -108,9 +108,13 @@ def create_prompt_jobs(form_data):
     return jobs
 
 def generate_and_upload_image(job_details):
-    # This function is now designed to take a list of input images
+    """
+    Receives a job with RAW IMAGE BYTES, creates its own image objects,
+    calls Gemini, and uploads the result. This is now thread-safe.
+    """
     prompt_json = job_details['prompt_json']
-    input_images = job_details['images_list']
+    # This now receives raw bytes, not PIL.Image objects
+    input_images_bytes = job_details['images_bytes_list']
     base_public_id = job_details['base_public_id']
     job_type = job_details['type']
     job_index = job_details['index']
@@ -119,11 +123,22 @@ def generate_and_upload_image(job_details):
         print(f"Starting job {job_index} ({job_type})...")
         model = genai.GenerativeModel('gemini-2.5-flash-image')
         
-        # The 'contents' list now includes the JSON prompt and ALL input images
-        contents = [json.dumps(prompt_json)] + input_images
+        plain_text_prompt = flatten_prompt_json(prompt_json)
+
+        # --- THE CRITICAL FIX IS HERE ---
+        # Each thread now creates its OWN list of fresh PIL.Image objects.
+        # This prevents any race conditions.
+        input_images_for_this_thread = []
+        for img_bytes in input_images_bytes:
+            input_images_for_this_thread.append(Image.open(BytesIO(img_bytes)))
+
+        # The 'contents' list is now built with thread-local image objects.
+        contents = [plain_text_prompt] + input_images_for_this_thread
         
         response = model.generate_content(contents)
+        
         generated_image_bytes = None
+
         for part in response.candidates[0].content.parts:
             if part.inline_data:
                 generated_image_bytes = part.inline_data.data
@@ -156,7 +171,7 @@ def generate_endpoint():
 
     try:
         # 1. Upload ALL user images and prepare them for Gemini
-        input_images_for_gemini = []
+        input_image_bytes_list = [] 
         base_public_id = None
         for i, image_file in enumerate(image_files):
             print(f"Uploading input image {i+1}...")
@@ -166,7 +181,7 @@ def generate_endpoint():
             
             image_response = requests.get(upload_result['secure_url'])
             image_response.raise_for_status()
-            input_images_for_gemini.append(Image.open(BytesIO(image_response.content)))
+            input_image_bytes_list.append(image_response.content)
 
         # 2. Get the list of prompt jobs
         prompt_jobs = create_prompt_jobs(form_data)
@@ -177,7 +192,7 @@ def generate_endpoint():
         # 3. Prepare jobs for the parallel executor
         jobs_with_context = [{
             'prompt_json': job['prompt_json'],
-            'images_list': input_images_for_gemini,
+            'images_bytes_list': input_image_bytes_list,
             'base_public_id': base_public_id,
             'type': job['type'], 'index': i
         } for i, job in enumerate(prompt_jobs)]
