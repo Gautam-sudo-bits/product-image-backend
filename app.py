@@ -125,14 +125,10 @@ def generate_and_upload_image(job_details):
         
         plain_text_prompt = flatten_prompt_json(prompt_json)
 
-        # --- THE CRITICAL FIX IS HERE ---
-        # Each thread now creates its OWN list of fresh PIL.Image objects.
-        # This prevents any race conditions.
         input_images_for_this_thread = []
         for img_bytes in input_images_bytes:
             input_images_for_this_thread.append(Image.open(BytesIO(img_bytes)))
 
-        # The 'contents' list is now built with thread-local image objects.
         contents = [plain_text_prompt] + input_images_for_this_thread
         
         response = model.generate_content(contents)
@@ -170,26 +166,26 @@ def generate_endpoint():
     form_data = json.loads(request.form['generationSettings'])
 
     try:
-        # 1. Upload ALL user images and prepare them for Gemini
+        # Upload ALL user images and prepare them for Gemini
         input_image_bytes_list = [] 
         base_public_id = None
         for i, image_file in enumerate(image_files):
             print(f"Uploading input image {i+1}...")
             upload_result = cloudinary.uploader.upload(image_file, folder="product-image-inputs")
-            if i == 0: # Use the first image's ID for naming outputs
+            if i == 0:
                 base_public_id = upload_result['public_id']
             
             image_response = requests.get(upload_result['secure_url'])
             image_response.raise_for_status()
             input_image_bytes_list.append(image_response.content)
 
-        # 2. Get the list of prompt jobs
+        # Get the list of prompt jobs
         prompt_jobs = create_prompt_jobs(form_data)
         if not prompt_jobs:
             return jsonify({"error": "No generation options selected."}), 400
         print(f"Created {len(prompt_jobs)} generation jobs.")
 
-        # 3. Prepare jobs for the parallel executor
+        # Prepare jobs for the parallel executor
         jobs_with_context = [{
             'prompt_json': job['prompt_json'],
             'images_bytes_list': input_image_bytes_list,
@@ -197,7 +193,7 @@ def generate_endpoint():
             'type': job['type'], 'index': i
         } for i, job in enumerate(prompt_jobs)]
 
-        # 4. Execute jobs in parallel
+        #  Execute jobs in parallel
         generated_urls = []
         with concurrent.futures.ThreadPoolExecutor() as executor:
             results = executor.map(generate_and_upload_image, jobs_with_context)
