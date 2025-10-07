@@ -50,59 +50,107 @@ def create_prompt_jobs(form_data):
     if category == 'Fashion':
         if options.get('humanModel'):
             jobs.append({"type": "human_long_shot", "prompt_json": {
-                "task": "Place the product from image 1 onto a human model, similar to the context in image 2 if provided.",
-                "composition": "Full-body long shot, model centered.",
-                "environment": "A bright, elegant lifestyle setting like a modern city street or upscale cafe.",
-                "lighting": "Soft, natural daylight.", "style": base_style, "constraints": base_constraints
-            }})
+            "objective": "Generate an ultra-realistic full-body e-commerce photo showing the product from image 1 being worn by a human model.",
+            "composition": "Centered, full-body long shot with the model standing naturally.",
+            "environment": "Bright and elegant lifestyle background such as a modern city street, minimalist indoor studio, or upscale cafe setting.",
+            "lighting": "Soft, natural daylight with even exposure across the frame.",
+            "camera": "Shot with a DSLR camera using a 50mm lens, aperture f/2.8, ISO 100.",
+            "style": "ultra-realistic, 4k, professional e-commerce photography, high-detail, clean, premium",
+            "constraints": [
+            "Ensure the entire product is visible in the frame.",
+            "Avoid cropping of the main product or model.",
+            "Maintain realistic body and fabric proportions.",
+            "Preserve maximum product texture, folds, and stitching details."
+            ]
+        }
+        })
             jobs.append({"type": "human_close_up", "prompt_json": {
-                "task": "Create a close-up shot of the product from image 1 being worn by a human model.",
-                "composition": "Waist-up shot, focusing on the product's texture and details.",
-                "environment": "Clean, minimally distracting background.",
-                "lighting": "Professional studio softbox lighting.", "style": base_style, "constraints": base_constraints
+                "objective": "Create a high-detail close-up of the product from image 1 being worn by a model.",
+                "composition": "Waist-up shot emphasizing fabric quality, fit, and product texture.",
+                "environment": "Clean, neutral, and minimally distracting background.",
+                "lighting": "Softbox studio lighting setup with subtle shadow gradients for depth.",
+                "camera": "Captured with a Canon EOS R5, 85mm lens, f/3.2 aperture.",
+                "style": "ultra-realistic, 4k, professional e-commerce photography, high-detail, clean, premium",
+                "constraints":"Keep the product fully visible and in sharp focus.",
+                "Maintain accurate texture and color tones.",
+                "Avoid reflections or overexposed areas.",
+                "No heavy post-processing or artificial effects."
             }})
         if options.get('mannequin'):
             jobs.append({"type": "mannequin", "prompt_json": {
-                "task": "Display the product from image 1 on a featureless, abstract mannequin.",
-                "composition": "Centered, three-quarter view of the mannequin. Cover the entire product on a full body mannequin.",
-                "environment": "Solid light-grey or white studio background.",
-                "lighting": "Even, bright studio lighting.", "style": base_style, "constraints": base_constraints
+                "objective": "Generate a clean, studio-style e-commerce photo displaying the product from image 1 on a mannequin.",
+                "composition": "Centered, head-on view with the full mannequin body visible.",
+                "environment": "Solid light-gray or white seamless studio background.",
+                "lighting": "Even, bright studio lighting with soft shadows to highlight product contours.",
+                "camera": "Shot on tripod, 70mm focal length for accurate proportions.",
+                "style": "ultra-realistic, 4k, professional e-commerce photography, high-detail, clean, premium",
+                "constraints": [
+                "Ensure the full product is shown without cropping.",
+                "Maintain true-to-life proportions and folds.",
+                "Avoid reflective or glossy mannequin surfaces.",
+                "Keep focus strictly on the product."
+                ]
             }})
         if options.get('creative'):
             jobs.append({"type": "creative_fashion", "prompt_json": {
-                "task": "Create a vibrant marketing banner for the product in image 1.",
-                "composition": "Dynamic, eye-catching layout.",
-                "visuals": "Incorporate abstract graphic elements and bold colors. Superimpose flashy text that reads '50% OFF - Limited Time!'",
-                "style": "commercial, advertisement, high-energy"
+                "objective": "Design a vibrant, eye-catching fashion marketing banner for the product from image 1.",
+                "composition": "Dynamic composition where the product is the central focus.",
+                "environment": "Abstract or colorful backdrop with stylish graphic overlays.",
+                "visuals": "Incorporate bold typography that reads '50% OFF – Limited Time!' with clean layout balance.",
+                "style": "high-energy, commercial, advertisement, modern, premium aesthetic",
+                "constraints": [
+                "The product should remain clearly visible and unobstructed.",
+                "Typography should not overlap key product details."
+                ]
             }})
 
     elif category == 'Home Decor':
         if options.get('lifestyle'):
-            jobs.append({"type": "lifestyle_angle1", "prompt_json": {
+            """jobs.append({"type": "lifestyle_angle2", "prompt_json": {
                 "task": "Place the product from image 1 into a suitable, high-end home lifestyle scene.",
                 "composition": "Shot from a 45-degree high angle, eye-level perspective to the product.",
                 "environment": "A beautifully decorated living room or study that complements the product.",
                 "lighting": "Warm, natural light from a window.", "style": base_style, "constraints": base_constraints
-            }})
-            jobs.append({"type": "lifestyle_angle2", "prompt_json": {
-                "task": "Place the product from image 1 into a different lifestyle scene.",
-                "composition": "Direct, eye-level front view, showing the product's proportions accurately.",
-                "environment": "A calm, minimalist bedroom or office setting.",
-                "lighting": "Soft, ambient indoor lighting.", "style": base_style, "constraints": base_constraints
+            }})"""
+            jobs.append({"type": "lifestyle_angle1", "prompt_json": {
+                "objective": "Generate an alternate lifestyle photo of the product from image 1 in a clean home interior.",
+                "composition": "Direct front-facing eye-level shot focusing on the product’s shape and material.",
+                "environment": "Minimalist bedroom or home office with coordinated decor tones.",
+                "lighting": "Soft, ambient indoor lighting with gentle contrast.",
+                "camera": "50mm lens, ISO 100, balanced exposure.",
+                "style": "ultra-realistic, 4k, professional e-commerce photography, high-detail, clean, premium",
+                "constraints": [
+                "Keep full visibility of the product.",
+                "No cropping or reflections.",
+                "Preserve surface texture and natural shadows."
+                ]
             }})
         if options.get('studio'):
             jobs.append({"type": "studio", "prompt_json": {
-                "task": "Create a clean, e-commerce listing photo for the product in image 1.",
-                "composition": "Product centered perfectly.",
-                "environment": "Seamless, solid white background.",
-                "lighting": "Flawless, bright studio lighting with no harsh shadows.", "style": base_style, "constraints": base_constraints
+                "objective": "Generate a clean e-commerce product listing image for the product from image 1.",
+                "composition": "Centered and isolated product on a plain background.",
+                "environment": "Seamless, solid white or light-gray backdrop.",
+                "lighting": "Bright, balanced studio lighting with soft shadows for realism.",
+                "camera": "Canon 5D Mark IV, 70mm lens, aperture f/5.6.",
+                "style": "ultra-realistic, 4k, professional e-commerce photography, high-detail, clean, premium",
+                "constraints": [
+                "Show the entire product clearly without any cropping.",
+                "Maintain accurate shape, texture, and proportions.",
+                "Avoid glare, overexposure, or reflections."
+                ]
             }})
         if options.get('creative'):
             jobs.append({"type": "creative_decor", "prompt_json": {
-                "task": "Create an engaging marketing image for the home decor product in image 1.",
-                "composition": "Product as the hero element.",
-                "visuals": "Surround with elegant design elements. Overlay text that says 'SALE - UP TO 70% OFF!' in a stylish font.",
-                "style": "advertisement, elegant, promotional"
+                "objective": "Create a visually engaging marketing image for the home decor product from image 1.",
+                "composition": "Hero-style composition emphasizing the product as the central subject.",
+                "environment": "Elegant backdrop with decorative elements that enhance but don’t distract.",
+                "visuals": "Overlay refined text that reads 'SALE – UP TO 70% OFF!' in a premium, minimalist font.",
+                "style": "advertisement, elegant, promotional, lifestyle-inspired",
+                "constraints": [
+                "Product must remain unobstructed and clearly visible.",
+                "Text should complement, not overpower, the visual.",
+                "Maintain high photorealism and premium aesthetic."
+                ]
             }})
 
     return jobs
