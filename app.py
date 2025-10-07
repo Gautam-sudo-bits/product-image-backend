@@ -60,7 +60,7 @@ def create_prompt_jobs(form_data):
             "Ensure the entire product is visible in the frame.",
             "Avoid cropping of the main product or model.",
             "Maintain realistic body and fabric proportions.",
-            "Preserve maximum product texture, folds, and stitching details."
+            "Preserve maximum product features, colors and patterns, folds, and stitching details."
             ]
         }
         })
@@ -72,7 +72,7 @@ def create_prompt_jobs(form_data):
                 "camera": "Captured with a Canon EOS R5, 85mm lens, f/3.2 aperture.",
                 "style": "ultra-realistic, 4k, professional e-commerce photography, high-detail, clean, premium",
                 "constraints":["Keep the product fully visible and in sharp focus.",
-                "Maintain accurate texture and color tones.",
+                "Preserve maximum product features, colors and patterns, folds, and stitching details.",
                 "Avoid reflections or overexposed areas.",
                 "No heavy post-processing or artificial effects."]
             }})
@@ -87,6 +87,7 @@ def create_prompt_jobs(form_data):
                 "constraints": [
                 "Ensure the full product is shown without cropping.",
                 "Maintain true-to-life proportions and folds.",
+                "Preserve maximum product features, colors and patterns, folds, and stitching details.",
                 "Avoid reflective or glossy mannequin surfaces.",
                 "Keep focus strictly on the product."
                 ]
@@ -100,7 +101,8 @@ def create_prompt_jobs(form_data):
                 "style": "high-energy, commercial, advertisement, modern, premium aesthetic",
                 "constraints": [
                 "The product should remain clearly visible and unobstructed.",
-                "Typography should not overlap key product details."
+                "Typography should not overlap key product details.",
+                "Preserve maximum product features, colors and patterns, folds, and stitching details."
                 ]
             }})
 
@@ -122,7 +124,7 @@ def create_prompt_jobs(form_data):
                 "constraints": [
                 "Keep full visibility of the product.",
                 "No cropping or reflections.",
-                "Preserve surface texture and natural shadows."
+                "Preserve maximum product features, colors and patterns, folds, and stitching details."
                 ]
             }})
         if options.get('studio'):
@@ -135,7 +137,7 @@ def create_prompt_jobs(form_data):
                 "style": "ultra-realistic, 4k, professional e-commerce photography, high-detail, clean, premium",
                 "constraints": [
                 "Show the entire product clearly without any cropping.",
-                "Maintain accurate shape, texture, and proportions.",
+                "Maintain accurate shape, texture, features, and proportions.",
                 "Avoid glare, overexposure, or reflections."
                 ]
             }})
@@ -149,7 +151,8 @@ def create_prompt_jobs(form_data):
                 "constraints": [
                 "Product must remain unobstructed and clearly visible.",
                 "Text should complement, not overpower, the visual.",
-                "Maintain high photorealism and premium aesthetic."
+                "Maintain high photorealism and premium aesthetic.",
+                "Preserve maximum product features, colors and patterns, folds, and stitching details."
                 ]
             }})
 
