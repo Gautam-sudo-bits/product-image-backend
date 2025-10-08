@@ -97,15 +97,16 @@ def create_prompt_jobs(form_data):
             }})
         if options.get('creative'):
             jobs.append({"type": "creative_fashion", "prompt_json": {
-                "objective": "Design a vibrant, eye-catching fashion marketing banner for the product from image 1(product only image), that focuses only on the product image.",
+                "objective": "Design a vibrant, eye-catching fashion, social-media marketing image for the product from image 1(product only image), that focuses only on the product image.",
                 "composition": "Dynamic composition where the product is the central focus. The fabric should be neatly ironed with no creases, folds and wrinkles",
-                "environment": "Abstract or colorful backdrop with stylish graphic overlays. The backdrop colrs and style should match the color palette of the fabric/product.",
-                "visuals": "Incorporate bold typography that reads '50% OFF – Limited Time!' with clean layout balance.",
+                "environment": "Abstract or colorful backdrop with stylish graphic overlays. The backdrop colors and style should complement the color palette of the fabric/product.",
+                "visuals": "Add creative design elements such as colorful frames, shapes, overlays, or graphic accents that enhance the advertisement's appeal. Incorporate bold typography that reads '50% OFF – Limited Time!' with clean layout balance, integrated naturaly into the design(not just pasted on the image.)",
                 "style": "high-energy, commercial, advertisement, modern, premium aesthetic",
                 "constraints": [
                 "The product shirt/t-shirt/fabric must appear perfectly smooth and evenly textured. Remove all wrinkles, fold, and creases completely while preserving the natural fabric texture.",
                 "The product should remain clearly visible and unobstructed.",
                 "Typography should not overlap key product details.",
+                "Image should look like a high-quality e-commerce or fashion sale ad designed for Instagram, facenook or pinterest.",
                 "Preserve maximum product features, colors and patterns, folds, and stitching details."
                 ]
             }})
@@ -154,6 +155,7 @@ def create_prompt_jobs(form_data):
                 "style": "advertisement, elegant, promotional, lifestyle-inspired",
                 "constraints": [
                 "Product must remain unobstructed and clearly visible.",
+                "Image should look like a high-quality e-commerce or fashion sale ad designed for Instagram, facenook or pinterest.",
                 "Text should complement, not overpower, the visual.",
                 "Maintain high photorealism and premium aesthetic.",
                 "Preserve maximum product features, colors and patterns, folds, and stitching details."
