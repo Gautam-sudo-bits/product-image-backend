@@ -100,7 +100,7 @@ def create_prompt_jobs(form_data):
                 "objective": "Design a vibrant, eye-catching fashion, social-media marketing image for the product from image 1(product only image), that focuses only on the product image.",
                 "composition": "Dynamic composition where the product is the central focus. The fabric should be neatly ironed with no creases, folds and wrinkles",
                 "environment": "Abstract or colorful backdrop with stylish graphic overlays. The backdrop colors and style should complement the color palette of the fabric/product.",
-                "visuals": "Add creative design elements such as colorful frames, shapes, overlays, or graphic accents that enhance the advertisement's appeal. Incorporate bold typography inside creative design elements like frames or shapes, that reads '50% OFF – Limited Time!' with clean layout balance, integrated naturaly into the design(not just pasted on the image.)",
+                "visuals": "Add creative design elements such as colorful frames, shapes, overlays, or graphic accents that enhance the advertisement's appeal. Incorporate bold typography inside creative design elements like frames or shapes, that reads '50% OFF – Limited Time!' with clean layout balance, integrated naturaly into the design(not just pasted on the image). Include 'By Now!', 'Click the link in Bio!', 'Link in Bio!' or 'Shop Now' texts as well resembling social media posts.",
                 "style": "high-energy, commercial, advertisement, modern, premium aesthetic",
                 "constraints": [
                 "The product shirt/t-shirt/fabric must appear perfectly smooth and evenly textured. Remove all wrinkles, fold, and creases completely while preserving the natural fabric texture.",
