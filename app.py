@@ -67,7 +67,7 @@ def create_prompt_jobs(form_data):
         })
             jobs.append({"type": "human_close_up", "prompt_json": {
                 "objective": "Create a high-detail close-up of the product from image 1(product only image) being worn by the model human on the second image(only if second human image is provided).",
-                "composition": "If the product in the image is clothing apparel, then create a Waist-up shot emphasizing fabric quality, fit, and product texture. Clear human model face. If the product is an accessory like a hat, scarf, shoe, or jewelry, etc., then create a tight close-up focusing on the product details and craftsmanship. Create a natural pose of the human model(e.g., two shoes can be placed on the floor, one shoe can be slightly forward to show depth).",
+                "composition": "If the product in the image is clothing apparel, then create a Waist-up shot emphasizing fabric quality, fit, and product texture. Clear human model face. If the product is an accessory like a hat, scarf, purse, shoe, or jewelry, etc., then create a tight close-up focusing on the product details and craftsmanship. Create a natural pose of the human model(e.g., two shoes can be placed on the floor, one shoe can be slightly forward to show depth).",
                 "environment": "Clean, neutral, and minimally distracting background.",
                 "lighting": "Softbox studio lighting setup with subtle shadow gradients for depth.",
                 "camera": "Captured with a Canon EOS R5, 85mm lens, f/3.2 aperture.",
@@ -123,7 +123,7 @@ def create_prompt_jobs(form_data):
                 "objective": "Generate a lifestyle photo of the product from image in a clean home interior. The scene should be naturally lit and the product should be the main focus, resembling as such a real e-commerce product photo.",
                 "composition": "Direct front-facing eye-level shot focusing on the product’s shape and material. The product should be the only main item - no duplicates or unrelated objects in the scene. The setting should look logical and context-appropriate for the product type(e.g., a sofa in a neat living room, shoes in a stylish entryway).Focus entirely on the product.",
                 "environment": "Minimalist bedroom, home office with coordinated decor tones, living room with appropriate product placement in the room, or any scene suitable for the main product.",
-                "lighting": "Soft, ambient indoor lighting with gentle contrast.",
+                "lighting": "Soft, ambient indoor lighting with gentle contrast.If the product is a lighting fixture, it should be turned on to showcase its effect(e.g., floor lamps, table lamps)-no outdoor window lighting.",
                 "camera": "50mm lens, ISO 100, balanced exposure.",
                 "style": "ultra-realistic, 4k, professional e-commerce photography, high-detail, clean, premium",
                 "constraints": [
