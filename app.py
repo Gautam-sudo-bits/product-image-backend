@@ -98,12 +98,12 @@ def create_prompt_jobs(form_data):
         if options.get('creative'):
             jobs.append({"type": "creative_fashion", "prompt_json": {
                 "objective": "Design a vibrant, eye-catching fashion marketing banner for the product from image 1(product only image), that focuses only on the product image.",
-                "composition": "Dynamic composition where the product is the central focus.",
+                "composition": "Dynamic composition where the product is the central focus. The fabric should be neatly ironed with no creases, folds and wrinkles",
                 "environment": "Abstract or colorful backdrop with stylish graphic overlays.",
                 "visuals": "Incorporate bold typography that reads '50% OFF – Limited Time!' with clean layout balance.",
                 "style": "high-energy, commercial, advertisement, modern, premium aesthetic",
                 "constraints": [
-                    "The product shirt/t-shirt/fabric must appear perfectly smooth and evenly textured. Remove all wrinkles, fold, and creases completely while preserving the natural fabric texture.",
+                "The product shirt/t-shirt/fabric must appear perfectly smooth and evenly textured. Remove all wrinkles, fold, and creases completely while preserving the natural fabric texture.",
                 "The product should remain clearly visible and unobstructed.",
                 "Typography should not overlap key product details.",
                 "Preserve maximum product features, colors and patterns, folds, and stitching details."
