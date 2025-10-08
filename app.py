@@ -57,6 +57,7 @@ def create_prompt_jobs(form_data):
             "camera": "Shot with a DSLR camera using a 50mm lens, aperture f/2.8, ISO 100.",
             "style": "ultra-realistic, 4k, professional e-commerce photography, high-detail, clean, premium",
             "constraints": [
+            "The product shirt/t-shirt/fabric must appear perfectly smooth and evenly textured. Remove all wrinkles, fold, and creases completely while preserving the natural fabric texture.",
             "Ensure the entire product is visible in the frame.",
             "Avoid cropping of the main product or model.",
             "Maintain realistic body and fabric proportions.",
@@ -72,6 +73,7 @@ def create_prompt_jobs(form_data):
                 "camera": "Captured with a Canon EOS R5, 85mm lens, f/3.2 aperture.",
                 "style": "ultra-realistic, 4k, professional e-commerce photography, high-detail, clean, premium",
                 "constraints":["Keep the product fully visible and in sharp focus.",
+                "The product shirt/t-shirt/fabric must appear perfectly smooth and evenly textured. Remove all wrinkles, fold, and creases completely while preserving the natural fabric texture.",
                 "Preserve maximum product features, colors and patterns, folds, and stitching details.",
                 "Avoid reflections or overexposed areas.",
                 "No heavy post-processing or artificial effects."]
@@ -86,6 +88,7 @@ def create_prompt_jobs(form_data):
                 "style": "ultra-realistic, 4k, professional e-commerce photography, high-detail, clean, premium",
                 "constraints": [
                 "Ensure the full product is shown without cropping.",
+                "The product shirt/t-shirt/fabric must appear perfectly smooth and evenly textured. Remove all wrinkles, fold, and creases completely while preserving the natural fabric texture.",
                 "Maintain true-to-life proportions and folds.",
                 "Preserve maximum product features, colors and patterns, folds, and stitching details.",
                 "Avoid reflective or glossy mannequin surfaces.",
@@ -100,6 +103,7 @@ def create_prompt_jobs(form_data):
                 "visuals": "Incorporate bold typography that reads '50% OFF – Limited Time!' with clean layout balance.",
                 "style": "high-energy, commercial, advertisement, modern, premium aesthetic",
                 "constraints": [
+                    "The product shirt/t-shirt/fabric must appear perfectly smooth and evenly textured. Remove all wrinkles, fold, and creases completely while preserving the natural fabric texture.",
                 "The product should remain clearly visible and unobstructed.",
                 "Typography should not overlap key product details.",
                 "Preserve maximum product features, colors and patterns, folds, and stitching details."
