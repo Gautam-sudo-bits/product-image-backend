@@ -151,7 +151,7 @@ def create_prompt_jobs(form_data):
                 "objective": "Create a visually engaging marketing image for the home decor product from image 1.",
                 "composition": "Hero-style composition emphasizing the product as the central subject.",
                 "environment": "Elegant backdrop with decorative elements that enhance but don’t distract.",
-                "visuals": "Overlay refined text that reads 'SALE – UP TO 70% OFF!' in a premium, minimalist font.",
+                "visuals": "Overlay refined text, Incorporating bold typography inside creative design elements like frames or shapes, that reads 'SALE – UP TO 70% OFF!' in a premium, minimalist font.",
                 "style": "advertisement, elegant, promotional, lifestyle-inspired",
                 "constraints": [
                 "Product must remain unobstructed and clearly visible.",
