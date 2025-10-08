@@ -66,8 +66,8 @@ def create_prompt_jobs(form_data):
         }
         })
             jobs.append({"type": "human_close_up", "prompt_json": {
-                "objective": "Create a high-detail close-up of the product from image 1(product only image) being worn by the model human on the second image.",
-                "composition": "Waist-up shot emphasizing fabric quality, fit, and product texture. Clear human model face.",
+                "objective": "Create a high-detail close-up of the product from image 1(product only image) being worn by the model human on the second image(only if second human image is provided).",
+                "composition": "If the product in the image is clothing apparel, then create a Waist-up shot emphasizing fabric quality, fit, and product texture. Clear human model face. If the product is an accessory like a hat, scarf, shoe, or jewelry, etc., then create a tight close-up focusing on the product details and craftsmanship. Create a natural pose of the human model(e.g., two shoes can be placed on the floor, one shoe can be slightly forward to show depth).",
                 "environment": "Clean, neutral, and minimally distracting background.",
                 "lighting": "Softbox studio lighting setup with subtle shadow gradients for depth.",
                 "camera": "Captured with a Canon EOS R5, 85mm lens, f/3.2 aperture.",
@@ -100,7 +100,7 @@ def create_prompt_jobs(form_data):
                 "objective": "Design a vibrant, eye-catching fashion, social-media marketing image for the product from image 1(product only image), that focuses only on the product image.",
                 "composition": "Dynamic composition where the product is the central focus. The fabric should be neatly ironed with no creases, folds and wrinkles",
                 "environment": "Abstract or colorful backdrop with stylish graphic overlays. The backdrop colors and style should complement the color palette of the fabric/product.",
-                "visuals": "Add creative design elements such as colorful frames, shapes, overlays, or graphic accents that enhance the advertisement's appeal. Incorporate bold typography inside creative design elements like frames or shapes, that reads '50% OFF – Limited Time!' with clean layout balance, integrated naturaly into the design(not just pasted on the image). Include 'By Now!', 'Click the link in Bio!', 'Link in Bio!' or 'Shop Now' texts as well resembling social media posts.",
+                "visuals": "Add creative design elements such as colorful frames, shapes, overlays, or graphic accents that enhance the advertisement's appeal. Incorporate bold typography inside creative design elements like frames or shapes, that reads '50% OFF – Limited Time!' with clean layout balance, integrated naturaly into the design(not just pasted on the image). Include any one: 'Buy Now!',or 'Click the link in Bio!',or 'Link in Bio!' or 'Shop Now' texts, resembling social media posts.",
                 "style": "high-energy, commercial, advertisement, modern, premium aesthetic",
                 "constraints": [
                 "The product shirt/t-shirt/fabric must appear perfectly smooth and evenly textured. Remove all wrinkles, fold, and creases completely while preserving the natural fabric texture.",
