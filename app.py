@@ -138,7 +138,7 @@ def create_prompt_jobs(form_data):
                 "objective": "Generate a clean e-commerce product listing image for the product from image 1.",
                 "composition": "Centered and isolated product on a plain background.",
                 "environment": "Seamless, solid white or light-gray backdrop.",
-                "lighting": "Bright, balanced studio lighting with soft shadows for realism.",
+                "lighting": "Bright, balanced studio lighting with soft shadows for realism. Shadows should look natural and not blunt.",
                 "camera": "Canon 5D Mark IV, 70mm lens, aperture f/5.6.",
                 "style": "ultra-realistic, 4k, professional e-commerce photography, high-detail, clean, premium",
                 "constraints": [
