@@ -52,7 +52,7 @@ def create_prompt_jobs(form_data):
             jobs.append({"type": "human_long_shot", "prompt_json": {
             "objective": "Generate an ultra-realistic full-body e-commerce photo showing the product from image 1(product only image) being worn by a human model.",
             "composition": "Centered, full-body long shot with the model standing naturally.",
-            "environment": "Bright and elegant lifestyle background such as a modern city street, minimalist indoor studio, or upscale cafe setting.",
+            "environment": "Bright and elegant lifestyle background such as a modern city street, minimalist indoor studio, or upscale cafe setting. Maintan real world object proportions.",
             "lighting": "Soft, natural daylight with even exposure across the frame.",
             "camera": "Shot with a DSLR camera using a 50mm lens, aperture f/2.8, ISO 100.",
             "style": "ultra-realistic, 4k, professional e-commerce photography, high-detail, clean, premium",
@@ -67,7 +67,7 @@ def create_prompt_jobs(form_data):
         })
             jobs.append({"type": "human_close_up", "prompt_json": {
                 "objective": "Create a high-detail close-up of the product from image 1(product only image) being worn by the model human on the second image.",
-                "composition": "Waist-up shot emphasizing fabric quality, fit, and product texture.",
+                "composition": "Waist-up shot emphasizing fabric quality, fit, and product texture. Clear human model face.",
                 "environment": "Clean, neutral, and minimally distracting background.",
                 "lighting": "Softbox studio lighting setup with subtle shadow gradients for depth.",
                 "camera": "Captured with a Canon EOS R5, 85mm lens, f/3.2 aperture.",
