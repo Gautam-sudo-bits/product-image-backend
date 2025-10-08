@@ -121,7 +121,7 @@ def create_prompt_jobs(form_data):
             }})"""
             jobs.append({"type": "lifestyle_angle1", "prompt_json": {
                 "objective": "Generate an alternate lifestyle photo of the product from image 1 in a clean home interior.",
-                "composition": "Direct front-facing eye-level shot focusing on the product’s shape and material.",
+                "composition": "Direct front-facing eye-level shot focusing on the product’s shape and material. The product should be the only main item - no duplicates or unrelated objects in the scene. The setting should look logical and context-appropriate for the product type(e.g., a sofa in a neat living room, shoes in a stylish entryway).Focus entirely on the product.",
                 "environment": "Minimalist bedroom or home office with coordinated decor tones.",
                 "lighting": "Soft, ambient indoor lighting with gentle contrast.",
                 "camera": "50mm lens, ISO 100, balanced exposure.",
