@@ -99,7 +99,7 @@ def create_prompt_jobs(form_data):
             jobs.append({"type": "creative_fashion", "prompt_json": {
                 "objective": "Design a vibrant, eye-catching fashion marketing banner for the product from image 1(product only image), that focuses only on the product image.",
                 "composition": "Dynamic composition where the product is the central focus. The fabric should be neatly ironed with no creases, folds and wrinkles",
-                "environment": "Abstract or colorful backdrop with stylish graphic overlays.",
+                "environment": "Abstract or colorful backdrop with stylish graphic overlays. The backdrop colrs and style should match the color palette of the fabric/product.",
                 "visuals": "Incorporate bold typography that reads '50% OFF – Limited Time!' with clean layout balance.",
                 "style": "high-energy, commercial, advertisement, modern, premium aesthetic",
                 "constraints": [
