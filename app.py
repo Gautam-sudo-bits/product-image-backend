@@ -129,7 +129,8 @@ def create_prompt_jobs(form_data):
                 "constraints": [
                 "Keep full visibility of the product.",
                 "No cropping or reflections.",
-                "Preserve maximum product features, colors and patterns, folds, and stitching details."
+                "Preserve maximum product features, colors and patterns, folds, and stitching details.",
+                "Maintain accurate shape, typography, texture, features, and proportions as such from the original image."
                 ]
             }})
         if options.get('studio'):
@@ -142,7 +143,7 @@ def create_prompt_jobs(form_data):
                 "style": "ultra-realistic, 4k, professional e-commerce photography, high-detail, clean, premium",
                 "constraints": [
                 "Show the entire product clearly without any cropping.",
-                "Maintain accurate shape, texture, features, and proportions.",
+                "Maintain accurate shape, typography, texture, features, and proportions as such from the original image.",
                 "Avoid glare, overexposure, or reflections."
                 ]
             }})
