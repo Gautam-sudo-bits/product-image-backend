@@ -1,3 +1,4 @@
+#app.py - pre-demo 1 version
 import os
 import json
 import concurrent.futures
@@ -50,67 +51,129 @@ def create_prompt_jobs(form_data):
     if category == 'Fashion':
         if options.get('humanModel'):
             jobs.append({"type": "human_long_shot", "prompt_json": {
-                "task": "Place the product from image 1 onto a human model, similar to the context in image 2 if provided.",
-                "composition": "Full-body long shot, model centered.",
-                "environment": "A bright, elegant lifestyle setting like a modern city street or upscale cafe.",
-                "lighting": "Soft, natural daylight.", "style": base_style, "constraints": base_constraints
-            }})
+            "objective": "Generate an ultra-realistic full-body e-commerce photo showing the product from image 1(product only image) being worn by a human model.",
+            "composition": "Centered, full-body long shot with the model standing naturally.",
+            "environment": "Bright and elegant lifestyle background such as a modern city street, minimalist indoor studio, or upscale cafe setting. Maintan real world object proportions.",
+            "lighting": "Soft, natural daylight with even exposure across the frame.",
+            "camera": "Shot with a DSLR camera using a 50mm lens, aperture f/2.8, ISO 100.",
+            "style": "ultra-realistic, 4k, professional e-commerce photography, high-detail, clean, premium",
+            "constraints": [
+            "The product shirt/t-shirt/fabric must appear perfectly smooth and evenly textured. Remove all wrinkles, fold, and creases completely while preserving the natural fabric texture.",
+            "Ensure the entire product is visible in the frame.",
+            "Avoid cropping of the main product or model.",
+            "Maintain realistic body and fabric proportions.",
+            "Preserve maximum product features, colors and patterns, folds, and stitching details."
+            ]
+        }
+        })
             jobs.append({"type": "human_close_up", "prompt_json": {
-                "task": "Create a close-up shot of the product from image 1 being worn by a human model.",
-                "composition": "Waist-up shot, focusing on the product's texture and details.",
-                "environment": "Clean, minimally distracting background.",
-                "lighting": "Professional studio softbox lighting.", "style": base_style, "constraints": base_constraints
+                "objective": "Create a high-detail close-up of the product from image 1(product only image) being worn by the model human on the second image(only if second human image is provided).",
+                "composition": "If the product in the image is clothing apparel, then create a Waist-up shot emphasizing fabric quality, fit, and product texture. Clear human model face. If the product is an accessory like a hat, scarf, purse, shoe, or jewelry, etc., then create a tight close-up focusing on the product details and craftsmanship. Create a natural pose of the human model(e.g., two shoes can be placed on the floor, one shoe can be slightly forward to show depth).",
+                "environment": "Clean, neutral, and minimally distracting background.",
+                "lighting": "Softbox studio lighting setup with subtle shadow gradients for depth.",
+                "camera": "Captured with a Canon EOS R5, 85mm lens, f/3.2 aperture.",
+                "style": "ultra-realistic, 4k, professional e-commerce photography, high-detail, clean, premium",
+                "constraints":["Keep the product fully visible and in sharp focus.",
+                "The product shirt/t-shirt/fabric must appear perfectly smooth and evenly textured. Remove all wrinkles, fold, and creases completely while preserving the natural fabric texture.",
+                "Preserve maximum product features, colors and patterns, folds, and stitching details.",
+                "Avoid reflections or overexposed areas.",
+                "No heavy post-processing or artificial effects."]
             }})
         if options.get('mannequin'):
             jobs.append({"type": "mannequin", "prompt_json": {
-                "task": "Display the product from image 1 on a featureless, abstract mannequin.",
-                "composition": "Centered, three-quarter view of the mannequin.",
-                "environment": "Solid light-grey or white studio background.",
-                "lighting": "Even, bright studio lighting.", "style": base_style, "constraints": base_constraints
+                "objective": "Generate a clean, studio-style e-commerce photo displaying the product from image 1 on a mannequin.",
+                "composition": "Centered, head-on view with the full mannequin body visible. Mannequin should be neutral in color (white, gray) to avoid distractions.",
+                "environment": "Solid light-gray or white seamless studio background.",
+                "lighting": "Even, bright studio lighting with soft shadows to highlight product contours.",
+                "camera": "Shot on tripod, 70mm focal length for accurate proportions.",
+                "style": "ultra-realistic, 4k, professional e-commerce photography, high-detail, clean, premium",
+                "constraints": [
+                "Ensure the full product is shown without cropping.",
+                "The product shirt/t-shirt/fabric must appear perfectly smooth and evenly textured. Remove all wrinkles, fold, and creases completely while preserving the natural fabric texture.",
+                "Maintain true-to-life proportions and folds.",
+                "Preserve maximum product features, colors and patterns, folds, and stitching details.",
+                "Avoid reflective or glossy mannequin surfaces.",
+                "Keep focus strictly on the product."
+                ]
             }})
         if options.get('creative'):
             jobs.append({"type": "creative_fashion", "prompt_json": {
-                "task": "Create a vibrant marketing banner for the product in image 1.",
-                "composition": "Dynamic, eye-catching layout.",
-                "visuals": "Incorporate abstract graphic elements and bold colors. Superimpose flashy text that reads '50% OFF - Limited Time!'",
-                "style": "commercial, advertisement, high-energy"
+                "objective": "Design a vibrant, eye-catching fashion, social-media marketing image for the product from image 1(product only image), that focuses only on the product image.",
+                "composition": "Dynamic composition where the product is the central focus. The fabric should be neatly ironed with no creases, folds and wrinkles",
+                "environment": "Abstract or colorful backdrop with stylish graphic overlays. The backdrop colors and style should complement the color palette of the fabric/product.",
+                "visuals": "Add creative design elements such as colorful frames, shapes, overlays, or graphic accents that enhance the advertisement's appeal. Incorporate bold typography inside creative design elements like frames or shapes, that reads '50% OFF – Limited Time!' with clean layout balance, integrated naturaly into the design(not just pasted on the image). Include any one: 'Buy Now!',or 'Click the link in Bio!',or 'Link in Bio!' or 'Shop Now' texts, resembling social media posts.",
+                "style": "high-energy, commercial, advertisement, modern, premium aesthetic",
+                "constraints": [
+                "The product shirt/t-shirt/fabric must appear perfectly smooth and evenly textured. Remove all wrinkles, fold, and creases completely while preserving the natural fabric texture.",
+                "The product should remain clearly visible and unobstructed.",
+                "Typography should not overlap key product details.",
+                "Image should look like a high-quality e-commerce or fashion sale ad designed for Instagram, facenook or pinterest.",
+                "Preserve maximum product features, colors and patterns, folds, and stitching details."
+                ]
             }})
 
     elif category == 'Home Decor':
         if options.get('lifestyle'):
-            jobs.append({"type": "lifestyle_angle1", "prompt_json": {
+            """jobs.append({"type": "lifestyle_angle2", "prompt_json": {
                 "task": "Place the product from image 1 into a suitable, high-end home lifestyle scene.",
                 "composition": "Shot from a 45-degree high angle, eye-level perspective to the product.",
                 "environment": "A beautifully decorated living room or study that complements the product.",
                 "lighting": "Warm, natural light from a window.", "style": base_style, "constraints": base_constraints
-            }})
-            jobs.append({"type": "lifestyle_angle2", "prompt_json": {
-                "task": "Place the product from image 1 into a different lifestyle scene.",
-                "composition": "Direct, eye-level front view, showing the product's proportions accurately.",
-                "environment": "A calm, minimalist bedroom or office setting.",
-                "lighting": "Soft, ambient indoor lighting.", "style": base_style, "constraints": base_constraints
+            }})"""
+            jobs.append({"type": "lifestyle_angle1", "prompt_json": {
+                "objective": "Generate a lifestyle photo of the product from image in a clean home interior. The scene should be naturally lit and the product should be the main focus, resembling as such a real e-commerce product photo.",
+                "composition": "Direct front-facing eye-level shot focusing on the product’s shape and material. If the product is a lighting fixture, it should be turned on to showcase its effect(e.g., floor lamps, table lamps)-no outdoor window lighting. The product should be the only main item - no duplicates or unrelated objects in the scene. The setting should look logical and context-appropriate for the product type(e.g., a sofa in a neat living room, shoes in a stylish entryway).Focus entirely on the product.",
+                "environment": "Minimalist bedroom, home office with coordinated decor tones, living room with appropriate product placement in the room, or any scene suitable for the main product. Table products can have suitable creative elements like books, vases, or plants, etc., on the table. Avoid cluttered or overly busy backgrounds.",
+                "lighting": "Soft, ambient indoor lighting with gentle contrast.",
+                "camera": "50mm lens, ISO 100, balanced exposure.",
+                "style": "ultra-realistic, 4k, professional e-commerce photography, high-detail, clean, premium",
+                "constraints": [
+                "Keep full visibility of the product.",
+                "No cropping or reflections.",
+                "Preserve maximum product features, colors and patterns, folds, and stitching details.",
+                "Maintain accurate shape, typography, texture, features, and proportions as such from the original image."
+                ]
             }})
         if options.get('studio'):
             jobs.append({"type": "studio", "prompt_json": {
-                "task": "Create a clean, e-commerce listing photo for the product in image 1.",
-                "composition": "Product centered perfectly.",
-                "environment": "Seamless, solid white background.",
-                "lighting": "Flawless, bright studio lighting with no harsh shadows.", "style": base_style, "constraints": base_constraints
+                "objective": "Generate a clean e-commerce product listing image for the product from image 1.",
+                "composition": "Centered and isolated product on a plain background.",
+                "environment": "Seamless, solid white or light-gray backdrop.",
+                "lighting": "Bright, balanced studio lighting with soft shadows for realism. Shadows should look natural and not blunt.",
+                "camera": "Canon 5D Mark IV, 70mm lens, aperture f/5.6.",
+                "style": "ultra-realistic, 4k, professional e-commerce photography, high-detail, clean, premium",
+                "constraints": [
+                "Show the entire product clearly without any cropping.",
+                "Maintain accurate shape, typography, texture, features, and proportions as such from the original image.",
+                "Avoid glare, overexposure, or reflections."
+                ]
             }})
         if options.get('creative'):
             jobs.append({"type": "creative_decor", "prompt_json": {
-                "task": "Create an engaging marketing image for the home decor product in image 1.",
-                "composition": "Product as the hero element.",
-                "visuals": "Surround with elegant design elements. Overlay text that says 'SALE - UP TO 70% OFF!' in a stylish font.",
-                "style": "advertisement, elegant, promotional"
+                "objective": "Create a visually engaging marketing image for the home decor product from image 1.",
+                "composition": "Hero-style composition emphasizing the product as the central subject.",
+                "environment": "Elegant backdrop with decorative elements that enhance but don’t distract.",
+                "visuals": "Overlay refined text, Incorporating bold typography inside creative design elements like frames or shapes, that reads 'SALE – UP TO 70% OFF!' in a premium, minimalist font.",
+                "style": "advertisement, elegant, promotional, lifestyle-inspired",
+                "constraints": [
+                "Product must remain unobstructed and clearly visible.",
+                "Image should look like a high-quality e-commerce or fashion sale ad designed for Instagram, facenook or pinterest.",
+                "Text should complement, not overpower, the visual.",
+                "Maintain high photorealism and premium aesthetic.",
+                "Preserve maximum product features, colors and patterns, folds, and stitching details."
+                ]
             }})
 
     return jobs
 
 def generate_and_upload_image(job_details):
-    # This function is now designed to take a list of input images
+    """
+    Receives a job with RAW IMAGE BYTES, creates its own image objects,
+    calls Gemini, and uploads the result. This is now thread-safe.
+    """
     prompt_json = job_details['prompt_json']
-    input_images = job_details['images_list']
+    # This now receives raw bytes, not PIL.Image objects
+    input_images_bytes = job_details['images_bytes_list']
     base_public_id = job_details['base_public_id']
     job_type = job_details['type']
     job_index = job_details['index']
@@ -119,11 +182,18 @@ def generate_and_upload_image(job_details):
         print(f"Starting job {job_index} ({job_type})...")
         model = genai.GenerativeModel('gemini-2.5-flash-image')
         
-        # The 'contents' list now includes the JSON prompt and ALL input images
-        contents = [json.dumps(prompt_json)] + input_images
+        plain_text_prompt = flatten_prompt_json(prompt_json)
+
+        input_images_for_this_thread = []
+        for img_bytes in input_images_bytes:
+            input_images_for_this_thread.append(Image.open(BytesIO(img_bytes)))
+
+        contents = [plain_text_prompt] + input_images_for_this_thread
         
         response = model.generate_content(contents)
+        
         generated_image_bytes = None
+
         for part in response.candidates[0].content.parts:
             if part.inline_data:
                 generated_image_bytes = part.inline_data.data
@@ -155,34 +225,34 @@ def generate_endpoint():
     form_data = json.loads(request.form['generationSettings'])
 
     try:
-        # 1. Upload ALL user images and prepare them for Gemini
-        input_images_for_gemini = []
+        # Upload ALL user images and prepare them for Gemini
+        input_image_bytes_list = [] 
         base_public_id = None
         for i, image_file in enumerate(image_files):
             print(f"Uploading input image {i+1}...")
             upload_result = cloudinary.uploader.upload(image_file, folder="product-image-inputs")
-            if i == 0: # Use the first image's ID for naming outputs
+            if i == 0:
                 base_public_id = upload_result['public_id']
             
             image_response = requests.get(upload_result['secure_url'])
             image_response.raise_for_status()
-            input_images_for_gemini.append(Image.open(BytesIO(image_response.content)))
+            input_image_bytes_list.append(image_response.content)
 
-        # 2. Get the list of prompt jobs
+        # Get the list of prompt jobs
         prompt_jobs = create_prompt_jobs(form_data)
         if not prompt_jobs:
             return jsonify({"error": "No generation options selected."}), 400
         print(f"Created {len(prompt_jobs)} generation jobs.")
 
-        # 3. Prepare jobs for the parallel executor
+        # Prepare jobs for the parallel executor
         jobs_with_context = [{
             'prompt_json': job['prompt_json'],
-            'images_list': input_images_for_gemini,
+            'images_bytes_list': input_image_bytes_list,
             'base_public_id': base_public_id,
             'type': job['type'], 'index': i
         } for i, job in enumerate(prompt_jobs)]
 
-        # 4. Execute jobs in parallel
+        #  Execute jobs in parallel
         generated_urls = []
         with concurrent.futures.ThreadPoolExecutor() as executor:
             results = executor.map(generate_and_upload_image, jobs_with_context)

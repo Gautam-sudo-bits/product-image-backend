@@ -4,6 +4,13 @@ __pycache__/
 
 # Environment variables file
 .env
+public
 
+brand_assets/
+images/
+videos/
+dump/
 # VSCode settings
 .vscode/
+
+.checkpoints/

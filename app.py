@@ -1,17 +1,19 @@
+# app.py (New Architecture)
 import os
 import json
-import concurrent.futures
-from flask import Flask, jsonify, request
+import chromadb
+import google.generativeai as genai
 from dotenv import load_dotenv
+from flask import Flask, jsonify, request
+from flask_cors import CORS
+import prompt_instruction_templates
 import cloudinary
 import cloudinary.uploader
-import google.generativeai as genai
 from PIL import Image
 from io import BytesIO
 import requests
-from flask_cors import CORS
+import concurrent.futures
 
-# --- Configuration ---
 load_dotenv()
 app = Flask(__name__)
 CORS(app)
@@ -22,8 +24,6 @@ cloudinary.config(
     api_secret=os.getenv("CLOUDINARY_API_SECRET")
 )
 genai.configure(api_key=os.getenv("GEMINI_API_KEY"))
-
-# app.py (add this new function)
 
 def flatten_prompt_json(prompt_json):
     """Converts our structured prompt JSON into a single, detailed string."""
@@ -37,237 +37,281 @@ def flatten_prompt_json(prompt_json):
             lines.append(f"- {key}: {value}")
     return "Execute the following instructions for the provided images:\n" + "\n".join(lines)
     
-# --- NEW: Production-Grade JSON Prompt Factory ---
-def create_prompt_jobs(form_data):
-    jobs = []
-    category = form_data.get('category')
-    options = form_data.get('selectedOptions', {})
-
-    # Base prompt elements to ensure consistency
-    base_style = "ultra-realistic, 4k, professional e-commerce photography, high-detail, clean, premium"
-    base_constraints = ["ensure the entire product is visible in the frame", "no cropping of the main product", "maintain realistic proportions","Preserve maximum product details and textures"]
-
-    if category == 'Fashion':
-        if options.get('humanModel'):
-            jobs.append({"type": "human_long_shot", "prompt_json": {
-            "objective": "Generate an ultra-realistic full-body e-commerce photo showing the product from image 1(product only image) being worn by a human model.",
-            "composition": "Centered, full-body long shot with the model standing naturally.",
-            "environment": "Bright and elegant lifestyle background such as a modern city street, minimalist indoor studio, or upscale cafe setting. Maintan real world object proportions.",
-            "lighting": "Soft, natural daylight with even exposure across the frame.",
-            "camera": "Shot with a DSLR camera using a 50mm lens, aperture f/2.8, ISO 100.",
-            "style": "ultra-realistic, 4k, professional e-commerce photography, high-detail, clean, premium",
-            "constraints": [
-            "The product shirt/t-shirt/fabric must appear perfectly smooth and evenly textured. Remove all wrinkles, fold, and creases completely while preserving the natural fabric texture.",
-            "Ensure the entire product is visible in the frame.",
-            "Avoid cropping of the main product or model.",
-            "Maintain realistic body and fabric proportions.",
-            "Preserve maximum product features, colors and patterns, folds, and stitching details."
-            ]
-        }
-        })
-            jobs.append({"type": "human_close_up", "prompt_json": {
-                "objective": "Create a high-detail close-up of the product from image 1(product only image) being worn by the model human on the second image(only if second human image is provided).",
-                "composition": "If the product in the image is clothing apparel, then create a Waist-up shot emphasizing fabric quality, fit, and product texture. Clear human model face. If the product is an accessory like a hat, scarf, purse, shoe, or jewelry, etc., then create a tight close-up focusing on the product details and craftsmanship. Create a natural pose of the human model(e.g., two shoes can be placed on the floor, one shoe can be slightly forward to show depth).",
-                "environment": "Clean, neutral, and minimally distracting background.",
-                "lighting": "Softbox studio lighting setup with subtle shadow gradients for depth.",
-                "camera": "Captured with a Canon EOS R5, 85mm lens, f/3.2 aperture.",
-                "style": "ultra-realistic, 4k, professional e-commerce photography, high-detail, clean, premium",
-                "constraints":["Keep the product fully visible and in sharp focus.",
-                "The product shirt/t-shirt/fabric must appear perfectly smooth and evenly textured. Remove all wrinkles, fold, and creases completely while preserving the natural fabric texture.",
-                "Preserve maximum product features, colors and patterns, folds, and stitching details.",
-                "Avoid reflections or overexposed areas.",
-                "No heavy post-processing or artificial effects."]
-            }})
-        if options.get('mannequin'):
-            jobs.append({"type": "mannequin", "prompt_json": {
-                "objective": "Generate a clean, studio-style e-commerce photo displaying the product from image 1 on a mannequin.",
-                "composition": "Centered, head-on view with the full mannequin body visible. Mannequin should be neutral in color (white, gray) to avoid distractions.",
-                "environment": "Solid light-gray or white seamless studio background.",
-                "lighting": "Even, bright studio lighting with soft shadows to highlight product contours.",
-                "camera": "Shot on tripod, 70mm focal length for accurate proportions.",
-                "style": "ultra-realistic, 4k, professional e-commerce photography, high-detail, clean, premium",
-                "constraints": [
-                "Ensure the full product is shown without cropping.",
-                "The product shirt/t-shirt/fabric must appear perfectly smooth and evenly textured. Remove all wrinkles, fold, and creases completely while preserving the natural fabric texture.",
-                "Maintain true-to-life proportions and folds.",
-                "Preserve maximum product features, colors and patterns, folds, and stitching details.",
-                "Avoid reflective or glossy mannequin surfaces.",
-                "Keep focus strictly on the product."
-                ]
-            }})
-        if options.get('creative'):
-            jobs.append({"type": "creative_fashion", "prompt_json": {
-                "objective": "Design a vibrant, eye-catching fashion, social-media marketing image for the product from image 1(product only image), that focuses only on the product image.",
-                "composition": "Dynamic composition where the product is the central focus. The fabric should be neatly ironed with no creases, folds and wrinkles",
-                "environment": "Abstract or colorful backdrop with stylish graphic overlays. The backdrop colors and style should complement the color palette of the fabric/product.",
-                "visuals": "Add creative design elements such as colorful frames, shapes, overlays, or graphic accents that enhance the advertisement's appeal. Incorporate bold typography inside creative design elements like frames or shapes, that reads '50% OFF – Limited Time!' with clean layout balance, integrated naturaly into the design(not just pasted on the image). Include any one: 'Buy Now!',or 'Click the link in Bio!',or 'Link in Bio!' or 'Shop Now' texts, resembling social media posts.",
-                "style": "high-energy, commercial, advertisement, modern, premium aesthetic",
-                "constraints": [
-                "The product shirt/t-shirt/fabric must appear perfectly smooth and evenly textured. Remove all wrinkles, fold, and creases completely while preserving the natural fabric texture.",
-                "The product should remain clearly visible and unobstructed.",
-                "Typography should not overlap key product details.",
-                "Image should look like a high-quality e-commerce or fashion sale ad designed for Instagram, facenook or pinterest.",
-                "Preserve maximum product features, colors and patterns, folds, and stitching details."
-                ]
-            }})
-
-    elif category == 'Home Decor':
-        if options.get('lifestyle'):
-            """jobs.append({"type": "lifestyle_angle2", "prompt_json": {
-                "task": "Place the product from image 1 into a suitable, high-end home lifestyle scene.",
-                "composition": "Shot from a 45-degree high angle, eye-level perspective to the product.",
-                "environment": "A beautifully decorated living room or study that complements the product.",
-                "lighting": "Warm, natural light from a window.", "style": base_style, "constraints": base_constraints
-            }})"""
-            jobs.append({"type": "lifestyle_angle1", "prompt_json": {
-                "objective": "Generate a lifestyle photo of the product from image in a clean home interior. The scene should be naturally lit and the product should be the main focus, resembling as such a real e-commerce product photo.",
-                "composition": "Direct front-facing eye-level shot focusing on the product’s shape and material. If the product is a lighting fixture, it should be turned on to showcase its effect(e.g., floor lamps, table lamps)-no outdoor window lighting. The product should be the only main item - no duplicates or unrelated objects in the scene. The setting should look logical and context-appropriate for the product type(e.g., a sofa in a neat living room, shoes in a stylish entryway).Focus entirely on the product.",
-                "environment": "Minimalist bedroom, home office with coordinated decor tones, living room with appropriate product placement in the room, or any scene suitable for the main product. Table products can have suitable creative elements like books, vases, or plants, etc., on the table. Avoid cluttered or overly busy backgrounds.",
-                "lighting": "Soft, ambient indoor lighting with gentle contrast.",
-                "camera": "50mm lens, ISO 100, balanced exposure.",
-                "style": "ultra-realistic, 4k, professional e-commerce photography, high-detail, clean, premium",
-                "constraints": [
-                "Keep full visibility of the product.",
-                "No cropping or reflections.",
-                "Preserve maximum product features, colors and patterns, folds, and stitching details.",
-                "Maintain accurate shape, typography, texture, features, and proportions as such from the original image."
-                ]
-            }})
-        if options.get('studio'):
-            jobs.append({"type": "studio", "prompt_json": {
-                "objective": "Generate a clean e-commerce product listing image for the product from image 1.",
-                "composition": "Centered and isolated product on a plain background.",
-                "environment": "Seamless, solid white or light-gray backdrop.",
-                "lighting": "Bright, balanced studio lighting with soft shadows for realism. Shadows should look natural and not blunt.",
-                "camera": "Canon 5D Mark IV, 70mm lens, aperture f/5.6.",
-                "style": "ultra-realistic, 4k, professional e-commerce photography, high-detail, clean, premium",
-                "constraints": [
-                "Show the entire product clearly without any cropping.",
-                "Maintain accurate shape, typography, texture, features, and proportions as such from the original image.",
-                "Avoid glare, overexposure, or reflections."
-                ]
-            }})
-        if options.get('creative'):
-            jobs.append({"type": "creative_decor", "prompt_json": {
-                "objective": "Create a visually engaging marketing image for the home decor product from image 1.",
-                "composition": "Hero-style composition emphasizing the product as the central subject.",
-                "environment": "Elegant backdrop with decorative elements that enhance but don’t distract.",
-                "visuals": "Overlay refined text, Incorporating bold typography inside creative design elements like frames or shapes, that reads 'SALE – UP TO 70% OFF!' in a premium, minimalist font.",
-                "style": "advertisement, elegant, promotional, lifestyle-inspired",
-                "constraints": [
-                "Product must remain unobstructed and clearly visible.",
-                "Image should look like a high-quality e-commerce or fashion sale ad designed for Instagram, facenook or pinterest.",
-                "Text should complement, not overpower, the visual.",
-                "Maintain high photorealism and premium aesthetic.",
-                "Preserve maximum product features, colors and patterns, folds, and stitching details."
-                ]
-            }})
-
-    return jobs
-
-def generate_and_upload_image(job_details):
+def plan_prompt(instruction_template, user_product_type, user_guidelines, user_marketing_copy):
     """
-    Receives a job with RAW IMAGE BYTES, creates its own image objects,
-    calls Gemini, and uploads the result. This is now thread-safe.
+    Uses Gemini Pro (The Planner) to convert user inputs into a structured prompt
+    for Nano Banana (The Artist).
     """
-    prompt_json = job_details['prompt_json']
-    # This now receives raw bytes, not PIL.Image objects
-    input_images_bytes = job_details['images_bytes_list']
-    base_public_id = job_details['base_public_id']
-    job_type = job_details['type']
-    job_index = job_details['index']
+    print("--- Step 1: Planning Prompt ---")
+    
+    # We construct a detailed meta-prompt for the planner LLM
+    meta_prompt = f"""
+    {instruction_template}
 
+    **USER-PROVIDED INPUTS FOLLOW:**
+    ---
+    - Product Type: "{user_product_type}"
+    - Brand/Theme Guidelines: "{user_guidelines}"
+    - Marketing Copy: "{user_marketing_copy}"
+    ---
+    Based on all the information above, generate the structured but Descriptive prompt for the image generator. Be creative and logical in product usage depiction.
+    """
+    
     try:
-        print(f"Starting job {job_index} ({job_type})...")
-        model = genai.GenerativeModel('gemini-2.5-flash-image')
+        # For this planning step, we use a standard text-generation model
+        planner_model = genai.GenerativeModel('gemini-2.5-pro')
+        response = planner_model.generate_content(meta_prompt)
         
-        plain_text_prompt = flatten_prompt_json(prompt_json)
-
-        input_images_for_this_thread = []
-        for img_bytes in input_images_bytes:
-            input_images_for_this_thread.append(Image.open(BytesIO(img_bytes)))
-
-        contents = [plain_text_prompt] + input_images_for_this_thread
+        # The raw response might be plain text, or wrapped in markdown backticks
+        planned_prompt_text = response.text.strip().replace('```json', '').replace('```', '')
         
-        response = model.generate_content(contents)
+        print(f"Successfully planned prompt:\n{planned_prompt_text}")
         
-        generated_image_bytes = None
-
-        for part in response.candidates[0].content.parts:
-            if part.inline_data:
-                generated_image_bytes = part.inline_data.data
-                break
-        
-        if generated_image_bytes is None:
-            print(f"Job {job_index} ({job_type}) failed: No image data from Gemini.")
-            return None
-
-        # Upload the generated image bytes to Cloudinary
-        upload_result = cloudinary.uploader.upload(
-            generated_image_bytes,
-            folder="product-image-outputs",
-            public_id=f"gen_{base_public_id}_{job_type}_{job_index}"
-        )
-        print(f"Finished job {job_index} ({job_type}). URL: {upload_result['secure_url']}")
-        return upload_result['secure_url']
+        # We return the clean text, ready to be passed to the artist model
+        return planned_prompt_text
 
     except Exception as e:
-        print(f"Error in job {job_index} ({job_type}): {e}")
+        print(f"Error during prompt planning: {e}")
+        raise
+
+def execute_generation(planned_prompt, user_images):
+    """
+    Uses Nano Banana to generate an image. This version includes robust error handling
+    and logs the full API response on failure to help debug safety filter issues.
+    """
+    print("--- Step 2: Executing Image Generation ---")
+    
+    try:
+        model = genai.GenerativeModel('gemini-2.5-flash-image')
+        contents = [planned_prompt] + user_images
+        
+        response = model.generate_content(contents)
+        print("Received response from Nano Banana.")
+        
+        generated_image_bytes = None
+        
+        # --- ROBUSTNESS FIX: Loop through all parts to find the image ---
+        # Don't assume the image is always the first part.
+        for part in response.candidates[0].content.parts:
+            if part.inline_data:
+                # Defensively copy the data into a stable bytes object
+                image_stream = BytesIO(part.inline_data.data)
+                generated_image_bytes = image_stream.getvalue()
+                print("Successfully extracted and copied generated image bytes.")
+                break # Exit the loop once we find our image
+
+        # --- DEBUGGING FIX: Check if we found an image and log if we didn't ---
+        if generated_image_bytes:
+            return generated_image_bytes
+        else:
+            # This is the critical part. We need to see the "black box" response.
+            print("--- !!! FAILED TO FIND IMAGE DATA IN RESPONSE !!! ---")
+            print(f"Full Gemini Response: {response}")
+            raise ValueError("No inline_data found in any part of the Gemini response.")
+
+    except Exception as e:
+        print(f"Error during image generation execution: {e}")
+        # Also log the full response if available, in case of other errors
+        if 'response' in locals():
+            print(f"Full Gemini Response at time of error: {response}")
+        raise
+
+def run_generation_pipeline(job_type, user_product_type, user_guidelines, user_marketing_copy, user_images):
+    """
+    Runs the full two-step pipeline for a single generation task and uploads the result.
+    """
+    print(f"\n--- Starting Generation Pipeline for Job: {job_type.upper()} ---")
+    
+    try:
+        if job_type == 'solid_background':
+            instruction = prompt_instruction_templates.SOLID_BACKGROUND_INSTRUCTION
+        elif job_type == 'lifestyle':
+            instruction = prompt_instruction_templates.LIFESTYLE_INSTRUCTION
+        else: # 'marketing_creative'
+            instruction = prompt_instruction_templates.MARKETING_CREATIVE_INSTRUCTION
+            
+        planned_prompt = plan_prompt(instruction, user_product_type, user_guidelines, user_marketing_copy)
+        
+        generated_image_bytes = execute_generation(planned_prompt, user_images)
+        
+        print(f"Uploading final '{job_type}' image to Cloudinary...")
+        product_slug = user_product_type.replace(" ", "-").lower()
+        public_id = f"{product_slug}_{job_type}"
+
+        file_to_upload = BytesIO(generated_image_bytes)
+        
+        upload_result = cloudinary.uploader.upload(
+            file_to_upload,
+            folder="test_version_2/outputs",
+            public_id=public_id
+        )
+        final_url = upload_result['secure_url']
+        print(f"Successfully uploaded. Final URL: {final_url}")
+        
+        return final_url
+
+    except Exception as e:
+        # --- THE CRITICAL FIX IS HERE ---
+        # We now print the actual error message for proper debugging.
+        print(f"--- Pipeline for Job '{job_type.upper()}' FAILED ---")
+        print(f"REASON: {e}") 
         return None
+
+# app.py (replace ONLY this function)
+
+@app.route('/api/test-pipeline', methods=['POST'])
+def test_pipeline_endpoint():
+    """
+    Tests the entire single-threaded generation pipeline with a real image.
+    """
+    image_files = request.files.getlist('images')
+    product_type = request.form.get('product_type', 'default_product')
+    guidelines = request.form.get('guidelines', '')
+    marketing_copy = request.form.get('marketing_copy', '')
+
+    if not image_files:
+        return jsonify({"error": "No image file provided"}), 400
+
+    try:
+        print("--- Uploading Input Image for Test ---")
+        input_filename = os.path.splitext(image_files[0].filename)[0]
+        
+        upload_result = cloudinary.uploader.upload(
+            image_files[0],
+            folder="test_version_2/inputs",
+            public_id=f"input_{input_filename}"
+        )
+        print(f"Input image uploaded to: {upload_result['secure_url']}")
+
+        # --- THE CRITICAL FIX IS HERE ---
+        # "Rewind" the file stream's cursor to the beginning after the first read.
+        image_files[0].seek(0)
+        
+        # Now, the second read will get the full, correct data.
+        image_bytes = image_files[0].read()
+        user_images_for_ai = [Image.open(BytesIO(image_bytes))]
+        
+        final_image_url = run_generation_pipeline(
+            job_type='lifestyle',
+            user_product_type=product_type,
+            user_guidelines=guidelines,
+            user_marketing_copy=marketing_copy,
+            user_images=user_images_for_ai
+        )
+        
+        if not final_image_url:
+            raise Exception("The generation pipeline failed to return a URL.")
+
+        return jsonify({
+            "status": "success",
+            "message": "Full pipeline test successful.",
+            "final_generated_image_url": final_image_url
+        })
+        
+    except Exception as e:
+        # This will now provide a more informative error if something else goes wrong.
+        return jsonify({"error": str(e)}), 500
+
+@app.route('/api/test-planner', methods=['GET'])
+def test_planner_endpoint():
+    """
+    A dedicated endpoint to test the plan_prompt function in isolation.
+    """
+    try:
+        # --- 1. Define Example User Inputs (as requested) ---
+        example_product_type = "Running shoes"
+        example_guidelines = "Brand colors: black & red; product-human interaction- human wearing the shoe; Snow theme, Should cover the poduct 45-degree view; format: 1080x1080 for Instagram."
+        example_marketing_copy = "Brand: StrideX — Limited-time 50% off this weekend! Christmas-themed ad targeting Gen Z shoppers."
+
+        # --- 2. Choose one of our master templates to test with ---
+        # We'll use the MARKETING_CREATIVE instruction for a complex test.
+        #test_instruction_template = prompt_instruction_templates.MARKETING_CREATIVE_INSTRUCTION
+        test_instruction_template = prompt_instruction_templates.LIFESTYLE_INSTRUCTION
+        #test_instruction_template = prompt_instruction_templates.SOLID_BACKGROUND_INSTRUCTION
+
+        # --- 3. Call our new planner function ---
+        planned_prompt = plan_prompt(
+            instruction_template=test_instruction_template,
+            user_product_type=example_product_type,
+            user_guidelines=example_guidelines,
+            user_marketing_copy=example_marketing_copy
+        )
+        
+        # --- 4. Return the result for verification ---
+        return jsonify({
+            "status": "success",
+            "message": "Prompt planning was successful.",
+            "planned_prompt_from_gemini_pro": planned_prompt
+        })
+
+    except Exception as e:
+        print(f"Error in test planner endpoint: {e}")
+        return jsonify({"error": str(e)}), 500
 
 @app.route('/api/generate', methods=['POST'])
 def generate_endpoint():
-    if 'images' not in request.files or 'generationSettings' not in request.form:
-        return jsonify({"error": "Missing images or generation settings"}), 400
-
+    """
+    Receives user inputs, runs three generation pipelines in parallel,
+    and returns the list of final image URLs.
+    """
+    # 1. Get user inputs from the request
+    # This now expects the final frontend data structure
     image_files = request.files.getlist('images')
-    form_data = json.loads(request.form['generationSettings'])
+    product_type = request.form.get('product_type', 'default_product')
+    guidelines = request.form.get('guidelines', '')
+    marketing_copy = request.form.get('marketing_copy', '')
+
+    if not image_files:
+        return jsonify({"error": "At least one product image is required."}), 400
 
     try:
-        # Upload ALL user images and prepare them for Gemini
-        input_image_bytes_list = [] 
-        base_public_id = None
-        for i, image_file in enumerate(image_files):
-            print(f"Uploading input image {i+1}...")
-            upload_result = cloudinary.uploader.upload(image_file, folder="product-image-inputs")
-            if i == 0:
-                base_public_id = upload_result['public_id']
+        # 2. Prepare the input images for AI (read them into memory once)
+        # This list of PIL.Image objects will be shared with all threads.
+        user_images_for_ai = []
+        for image_file in image_files:
+            image_bytes = image_file.read()
+            user_images_for_ai.append(Image.open(BytesIO(image_bytes)))
+            # No need to seek() as we are creating new objects for each pipeline call now
+
+        # 3. Define the three jobs we need to run
+        job_types = ['solid_background', 'lifestyle', 'marketing_creative']
+
+        # 4. Prepare the arguments for each parallel pipeline run
+        # We create a list of tuples, where each tuple contains all arguments for one pipeline call.
+        job_args = []
+        for job_type in job_types:
+            job_args.append(
+                (job_type, product_type, guidelines, marketing_copy, user_images_for_ai)
+            )
             
-            image_response = requests.get(upload_result['secure_url'])
-            image_response.raise_for_status()
-            input_image_bytes_list.append(image_response.content)
-
-        # Get the list of prompt jobs
-        prompt_jobs = create_prompt_jobs(form_data)
-        if not prompt_jobs:
-            return jsonify({"error": "No generation options selected."}), 400
-        print(f"Created {len(prompt_jobs)} generation jobs.")
-
-        # Prepare jobs for the parallel executor
-        jobs_with_context = [{
-            'prompt_json': job['prompt_json'],
-            'images_bytes_list': input_image_bytes_list,
-            'base_public_id': base_public_id,
-            'type': job['type'], 'index': i
-        } for i, job in enumerate(prompt_jobs)]
-
-        #  Execute jobs in parallel
+        print(f"--- Preparing to run {len(job_types)} pipelines in parallel ---")
+        
+        # 5. Execute all three pipelines concurrently using ThreadPoolExecutor
         generated_urls = []
         with concurrent.futures.ThreadPoolExecutor() as executor:
-            results = executor.map(generate_and_upload_image, jobs_with_context)
-            for url in results:
-                if url: generated_urls.append(url)
+            # executor.map is good for a single argument. For multiple arguments,
+            # we use executor.submit and a loop to get more control.
+            
+            # Create a future for each pipeline run
+            futures = [executor.submit(run_generation_pipeline, *args) for args in job_args]
+            
+            # Wait for each future to complete and collect the results
+            for future in concurrent.futures.as_completed(futures):
+                result_url = future.result()
+                if result_url: # Only add successful results
+                    generated_urls.append(result_url)
         
-        print(f"All jobs finished. Successfully generated {len(generated_urls)} images.")
-        
+        print(f"--- All pipelines finished. Successfully generated {len(generated_urls)} images. ---")
+
+        # 6. Return the final list of URLs to the frontend
         return jsonify({
             "status": "success",
-            "message": f"Generated {len(generated_urls)} images.",
+            "message": f"Successfully generated {len(generated_urls)} images.",
             "generated_image_urls": generated_urls
         })
 
     except Exception as e:
-        print(f"A critical error occurred in the main endpoint: {e}")
+        print(f"A critical error occurred in the main generate endpoint: {e}")
         return jsonify({"error": "An internal server error occurred."}), 500
 
 if __name__ == '__main__':
