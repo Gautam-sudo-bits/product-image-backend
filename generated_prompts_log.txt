@@ -1,0 +1,324 @@
+--- LOG FOR GENERATION REQUEST 20251020_122238 ---
+
+--- PROMPT 1 ---
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+STEP 1: ANALYZE INPUT IMAGE (MANDATORY)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+A) PRODUCT IDENTITY:
+The product is a commercial-style, single-handle, pull-down kitchen sink faucet. It features a high-arc gooseneck spout constructed with an exposed metal spring coil.
+
+B) PHYSICAL ATTRIBUTES:
+Precise colors:
+- Main body, handle, deck plate, spring coil, and spray head: Brushed gold metallic finish (approximate hex #C5B358).
+- Flexible hose inside the spring coil and the connector piece above the spray head: Matte black (#1C1C1C).
+- Buttons on the spray head: Dark gray or matte black.
+
+Material finishes:
+- All gold components have a non-glossy, brushed satin metallic finish.
+- The black hose and connector appear to be made of a matte rubber or plastic material.
+
+Shape and form factor:
+- The faucet has a tall, slender profile dominated by the arched spring coil spout.
+- The main body is cylindrical, tapering slightly towards the top.
+- A single, rectangular lever handle is mounted on the right side of the base.
+- The spray head is conical and docks into a horizontal support arm extending from the main body.
+- The entire unit is mounted on a thin, rectangular deck plate (escutcheon) with rounded corners.
+
+C) BRAND ELEMENTS (CRITICAL - PRESERVE EXACTLY):
+- Any visible logos: None visible.
+- Any text/labels on product: None visible.
+- Any badges, stickers, brand marks: None visible.
+
+D) COMPONENT DETAILS:
+- Controls: A single lever handle controls temperature and flow. The spray head has two controls: a small, round button on top and a larger, elongated rocker-style switch below it, used for changing spray patterns.
+- Handles, attachments: A high-arc, open-coil spring spout. A pull-down spray head. A horizontal docking arm holds the spray head. A rectangular deck plate at the base.
+- Openings: The spray head has nozzles for water output.
+- Joints: The faucet body swivels at the base. The handle pivots for operation.
+
+E) CURRENT STATE:
+- Product condition in image: New, clean, and without any visible wear or damage.
+- Any wear, reflections, or characteristics to maintain: The image shows soft highlights on the brushed metallic surface that define its shape, and a subtle drop shadow. These characteristics should be maintained in a professional studio context.
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+STEP 2: CONSTRUCT STUDIO SCENE SPECIFICATIONS
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+BACKGROUND:
+Color: Light gray (#F5F5F5)
+Texture: Seamless, perfectly smooth, gradient-free
+Type: Infinity curve backdrop with a reflective floor
+
+PRODUCT POSITIONING:
+Placement: Centered in frame
+Angle: Front-facing 3/4 view, angled slightly to the right to clearly show the handle and spray head controls.
+Distance: 15-20% margin from all frame edges
+
+LIGHTING SETUP:
+Primary: Three-point studio lighting (key + fill + rim)
+Quality: Soft, diffused, professional
+Shadows: Subtle, falling to the back-right opposite key light, 30-40% opacity
+Reflections: Natural floor reflection showing 40-50% opacity of the product base
+Highlights: Gentle specular highlights on the brushed gold surfaces to define the form and texture without overexposure
+
+PRODUCT STATE:
+Condition: Pristine, brand new appearance
+Operational status: OFF/CLOSED/RESTING
+Configuration: Handle in the upright, closed position. The pull-down spray head is fully retracted and securely seated in its docking arm.
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+STEP 3: GENERATE FINAL PROMPT WITH STRICT FORMAT
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Professional studio product photography.
+
+PRODUCT: A commercial-style, single-handle, pull-down kitchen faucet with a high-arc, open-coil spring spout. The main body, handle, deck plate, and spray head have a brushed gold metallic finish. The flexible inner hose, connector piece, and control buttons are matte black. The faucet is mounted on a thin rectangular deck plate. CRITICAL: No visible logos, text, or brand marks are present on the product. The spray head features a small round button and a larger rocker switch for spray control. The handle is a single rectangular lever on the right side.
+
+SCENE: Product isolated and centered on a light gray (#F5F5F5) seamless infinity backdrop. Product positioned at a front-facing 3/4 view, angled slightly to the right.
+
+LIGHTING: Professional three-point studio lighting with soft diffused key light from the front-left, fill light reducing shadows, and rim light creating edge definition. Soft shadow cast to the back-right at 30-40% opacity. Natural reflection beneath the product on a glossy floor at 40-50% opacity showing the product's base.
+
+STATE: Product in pristine, non-operational condition, with the handle in the closed position and the pull-down spray head fully docked.
+
+TECHNICAL: High-resolution commercial product photography, tack-sharp focus throughout entire product, no depth-of-field blur, neutral white balance (5500K), minimal lens distortion, e-commerce platform ready.
+
+PRESERVE: Exact product appearance from input image including all logos, text, material finishes, and design details without any alterations.
+
+---------------------------------------
+
+--- PROMPT 2 ---
+**Strict Protocol Adherence: PASSED**
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+**STEP 1: ANALYZE INPUT IMAGE (MANDATORY)**
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+**A) PRODUCT COMPLETE DESCRIPTION:**
+
+*   **Exact product type and model:** Commercial-style, high-arc, pull-down kitchen sink faucet with an exposed spring coil gooseneck design.
+*   **Precise color palette:** The main body, handle, and support arm have a gold finish. The flexible hose running through the spring coil is matte black. The buttons on the sprayer head are dark grey/black.
+*   **Material composition:** The faucet body is metal. The inner hose is a flexible rubber or composite material. The control buttons are plastic.
+*   **Texture and finish:** The gold metal has a brushed satin finish, which is non-reflective. The black hose and buttons are matte.
+*   **Exact dimensions and proportions:** This is a tall, high-arc faucet designed to be a prominent feature over a kitchen sink. It features a single-lever handle on the right side and is mounted on a thin, rectangular escutcheon plate (deck plate) for three-hole sink installations.
+
+**B) BRAND PRESERVATION (MUST MAINTAIN):**
+
+*   **All visible logos:** None visible.
+*   **All text on product:** None visible.
+*   **Brand marks, symbols, badges:** None visible.
+*   **Maintain the same viewing angle/ camera angle:** A similar front-angled, slightly elevated perspective will be used to naturally showcase the product in its environment.
+*   **Color schemes associated with branding:** N/A.
+
+**C) DESIGN FEATURES:**
+
+*   **All buttons, controls, displays, interfaces:** The sprayer head features two controls: a small, round upper button and a larger, vertical rocker-switch below it. A single, solid metal lever on the right side of the base controls water flow and temperature.
+*   **Structural elements:** A prominent, flexible gooseneck is wrapped in a gold-finished metal spring coil. The sprayer head docks into a horizontal support arm. The faucet is mounted on a matching gold, rectangular escutcheon plate.
+*   **Unique design characteristics:** The two-tone design combining the brushed gold finish with the black industrial-style spring and hose is a key feature.
+*   **Any attachments or accessories visible:** The matching escutcheon plate is part of the product assembly.
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+**STEP 2: DETERMINE SCENE TYPE FROM THEME GUIDELINES**
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+[ ] Option A - Human Interaction
+[X] Option B - Standalone
+
+**Contextual Props:**
+*   A wooden cutting board with a few sprigs of fresh rosemary and a chef's knife resting beside an uncut lemon.
+*   A minimalist white ceramic bottle of hand soap.
+*   A neatly folded, neutral-colored linen dish towel hanging over the edge of the sink basin.
+*   A small, terracotta pot with a basil plant on the windowsill in the background.
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+**STEP 3: DEFINE LOGICAL ENVIRONMENT**
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+**SELECTED ENVIRONMENT:** A bright, clean, and modern household kitchen.
+
+**ENVIRONMENTAL DETAILS:**
+
+*   **Primary surface:** The faucet is installed on a light-colored, white quartz countertop with subtle grey veining, positioned behind a clean, white fireclay undermount kitchen sink.
+*   **Background elements:** A clean, white subway tile backsplash, a wooden windowsill, and the edge of a light grey kitchen cabinet.
+*   **Environmental storytelling:** The scene suggests a fresh, culinary-focused space. The cutting board with herbs and a lemon implies that a meal is being prepared, showcasing the faucet's utility in a food-prep context without it being in operation.
+*   **Depth:** Soft background blur (shallow depth of field), ensuring the faucet remains the sharp, primary focus while the kitchen environment provides authentic context.
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+**STEP 4: DEFINE LIGHTING & ATMOSPHERE**
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+**SELECTED:** [X] Natural window light (soft, directional)
+
+**ATMOSPHERIC MOOD:**
+
+*   **Color temperature:** Neutral.
+*   **Overall feeling:** Fresh, clean, and airy.
+*   **Shadow quality:** Soft and natural, cast gently away from the light source.
+*   **Time of day suggestion:** Morning.
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+**STEP 5: GENERATE FINAL PROMPT WITH STRICT FORMAT**
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+**Lifestyle product photography, standalone presentation.**
+
+**PRODUCT:** A commercial-style, high-arc, pull-down kitchen faucet with a brushed gold satin finish. The faucet features a tall gooseneck wrapped in a matching gold spring coil, with a matte black flexible hose visible within. The pull-down sprayer head has two dark grey/black buttons (one small and round, one larger rocker-switch) and rests in a horizontal support arm. A single-lever handle is on the right, and the entire assembly is mounted on a thin, rectangular, brushed-gold escutcheon plate. The product is in a non-operational, resting state.
+
+**PRODUCT POSITIONING:** Professionally installed on a countertop, centered behind a kitchen sink. The camera angle is from the front right, capturing the profile of the handle and face of the sprayer.
+
+**CONTEXTUAL PROPS:** To the left of the sink, a light wood cutting board holds a few sprigs of fresh rosemary next to a whole lemon and a resting chef's knife. To the right, a simple white ceramic hand soap dispenser sits on the countertop. A clean, beige linen dish towel is neatly draped over the front edge of the sink.
+
+**ENVIRONMENT:** A modern, airy household kitchen. The faucet is installed in a white quartz countertop with subtle grey veining, set behind a deep white fireclay undermount sink. The background consists of a glossy white subway tile backsplash and a wooden windowsill holding a small terracotta pot with a basil plant, all softly out of focus.
+
+**COMPOSITION:** Product is the hero element, positioned according to the rule of thirds. The composition is balanced and clean, with props arranged naturally to create a realistic kitchen scene.
+
+**LIGHTING:** Soft, directional natural light streams in from a nearby window (out of frame), beautifully highlighting the faucet's brushed gold finish and creating gentle, natural shadows. The color temperature is neutral, creating a fresh, clean, and airy atmosphere.
+
+**TECHNICAL:** Photorealistic lifestyle photography, natural perspective, shallow depth of field to keep the faucet sharp and the background softly blurred, authentic context, e-commerce ready.
+
+**PRESERVE:** Exact product appearance from the input image with all design details, colors, and finishes maintained without alteration.
+
+---------------------------------------
+
+--- PROMPT 3 ---
+An excellent request. Here is the detailed breakdown following the strict protocol.
+
+===== MARKETING CREATIVE IMAGE GENERATION - STRICT PROTOCOL =====
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+**STEP 1: ANALYZE INPUT IMAGE (MANDATORY)**
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+**COMPLETE PRODUCT DESCRIPTION:**
+
+*   **Product type and specific model:** Commercial-style, single-handle, pull-down kitchen sink faucet. The specific model is not identified.
+*   **All colors (precise shades):** The main body, handle, coil spring, spray head, and deck plate have a brushed gold finish. The inner flexible hose and the two buttons on the spray head are matte black.
+*   **All materials and finishes:** The faucet appears to be made of metal with a non-reflective, brushed/matte finish. The inner hose is a flexible, rubber-like material.
+*   **Exact proportions and size:** It is a tall, high-arc faucet designed to stand prominently over a kitchen sink. The coil spring is a dominant feature, covering most of the gooseneck spout.
+*   **ALL visible brand text/logos (exact wording, position, clarity):** There are no visible brand names or logos on the product in the provided image.
+*   **All design features:**
+    *   High-arc gooseneck spout with an external, open-coil spring.
+    *   A horizontal docking arm to secure the pull-down spray head.
+    *   The spray head has a control panel on its side with two distinct matte black buttons (likely for stream, spray, and pause functions).
+    *   A single lever handle is positioned on the right side of the faucet's base.
+    *   The faucet is mounted on a rectangular escutcheon plate (deck plate), suggesting compatibility with 1-hole or 3-hole sink configurations.
+*   **Unique identifying characteristics:** The primary characteristic is the industrial-modern aesthetic created by the combination of the brushed gold finish and the prominent black-and-gold open-coil spring design.
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+**STEP 2: EXTRACT MARKETING SPECIFICATIONS FROM USER INPUT**
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+**TEXT ELEMENTS:**
+*   **Brand Name:** "KOHLER"
+*   **Headline Text:** "New Item"
+*   **Call-to-Action:** "Shop now"
+*   **Footer Text:** [none]
+
+**PROMOTIONAL ELEMENTS:**
+*   **Discount/Sale callout:** "30% off"
+*   **Badge/Banner needed:** YES - "in a bright rose/white color widget"
+
+**SEASONAL/FESTIVE THEME:**
+*   **Theme:** New Year
+*   **Specific elements required:** [Implied: celebratory elements like sparkles, confetti, elegant lighting]
+
+**COMPOSITION STYLE:**
+*   [ ] A - Hero Product
+*   [ ] B - Multi-Instance
+*   [ ] C - Feature Showcase
+*   [X] D - Lifestyle + Overlay (lifestyle scene with promotional graphics)
+
+**SELECTED STYLE:** D - Lifestyle + Overlay
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+**STEP 3: DEFINE VISUAL DESIGN ELEMENTS**
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+**BACKGROUND DESIGN:**
+*   The product will be set in a bright, clean, and modern lifestyle kitchen scene. The background will feature a white marble or light quartz countertop and an undermount stainless steel or white fireclay basin. The background will be slightly out of focus (soft bokeh effect) to keep the main focus on the faucet and the marketing graphics.
+*   **SELECTED BACKGROUND:** Soft-focus, high-end kitchen with a basin.
+
+**COLOR PALETTE:**
+*   **Primary color:** Bright Rose (#FF6B99) for promotional widgets.
+*   **Accent color:** Champagne Gold (#F7E7CE) for festive elements and potentially headline text.
+*   **Supporting colors:** White (#FFFFFF) for text, Charcoal Gray (#333333) for brand name text.
+
+**DESIGN ELEMENTS TO INCLUDE:**
+*   **[X] Gradient overlay:** A subtle white-to-transparent vertical gradient with 15% opacity applied to the rightmost 25% of the image, providing a clean area for the brand name.
+*   **[X] Light effects:** Soft, out-of-focus bokeh lights and subtle gold sparkle effects to convey the New Year theme.
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+**STEP 4: DEFINE TEXT PLACEMENT & TYPOGRAPHY**
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+**BRAND NAME:**
+*   **Text:** "KOHLER"
+*   **Position:** Top right, placed over the white gradient overlay.
+*   **Typography:** Sleek uppercase sans-serif (e.g., Montserrat Bold).
+*   **Size:** Medium.
+*   **Color:** Charcoal Gray (#333333).
+*   **Effect:** None.
+
+**HEADLINE:**
+*   **Text:** "New Item"
+*   **Position:** Top left.
+*   **Typography:** An elegant, fancy script font (e.g., Playfair Display Italic, or a flowing script like "Magnolia Sky").
+*   **Size:** Large, prominent.
+*   **Color:** White, with a subtle champagne gold glow.
+*   **Effect:** Soft glow.
+
+**CALL-TO-ACTION:**
+*   **Text:** "Shop now"
+*   **Style:** A small, clean, rounded rectangle button.
+*   **Position:** Bottom right corner.
+*   **Button color:** Bright Rose (#FF6B99).
+*   **Text color:** White (#FFFFFF).
+*   **Size:** Small but clearly defined and legible.
+
+**PROMOTIONAL BADGE/BANNER:**
+*   **Text:** "30% off"
+*   **Style:** A circular badge/widget.
+*   **Position:** Positioned slightly below and to the right of the "New Item" headline in the upper left quadrant.
+*   **Colors:** Bright Rose (#FF6B99) background with bold white text.
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+**STEP 5: DEFINE FESTIVE/SEASONAL OVERLAYS (if applicable)**
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+**FESTIVE OVERLAY (New Year):**
+*   **Elements:** Delicate, festive overlay of falling champagne gold and silver confetti/sparkles, primarily in the upper half of the image. Soft, glowing bokeh light effects scattered in the background to create a celebratory and magical atmosphere.
+*   **Colors:** Champagne gold, silver, soft white.
+*   **Placement:** These elements will be subtly integrated into the scene, appearing both in front of and behind the faucet to create depth, but without obscuring key product details or text.
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+**STEP 6: GENERATE FINAL PROMPT WITH STRICT FORMAT**
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Marketing creative product advertisement image for an Instagram post.
+
+**PRODUCT:** A tall, commercial-style pull-down kitchen faucet. The entire body, single-lever handle, coil spring, spray head, and rectangular deck plate are finished in brushed gold. It features a high-arc, open-coil spring spout with a flexible matte black hose running through it. The pull-down spray head is brushed gold with a side-mounted control panel containing two matte black buttons. The product has no visible brand logos on it.
+
+**COMPOSITION STYLE:** Lifestyle + Overlay. The faucet is professionally installed and centered in a bright, modern kitchen, mounted over a clean undermount basin set into a white marble countertop. The background is softly blurred. A subtle, vertical white-to-transparent gradient at 15% opacity is applied to the right side of the image.
+
+**BACKGROUND:** A soft-focus, high-end kitchen scene with a white marble countertop and a sink basin. The overall atmosphere is bright and aspirational.
+
+**DESIGN ELEMENTS:** Soft, out-of-focus bokeh light effects are scattered in the background.
+
+**COLOR PALETTE:** Primary Bright Rose (#FF6B99), Accent Champagne Gold (#F7E7CE), Supporting White (#FFFFFF) and Charcoal Gray (#333333).
+
+**TEXT ELEMENTS - EXACT PLACEMENT:**
+
+*   **Brand name text reading "KOHLER"** positioned at the top right corner over the gradient overlay, in a sleek uppercase sans-serif font, medium size, in Charcoal Gray color.
+*   **Headline text reading "New Item"** positioned at the top left, in a large, prominent, fancy elegant script font, colored white with a subtle champagne gold glow.
+*   **A circular widget** positioned below the headline in the upper left quadrant, with a Bright Rose background displaying the text **"30% off"** in bold white font.
+*   **Call-to-action element reading "Shop now"** as a small rounded rectangle button positioned at the bottom right corner, with a Bright Rose background and white text.
+
+**FESTIVE OVERLAY:** A celebratory New Year theme is applied. Delicate, falling champagne gold and silver confetti sparkles are subtly overlaid across the top half of the image, creating a magical and festive mood without obscuring the product or text.
+
+**LIGHTING & MOOD:** Bright, clean, and celebratory studio lighting. The mood is premium, festive, and exciting.
+
+**TECHNICAL:** High-resolution commercial advertising quality, photorealistic, professional graphic design composition for an Instagram post. Balanced visual hierarchy (Product → Headline/Offer → Brand → CTA). E-commerce marketing ready.
+
+**PRESERVE:** Exact product appearance from the input image with all its specific design details, colors, and finishes maintained without alteration. The marketing and festive elements are overlaid on the lifestyle scene, enhancing but not altering the product itself.
+
+---------------------------------------
+

@@ -1,177 +1,670 @@
 # prompt_templates
-
-"""
-This file stores the master instruction templates for the Gemini 2.5 Pro model (The Planner).
-Each template is designed to guide the LLM in creating a detailed, structured prompt
-for the Nano Banana model (The Artist).
-"""
-
 SOLID_BACKGROUND_INSTRUCTION = """
-Instructions:
-**LLM instruction (what to output):**
+===== STUDIO BACKGROUND IMAGE GENERATION - STRICT PROTOCOL =====
 
-Output one Nano Banana prompt for a studio packshot with a seamless background and physically correct shadows. Do not include any text/CTA/price overlays.
-Provide the prompt with these sections and rules:
+YOU MUST FOLLOW THESE STEPS IN EXACT ORDER:
 
-Portrayal (precise)
-Show the referenced product as a standalone, centered hero.
-Choose angle that best reveals form:
-Front if symmetrical/flat face is key.
-3/4 if depth, handles, or side details matter (default).
-Top‑down for broad, planar items (e.g., pans, rugs).
-Scale: product occupies ~55–70% of frame height; keep entire product in frame.
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+STEP 1: ANALYZE INPUT IMAGE (MANDATORY)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-Fidelity: preserve exact proportions, materials, and colors from the image (brushed steel, powder‑coat, oak grain, glass). Keep any existing brand mark as is; do not invent logos/features.
+IF INPUT IMAGE IS PROVIDED:
+Examine the image carefully and extract these EXACT details:
 
-Layout of the image:
-Background: seamless studio sweep in one of:
-Pure white #FFFFFF, or
-Light gray #F4F5F7, or
-Charcoal #121212 (use only if product is light‑colored).
-Subtle studio gradient allowed. Ground the product with:
-Soft contact shadow beneath (15–25% opacity).
-Optional faint reflection (10–12%) only if surface would realistically reflect.
-Safe margins: 48–64 px on all sides. No props, borders, or frames.
+A) PRODUCT IDENTITY:
 
-Text position:
-None. Explicitly instruct the model: no text, no CTA, no price, no badges.
+What is the exact product shown?
 
-Lighting & shadows:
-Two‑softbox studio setup: key light upper‑left; fill front‑right; gentle rim highlight to define edges.
-Speculars controlled on metal/ceramic; avoid blown highlights; deep focus so the entire product is sharp.
+Specific model characteristics, design features
 
-Composition rules:
-Product centered; no cropping of important parts; one hero item only (no duplicates).
+B) PHYSICAL ATTRIBUTES:
 
-Negative prompt:
-text, numbers, watermark, invented logos, extra props, duplicate products, patterned/busy backgrounds, warped geometry, unrealistic shadows, strong color casts.
+Precise colors (include hex codes if discernible):
 
-Aspect: [1:1 1080×1080 | 4:5 1080×1350 | 9:16 1080×1920]
+Material finishes (matte/glossy/textured/metallic, etc.,):
 
+Shape and form factor:
+
+Dimensions and proportions:
+
+C) BRAND ELEMENTS (CRITICAL - PRESERVE EXACTLY):
+
+Any visible logos (describe position, style, clarity):
+
+Any text/labels on product (transcribe exactly as shown, even if blurry):
+
+Any badges, stickers, brand marks:
+
+Typography style if readable:
+
+D) COMPONENT DETAILS:
+
+Buttons, knobs, controls, screens:
+
+Handles, legs, stands, attachments:
+
+Openings, vents, ports, connectors:
+
+Surface textures and patterns:
+
+Stitching, seams, joints (for fabric/leather products):
+
+E) CURRENT STATE:
+
+Product condition in image:
+
+Any wear, reflections, or characteristics to maintain:
+
+WRITE THIS ANALYSIS EXPLICITLY BEFORE GENERATING THE PROMPT.
+
+IF NO INPUT IMAGE:
+Use the provided product type to describe a standard, accurate representation of that product category.
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+STEP 2: CONSTRUCT STUDIO SCENE SPECIFICATIONS
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Now define the studio setup:
+
+BACKGROUND:
+
+Color: [Choose ONE: Pure white (#FFFFFF) / Light gray (#F5F5F5) / Soft beige (#FAF9F6) / Pale neutral tone]
+
+Texture: Seamless, perfectly smooth, gradient-free
+
+Type: Infinity curve backdrop OR flat surface with reflective floor
+
+PRODUCT POSITIONING:
+
+Placement: Centered in frame
+
+Angle: [Select based on product type]
+
+Small items (jewelry, accessories, phones): Slightly elevated, 30-45° angle
+
+Appliances/Electronics: Front-facing 3/4 view showing controls and main features
+
+Furniture: Front or angled view showing design and legs
+
+Fashion/Apparel: Flat lay OR hanging OR on invisible mannequin
+
+Tools/Equipment: Angled to show primary functional side
+
+Distance: 15-20% margin from all frame edges
+
+LIGHTING SETUP:
+
+Primary: Three-point studio lighting (key + fill + rim)
+
+Quality: Soft, diffused, professional
+
+Shadows: Subtle, falling to [left/right/back] opposite key light, 30-40% opacity
+
+Reflections: Natural floor reflection showing 40-50% opacity of product base
+
+Highlights: Gentle specular highlights on shiny surfaces without overexposure
+
+PRODUCT STATE:
+
+Condition: Pristine, brand new appearance
+
+Operational status: OFF/CLOSED/RESTING (no power, no operation)
+
+Configuration: [Specify based on product - doors closed, screens off, blades retracted, etc.]
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+STEP 3: GENERATE FINAL PROMPT WITH STRICT FORMAT
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+OUTPUT FORMAT (USE EXACTLY THIS STRUCTURE):
+
+"Professional studio product photography.
+
+PRODUCT: [Insert EXACT description from Step 1 - all physical details, colors, materials, dimensions]. [CRITICAL: List ALL brand text/logos exactly as they appear, with exact positioning]. [List all components, buttons, features from Step 1].
+
+SCENE: Product isolated and centered on [background color] seamless infinity backdrop. Product positioned at [specific angle from Step 2].
+
+LIGHTING: Professional three-point studio lighting with soft diffused key light from [direction], fill light reducing shadows, rim light creating edge definition. Soft shadow cast [direction] at 30-40% opacity. Natural reflection beneath product on glossy floor at 40-50% opacity showing product underside.
+
+STATE: Product in pristine, non-operational condition, [specific state - powered off/closed/resting].
+
+TECHNICAL: High-resolution commercial product photography, tack-sharp focus throughout entire product, no depth-of-field blur, neutral white balance (5500K), minimal lens distortion, e-commerce platform ready.
+
+PRESERVE: Exact product appearance from input image including all logos, text, material finishes, and design details without any alterations."
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+MANDATORY CHECKS BEFORE SUBMITTING PROMPT:
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+□ Have I described the EXACT product from the input image with specific details?
+□ Have I listed ALL visible brand text/logos exactly as shown?
+□ Have I specified exact colors, materials, and finishes from the input?
+□ Is the background a solid studio color (not lifestyle scene)?
+□ Is the product state non-operational?
+□ Have I included studio lighting with shadows and reflections?
+□ Is the output format followed precisely?
+
+CRITICAL REMINDER: You are NOT creating a new product. You are describing how to photograph the EXACT product shown in the input image in a professional studio setting. Every detail must match the input.
+
+***Generate the detailed product description from Step 1 and final prompt (Step 3) for the product imgage provided.*** 
 """
 
 LIFESTYLE_INSTRUCTION = """
-LLM Instructions: Follow this template precisely.
-Pay close attention to the User Guidelines to determine if a human subject is required.
-Generate a prompt that tells a complete story within a single frame.
+===== LIFESTYLE IMAGE GENERATION - STRICT PROTOCOL =====
 
-Prompt Structure:
+YOU MUST FOLLOW THESE STEPS IN EXACT ORDER:
 
-// [1] CORE SCENE: A high-level summary of the photograph, showcasing the product's function, design, or the lifestyle it enables.
-// - Snow Blower Example: "A cinematic photo showing the power and efficiency of a snow blower clearing deep snow."
-// - Faucet Example: "An architectural photograph of a minimalist bathroom, highlighting a modern matte black faucet as the centerpiece."
-// - Patio Furniture Example: "A warm, inviting lifestyle shot of a perfectly arranged patio set at dusk, ready for relaxation."
-     and so on... [Adapt to the product usecase]
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+STEP 1: ANALYZE INPUT IMAGE (MANDATORY)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-// [2] PRIMARY SUBJECT & PRODUCT FIDELITY: Defines the main subject (human or product) and ensures product accuracy. [Adapt to the product usecase]
-// **IMPORTANT: Only include a human subject if explicitly requested in the User Guidelines.** If no human is requested, this section focuses solely on the product's placement and state.
+IF INPUT IMAGE IS PROVIDED:
+Examine the image and document these EXACT details:
 
-//  --- IF A HUMAN SUBJECT IS REQUESTED ---
-// - Persona & Attire: [e.g., "A man in his 40s wearing a heavy-duty work jacket for winter."]
-// - Stance & Gaze: [e.g., "He stands firmly, looking with focus at the path he is clearing."]
-// - Product Handling: [e.g., "His gloved hands are firmly on the handlebars, guiding the machine with confident control."]
+A) PRODUCT COMPLETE DESCRIPTION:
 
-//  --- IF PRODUCT-ONLY (NO HUMAN) ---
-// - Product Placement: [e.g., "The faucet is perfectly centered on a white marble vanity," or "The espresso machine sits on a clean, dark quartz countertop."]
-// - Product State: [e.g., "The faucet is off, with a single, perfect water droplet on its spout," or "The oven's interior light is on, showcasing the racks inside."]
+Exact product type and model:
 
-// --- ALWAYS INCLUDE ---
-// - High Fidelity: "Preserve the exact design, proportions, materials (e.g., brushed steel, powder-coated paint, oak grain, glass), and branding from the provided product image. Do not invent features or logos."
-    
-// [3] THREE-PART ENVIRONMENT (Before, During, After): **(CRITICAL SECTION)** Defines the logical states of the scene to show the product's full impact in one frame. This tells the story.
-// - A. The 'Contextual / Untransformed' Zone: The state of the environment BEFORE or AROUND the product's core function.
-//    - Snow Blower Example: "IN FRONT of the machine, a path is covered in a thick, undisturbed blanket of powdery snow."
-//    - Faucet Example: "The pristine, dry, white porcelain basin SURROUNDS the base of the faucet."
-//    - Patio Furniture Example: "BEYOND the furniture set, an empty section of the wooden deck is visible, waiting to be used."
-        and so on... [Adapt to the product usecase]
+Precise color palette (all colors present):
 
-// - B. The 'Focal / Interaction' Zone: The product itself, as the hero of the scene.
-//    - Snow Blower Example: "AT THE MOUTH of the snow blower, the auger is actively churning the snow."
-//    - Faucet Example: "The matte black FAUCET itself stands as a sculptural element."
-//    - Patio Furniture Example: "The plush, modern patio SOFA and chairs, arranged in a cozy, conversational grouping."
-        and so on... [Adapt to the product usecase]
+Material composition (fabric/metal/plastic/wood/glass/leather):
 
-// - C. The 'Resulting / Transformed' Zone: The state of the environment AFTER or as a direct RESULT of the product's presence or action.
-//    - Snow Blower Example: "BEHIND the machine, a perfectly clean, wet, black asphalt path is now visible."
-//    - Faucet Example: "BENEATH the spout, a small, elegant pool of clear water has formed near the drain."
-//    - Patio Furniture Example: "ON the sofa, a cozy throw blanket is artfully draped and a book rests on a cushion, implying comfort and relaxation."
-        and so on... [Adapt to the product usecase]
+Texture and finish (matte/glossy/brushed/woven/smooth):
 
-// [4] DYNAMIC INTERACTION & EFFECT: Describes the product's action or its passive interaction with the environment.
-// - A. Product Action (The Cause):
-//    - Espresso Machine Example: "The machine is forcing hot water through a portafilter packed with fine coffee grounds."
-//    - Faucet Example (if on): "The handle is turned, causing a valve to release a controlled flow of water."
-//    - Patio Furniture Example (passive): "The setting sun casts long, dramatic shadows from the furniture's legs across the deck."
-        and so on... [Adapt to the product usecase]
+Exact dimensions and proportions:
 
-// - B. Material Reaction (The Effect):
-//    - Espresso Machine Example: "Two streams of rich, dark espresso with a thick golden crema are flowing into a small glass cup."
-//    - Faucet Example (if on): "A perfectly clear, non-splashing, aerated stream of water falls from the spout."
-//    - Patio Furniture Example (passive): "The warm light of dusk highlights the texture of the cushion fabric and the smooth finish of the frame."
-        and so on... [Adapt to the product usecase]
+B) BRAND PRESERVATION (MUST MAINTAIN):
 
-// [5] COMPOSITION & PHOTOGRAPHY: The technical details of the shot.
-// - Shot & Angle: [e.g., "Dynamic low-angle shot," "Architectural-style straight-on shot," "Intimate eye-level medium shot," "Top-down flat lay."]
-// - Background & Lighting: [e.g., "Bright, even light from a large window," "Warm, ambient string lights at twilight," "Crisp, direct winter sunlight."]
-// - Focus & Depth: [e.g., "Razor-sharp focus on the product, with a soft-focus background (shallow depth of field)."]
-     and so on... [Adapt to the product usecase]
+All visible logos (position, size, clarity level):
 
-// [6] STYLE & QUALITY: The overall aesthetic.
-// - Genre & Mood: [e.g., "Professional commercial photography," "Spa-like tranquility," "Cozy and inviting lifestyle," "Minimalist and modern."]
-// - Color Palette: [e.g., "High contrast (red, white, black)," "Monochromatic with metallic accents," "Warm, earthy tones."]
-// - Technical Specs: [e.g., "Photorealistic, 8K, highly detailed, sharp focus."]
-     and so on... [Adapt to the product usecase]
+All text on product (exact wording, even if partially visible or blurry):
 
-// [7] NEGATIVE PROMPT: Explicitly forbid logical fallacies and common errors.
-// - e.g., "illogical scene, unreal physics, text, logos (other than the product's), watermarks, cartoon, illustration, deformed, blurry, discolored grout, water spots, smudges, dirty cushions, rust."
-"""
-"""**Example prompt that achieved great results:**(Do not copy the brand name and setting from this exactly- This is provided for structural and creative reference only.)
+Brand marks, symbols, badges:
 
-You could follow similar structure as above to create the prompt for the given input image with appropraiate context related to the product.
+Maintain the same viewing angle/ camera angle as in the input product image if possible.
+
+Color schemes associated with branding:
+
+C) DESIGN FEATURES:
+
+All buttons, controls, displays, interfaces:
+
+Structural elements (handles, wheels, stands, feet, lids):
+
+Unique design characteristics:
+
+Any attachments or accessories visible:
+
+WRITE THIS ANALYSIS EXPLICITLY.
+
+IF NO INPUT IMAGE:
+Describe standard accurate features of the stated product type.
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+STEP 2: DETERMINE SCENE TYPE FROM THEME GUIDELINES
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Read the Theme Guidelines and decide:
+
+OPTION A - WITH HUMAN INTERACTION:
+(If guidelines mention: person, man, woman, model, someone using, human interaction, etc.)
+
+Define human subject:
+
+Type: [man/woman/young adult/child/professional/athlete - based on product and theme]
+
+Approximate age: [age range appropriate to product]
+
+Ethnicity/appearance: [diverse, natural, relatable - based on theme]
+
+Clothing: [Specific attire matching environment and activity]
+
+Expression: [Specific: warm smile/focused/relaxed/confident/joyful]
+
+Pose detail: [SPECIFIC pose - e.g., "standing with left hand resting on product, right hand in pocket, left leg slightly forward, looking at camera with gentle smile"]
+
+Eye direction: [looking at camera OR looking at product OR looking away naturally]
+
+OPTION B - STANDALONE PRODUCT:
+(If guidelines mention: product alone, no people, standalone, product focus, etc.)
+
+Define contextual props:
+
+Supporting items that suggest product use
+
+Environmental elements that tell product story
+
+Props positioned to complement, not compete, aim for real-world natural setting depiction.
+
+STATE YOUR CHOICE: [ ] Option A - Human Interaction  [ ] Option B - Standalone
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+STEP 3: DEFINE LOGICAL ENVIRONMENT
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Based on product type, select appropriate setting where this product ACTUALLY exists/is used:
+
+ENVIRONMENT LOGIC TABLE:
+
+Coffee makers/Kitchen appliances → Kitchen counter, breakfast nook, home kitchen
+
+Outdoor power equipment → Driveway, yard, garage, appropriate outdoor terrain
+
+Fitness equipment → Home gym, yoga studio, fitness room, outdoor exercise space
+
+Electronics/Gaming → Living room, home office, entertainment area, desk setup
+
+Fashion/Accessories → Urban café, home bedroom, outdoor lifestyle location
+
+Beauty products → Bathroom vanity, spa-like setting, bedroom dresser
+
+Tools → Workshop, garage workbench, construction site (if commercial)
+
+Furniture → Living room, bedroom, patio, appropriately decorated space
+
+Baby/Kids products → Nursery, playroom, family living area
+
+Automotive accessories → Garage, driveway, car interior
+
+SELECTED ENVIRONMENT: [Specific setting based on above logic]
+
+ENVIRONMENTAL DETAILS:
+
+Primary surface: [What product sits on/near]
+
+Background elements: [3-5 specific items visible in background]
+
+Environmental storytelling: [Evidence of product's purpose WITHOUT showing it working]
+Examples:
+
+Snow blower → Cleared path behind, deep snow in front
+
+Coffee maker → Filled cup beside machine, coffee beans nearby
+
+Vacuum → Clean, tidy room environment
+
+Lawn mower → Freshly cut grass edge, outdoor setting
+
+Depth: [Sharp throughout OR soft background blur keeping product sharp]
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+STEP 4: DEFINE LIGHTING & ATMOSPHERE
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+LIGHTING TYPE:
+[ ] Natural window light (soft, directional)
+[ ] Golden hour sunlight (warm, low-angle)
+[ ] Bright daylight (even, clear)
+[ ] Soft overcast (diffused, no harsh shadows)
+[ ] Warm interior lighting (cozy, ambient)
+
+SELECTED: [Choose based on theme and environment]
+
+ATMOSPHERIC MOOD:
+
+Color temperature: [Warm/Neutral/Cool]
+
+Overall feeling: [Cozy/Fresh/Energetic/Serene/Professional]
+
+Shadow quality: Soft and natural
+
+Time of day suggestion: [Morning/Midday/Afternoon/Evening]
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+STEP 5: GENERATE FINAL PROMPT WITH STRICT FORMAT
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+FOR HUMAN INTERACTION (Option A):
+
+"Lifestyle product photography with human interaction.
+
+PRODUCT: [EXACT description from Step 1 - all colors, materials, finishes, dimensions, visible text/logos with exact wording and positioning, all design features and components]. Product in non-operational, resting state.
+
+HUMAN SUBJECT: [Detailed description from Step 2 - specific age, gender, ethnicity, exact clothing description], [exact detailed pose with body positioning], [facial expression], [eye direction].
+
+PRODUCT INTERACTION: [Specific description of how human is positioned relative to product - e.g., "standing beside product with right hand resting on top surface, casual lean" OR "holding product naturally in both hands at chest height"].
+
+ENVIRONMENT: [Specific setting from Step 3], [surface product is on], [3-5 specific background elements], [environmental storytelling details showing product purpose evidence].
+
+COMPOSITION: Product remains clearly visible occupying 30-40% of frame, human subject complementing but not overshadowing product, [rule of thirds/balanced composition].
+
+LIGHTING: [Specific lighting type from Step 4], [color temperature], creating [atmospheric mood], soft natural shadows, realistic and inviting ambiance.
+
+TECHNICAL: Photorealistic lifestyle photography, natural perspective, [depth of field specification], authentic moment, e-commerce ready.
+
+PRESERVE: Exact product appearance from input image with all logos, text, and design details maintained without alteration."
+
+FOR STANDALONE (Option B):
+
+"Lifestyle product photography, standalone presentation.
+
+PRODUCT: [EXACT description from Step 1 - all colors, materials, finishes, dimensions, visible text/logos with exact wording and positioning, all design features and components]. Product in non-operational, resting state.
+
+PRODUCT POSITIONING: [Specific placement and angle in environment].
+
+CONTEXTUAL PROPS: [Specific complementary items from Step 2 - e.g., "White ceramic mug positioned beneath espresso spout, scattered whole coffee beans on counter surface, small milk pitcher to the right"].
+
+ENVIRONMENT: [Specific setting from Step 3], [surface details], [background elements creating context], [environmental storytelling showing product purpose without operation].
+
+COMPOSITION: Product as hero element in foreground, [specific framing], contextual environment supporting product story.
+
+LIGHTING: [Specific lighting type from Step 4], [color temperature], creating [atmospheric mood], soft natural shadows, authentic setting.
+
+TECHNICAL: Photorealistic lifestyle photography, natural perspective, [depth of field specification], authentic context, e-commerce ready.
+
+PRESERVE: Exact product appearance from input image with all logos, text, and design details maintained without alteration."
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+MANDATORY CHECKS BEFORE SUBMITTING:
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+□ Have I described the EXACT product from input with all specific details?
+□ Have I preserved ALL brand text/logos exactly as shown?
+□ Is the environment logical for where this product is actually used?
+□ Is the product in NON-OPERATIONAL state?
+□ If human included, is the pose specifically detailed?
+□ Are contextual props appropriate and specific?
+□ Does environmental storytelling show product purpose without showing it working?
+
+CRITICAL: You are describing how to photograph the EXACT input product in a realistic lifestyle context, not inventing a new product.
+
+NOTE:
+***Generate the detailed product description from Step 1 and final prompt (Step 3) for the product imgage provided.*** 
 """
 
 MARKETING_CREATIVE_INSTRUCTION = """
-**Instructions for LLM prompt generation:**
+===== MARKETING CREATIVE IMAGE GENERATION - STRICT PROTOCOL =====
 
-The generated image should be ready to be put as commercials in Instagram reels, facebook posts.
-One image input of the product(the same image will be provided to Nano Banana), second a constructive prompt. The prompt can be constructed based on this:
-Precisely mention how to potray the given product.(standalone or with human using it or so on..)
-Layout of the image. Here the the product is centred with a backdrop template, simple but well adapted to the product. (human language may not know the correct words to guide the model to generate an image like this)
-Text position. If the image is for an instagram marketing campaign then, the suitable texts, brand name and widgets can be added just like in the image.(Should have some lines describing the product for marketing)
-so a prompt structure is crucial.
-Add festival themed elements if mentioned in User Guidelines. (e.g., Diwali lights, Christmas decorations, thanksgiving, etc.)
+YOU MUST FOLLOW THESE STEPS IN EXACT ORDER:
 
-**Example prompt that had achieved greater response from the same model:**(Do not copy the brand name and setting from this exactly- This is provided for structural and creative reference only.)
-Lifestyle with woman, natural setup (Instagram/Facebook)
-Input image: Use the provided product photo of the earrings exactly as-is; clean cutout; preserve metal finish, pearl details, aqua beads, and square mirror studs; keep true color and proportions; no redesign.
-Goal: A natural, editorial-style photo of a woman wearing these earrings; warm, romantic vibe; ready for Instagram feed (4:5) and Reels/Stories (9:16 crop-safe).
-Portrayal:
-Focus on the woman from shoulders to head; hair softly tied back or tucked behind ears to fully reveal both earrings.
-Slight three-quarter head turn toward camera-left; soft smile; minimal, dewy makeup.
-Wardrobe: pastel blouse or chiffon kurta in ivory/sage; no other statement jewelry.
-Ensure earrings hang naturally, symmetrical pair, accurate scale and clasp orientation.
-Environment and lighting:
-Outdoor terrace or garden at golden hour; soft bokeh greenery with faint blush-pink roses to echo the product palette.
-Warm directional key light from camera-left; subtle rim light to define contours; no blown highlights on metal or beads.
-Composition and layout:
-Aspect ratio: 4:5 vertical (1080×1350) with a 9:16 safe crop overlay for Reels.
-Place the model slightly off-center (rule of thirds); leave clean negative space top-right for text.
-Depth of field: portrait lens look (85mm equivalent, f/2.8) for creamy background.
-Color direction:
-Palette: sage green, blush rose, ivory, and soft gold to harmonize with aqua beads and pearls.
-On-image text (marketing copy and widgets):
-Top-right: {BrandName} logo (If user provides brand name in guidelines, else ignore).
-Headline (2 lines max): “Bloom in Every Moment”
-Subhead: “Handcrafted aqua & pearl chandeliers in luxe gold tone.”
-Micro-features row with small icons: Lightweight | Nickel‑free | Secure clasp
-CTA pill button bottom-right: “Shop Now ▸”
-Footer micro text bottom-left: @{BrandHandle} • brandname.com (Only If user provides brand name in guidelines, else ignore)
-Add a subtle vertical gradient behind text (0–30% black) for legibility.
-Technical/finishing:
-sRGB, gentle contrast, natural skin texture, realistic shadows beneath earrings.
-Remove stray hair overlapping earrings; no dust or scratches; no color cast on pearls.
-Negative prompts (avoid):
-No extra earrings, no duplication or distortion of beads, no altered colors, no hard flash, no busy props or branded clutter, no face of a recognizable public figure.
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+STEP 1: ANALYZE INPUT IMAGE (MANDATORY)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-You could follow similar structure as above to create the prompt for the given input image with appropraiate context related to the product.
+IF INPUT IMAGE IS PROVIDED:
+Document EXACT product specifications:
+
+COMPLETE PRODUCT DESCRIPTION:
+
+Product type and specific model:
+
+All colors (precise shades):
+
+All materials and finishes:
+
+Exact proportions and size:
+
+ALL visible brand text/logos (exact wording, position, clarity):
+
+All design features (buttons, screens, handles, components):
+
+Unique identifying characteristics:
+
+WRITE EXPLICIT ANALYSIS.
+
+IF NO INPUT IMAGE: Use accurate standard features of stated product type.
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+STEP 2: EXTRACT MARKETING SPECIFICATIONS FROM USER INPUT
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+From "Marketing Image Details" provided by user, extract:
+
+TEXT ELEMENTS:
+
+Brand Name: "[exact text]" OR [none provided]
+
+Headline Text: "[exact text, max 3-4 words]" OR [none provided]
+
+Call-to-Action: "[exact text]" OR default to "SHOP NOW"
+
+Footer Text: "[exact text]" OR [none]
+
+PROMOTIONAL ELEMENTS:
+
+Discount/Sale callout: "[e.g., 50% OFF, LIMITED TIME, NEW]" OR [none]
+
+Badge/Banner needed: [YES/NO] - "[text if yes]"
+
+SEASONAL/FESTIVE THEME:
+
+Theme: [Christmas/New Year/Black Friday/Summer/Spring/Halloween/Valentine's/None]
+
+Specific elements required: [e.g., "string lights, snowflakes, ornaments"]
+
+COMPOSITION STYLE (select based on theme guidelines):
+[ ] A - Hero Product (single large product, 60-70% of frame)
+[ ] B - Multi-Instance (2-5 products at varying sizes/angles)
+[ ] C - Feature Showcase (main product + detail callouts)
+[ ] D - Lifestyle + Overlay (lifestyle scene with promotional graphics)
+
+SELECTED STYLE: [Choose one based on user request]
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+STEP 3: DEFINE VISUAL DESIGN ELEMENTS
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Maintain the same viewing angle/ camera angle as in the input product image if possible.
+
+BACKGROUND DESIGN:
+Select appropriate background:
+
+Premium products → Deep navy/black/charcoal with subtle gradient OR elegant solid color
+
+Tech products → Clean white/light gray with geometric elements OR gradient blue
+
+Lifestyle products → Soft blurred environment OR warm gradient
+
+Vibrant/Youth products → Bold solid colors OR energetic gradients
+
+Eco products → Natural greens/earth tones OR organic textures
+
+SELECTED BACKGROUND: [Specific color/style with hex code if applicable]
+
+COLOR PALETTE:
+
+Primary color: [specific color for background/dominant area]
+
+Accent color: [for text/CTA elements - must contrast with background]
+
+Supporting colors: [2-3 colors for additional elements]
+
+DESIGN ELEMENTS TO INCLUDE:
+[ ] Geometric shapes (circles/lines/triangles) - specify placement
+[ ] Gradient overlay - specify direction and colors
+[ ] Subtle texture - specify type (grain/fabric/concrete)
+[ ] Light effects - specify type (glow/rays/spotlight)
+[ ] Shadow drama - specify style
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+STEP 4: DEFINE TEXT PLACEMENT & TYPOGRAPHY
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+BRAND NAME (if provided):
+
+Text: "[exact text from Step 2]"
+
+Position: [Top left/Top center/Top right/Bottom center/Footer]
+
+Typography: [Bold sans-serif/Modern bold/Elegant serif/Sleek uppercase]
+
+Size: [Large/Medium - relative to composition]
+
+Color: [Specific color ensuring contrast]
+
+Effect: [None/Subtle shadow/Soft glow]
+
+HEADLINE (if provided):
+
+Text: "[exact text from Step 2]"
+
+Position: [Upper third/Center left/Center right/Lower third]
+
+Typography: [Bold impact font/Modern bold sans-serif/Clean strong font]
+
+Size: Large, prominent
+
+Color: [High contrast color]
+
+Effect: [None/Shadow for depth]
+
+CALL-TO-ACTION:
+
+Text: "[exact text from Step 2]"
+
+Style: [Rounded rectangle button/Pill-shaped badge/Minimal underlined text/Banner ribbon]
+
+Position: [Bottom right/Bottom center/Lower third centered]
+
+Button color: [Accent color from Step 3]
+
+Text color: [Contrasting color for readability]
+
+Size: [Moderate, clearly clickable appearance]
+
+PROMOTIONAL BADGE/BANNER (if applicable):
+
+Text: "[exact text from Step 2]"
+
+Style: [Corner ribbon/Circular badge/Star burst/Rectangular banner]
+
+Position: [Top right corner/Top left corner/Center burst]
+
+Colors: [Urgent reds/yellows OR festive colors]
+
+FOOTER (if provided):
+
+Text: "[exact text from Step 2]"
+
+Position: Bottom edge, centered or left-aligned
+
+Size: Small, subtle
+
+Color: Muted, non-intrusive
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+STEP 5: DEFINE FESTIVE/SEASONAL OVERLAYS (if applicable)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+IF SEASONAL THEME SELECTED IN STEP 2:
+
+CHRISTMAS:
+
+Elements: Warm white string lights draped across top third, red and gold ornament accents in corners, subtle snowflakes overlay, pine branch elements framing edges
+
+Colors: Traditional red, green, gold, white
+
+Placement: Overlaid ON the composition, not obscuring product
+
+NEW YEAR:
+
+Elements: Gold and silver confetti burst, champagne gold accents, celebratory firework graphics, "2024/2025" year elements if relevant
+
+Colors: Midnight blue, champagne gold, silver, black
+
+Placement: Celebratory elements around product, not covering
+
+BLACK FRIDAY/SALES:
+
+Elements: Bold geometric sale badges, lightning bolt graphics, urgent color blocks
+
+Colors: Black, red, yellow, white for high contrast
+
+Placement: Corner badges, side banners
+
+SUMMER:
+
+Elements: Sun ray graphics, tropical leaf accents, bright color pops, beach texture hints
+
+Colors: Bright yellows, oranges, turquoise, coral
+
+Placement: Background elements, corner accents
+
+SPRING:
+
+Elements: Delicate floral corner pieces, soft botanical elements, pastel color accents
+
+Colors: Soft pink, mint green, lavender, cream
+
+Placement: Edge decorative elements
+
+HALLOWEEN:
+
+Elements: Autumn leaves, orange and purple color accents, subtle spooky-fun elements
+
+Colors: Orange, purple, black, deep autumn tones
+
+Placement: Scattered elements, color grade overlay
+
+VALENTINE'S:
+
+Elements: Heart shapes, rose petal accents, romantic color washes
+
+Colors: Deep red, pink, rose gold, white
+
+Placement: Corner accents, subtle background elements
+
+DESCRIBE EXACT FESTIVE ELEMENTS: [Based on theme from Step 2]
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+STEP 6: GENERATE FINAL PROMPT WITH STRICT FORMAT
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+"Marketing creative product advertisement image.
+
+PRODUCT: [EXACT complete description from Step 1 - all colors, materials, finishes, dimensions, all visible brand text/logos with exact wording and positioning, all design features]. Product shown in [non-operational state/appropriate display state].
+
+COMPOSITION STYLE: [Selected style from Step 2 - describe specific layout]
+[IF Hero: Single large product positioned [location] occupying 60-70% of frame]
+[IF Multi-Instance: [Number] instances of same product at varying scales - [describe specific arrangement]]
+[IF Feature Showcase: Main product [position] with [number] detail callout elements showing [specific features]]
+[IF Lifestyle + Overlay: Product in [specific environment] with marketing graphics overlaid]
+
+BACKGROUND: [Specific background description from Step 3 with exact colors/hex codes], [any gradients with direction], [texture if applicable].
+
+DESIGN ELEMENTS: [List specific geometric shapes, overlays, light effects from Step 3 with exact placement - e.g., "Three thin golden circles in bottom left, diagonal light ray from top right, subtle 15% concrete texture overlay"].
+
+COLOR PALETTE: Primary [color], Accent [color], Supporting [colors].
+
+TEXT ELEMENTS - EXACT PLACEMENT:
+
+[IF BRAND NAME PROVIDED:]
+Brand name text reading "[EXACT TEXT]" positioned at [exact position from Step 4], [typography style], [size], [color], [effects if any].
+
+[IF HEADLINE PROVIDED:]
+Headline text reading "[EXACT TEXT]" positioned at [exact position from Step 4], [typography style], large prominent size, [color], [effects if any].
+
+Call-to-action element reading "[EXACT TEXT]" as [button/badge style from Step 4] positioned at [exact position], [button color] background with [text color] text, [size and shape details].
+
+[IF PROMOTIONAL BADGE PROVIDED:]
+[Badge style] displaying "[EXACT TEXT]" positioned at [exact position], [colors].
+
+[IF FOOTER PROVIDED:]
+Footer text "[EXACT TEXT]" at bottom edge, [alignment], small subtle size, [color].
+
+[IF SEASONAL THEME SELECTED:]
+FESTIVE OVERLAY: [Exact festive elements from Step 5 with specific placement - e.g., "Warm white string lights draped across top edge, small red and gold ornaments in top right and bottom left corners, subtle snowflake graphics scattered at 20% opacity, pine branch accent framing left edge"].
+
+LIGHTING & MOOD: [Dramatic/Soft/Vibrant] lighting creating [specific mood - luxurious/energetic/fresh/premium], [lighting direction and quality].
+
+TECHNICAL: High-resolution commercial advertising quality, photorealistic product rendering, professional graphic design composition, balanced visual hierarchy (Product → Brand → Headline → CTA), e-commerce marketing ready.
+
+PRESERVE: Exact product appearance from input image with all logos, text, and design details maintained without alteration. Marketing elements enhance but never alter the product itself."
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+MANDATORY CHECKS BEFORE SUBMITTING:
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+□ Have I described EXACT product from input with all specific details?
+□ Have I preserved ALL brand text/logos from the product exactly?
+□ Have I included ALL text elements with EXACT wording provided by user?
+□ Are text positions specifically defined (not vague)?
+□ Are all colors specified (background, text, buttons, accents)?
+□ If seasonal theme requested, are specific festive elements described with placement?
+□ Is composition style clearly defined?
+□ Is the prompt structured in the required format?
+
+CRITICAL: Marketing graphics overlay the scene, but the product itself must remain exactly as shown in input image.
+
+***NOTE: Generate the detailed product description from Step 1 and final prompt (Step 3) for the product imgage provided.***
+
 """
