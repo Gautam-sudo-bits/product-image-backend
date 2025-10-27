@@ -1,4 +1,4 @@
---- LOG FOR GENERATION REQUEST 20251020_122238 ---
+--- LOG FOR GENERATION REQUEST 20251027_234031 ---
 
 --- PROMPT 1 ---
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
@@ -6,65 +6,69 @@ STEP 1: ANALYZE INPUT IMAGE (MANDATORY)
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
 A) PRODUCT IDENTITY:
-The product is a commercial-style, single-handle, pull-down kitchen sink faucet. It features a high-arc gooseneck spout constructed with an exposed metal spring coil.
+The product is a five-piece outdoor patio furniture conversation set. The set consists of two armchairs, two matching ottomans, and one square side table. The design features a modern, blocky silhouette with a woven texture.
 
 B) PHYSICAL ATTRIBUTES:
 Precise colors:
-- Main body, handle, deck plate, spring coil, and spray head: Brushed gold metallic finish (approximate hex #C5B358).
-- Flexible hose inside the spring coil and the connector piece above the spray head: Matte black (#1C1C1C).
-- Buttons on the spray head: Dark gray or matte black.
+-   Wicker Frame: Dark brown, almost espresso color (approx. hex #3D3531).
+-   Cushions: Off-white or light beige fabric (approx. hex #EDEAE0).
+-   Tabletop: Dark, tinted, reflective glass, likely black or dark brown.
+-   Furniture Feet/Handles: Matte black.
 
 Material finishes:
-- All gold components have a non-glossy, brushed satin metallic finish.
-- The black hose and connector appear to be made of a matte rubber or plastic material.
+-   Frame: Matte, textured all-weather wicker/rattan with a woven pattern.
+-   Cushions: Matte, woven fabric finish, appears to be a durable outdoor material.
+-   Tabletop: Glossy, smooth, reflective glass.
+-   Feet/Handles: Matte plastic or powder-coated metal.
 
 Shape and form factor:
-- The faucet has a tall, slender profile dominated by the arched spring coil spout.
-- The main body is cylindrical, tapering slightly towards the top.
-- A single, rectangular lever handle is mounted on the right side of the base.
-- The spray head is conical and docks into a horizontal support arm extending from the main body.
-- The entire unit is mounted on a thin, rectangular deck plate (escutcheon) with rounded corners.
+-   Chairs: Rectangular and robust with wide, flat armrests and a slightly angled back.
+-   Ottomans: Square, cube-like shape.
+-   Table: Square, cube-like shape with an open storage shelf below the top surface.
+
+Dimensions and proportions:
+The chairs are generously sized for comfort. The ottomans are sized to function as footrests and are approximately the same height as the chair seats. The side table is slightly lower than the chair armrests.
 
 C) BRAND ELEMENTS (CRITICAL - PRESERVE EXACTLY):
-- Any visible logos: None visible.
-- Any text/labels on product: None visible.
-- Any badges, stickers, brand marks: None visible.
+-   Any visible logos: None visible.
+-   Any text/labels on product: None visible.
+-   Any badges, stickers, brand marks: None visible.
 
 D) COMPONENT DETAILS:
-- Controls: A single lever handle controls temperature and flow. The spray head has two controls: a small, round button on top and a larger, elongated rocker-style switch below it, used for changing spray patterns.
-- Handles, attachments: A high-arc, open-coil spring spout. A pull-down spray head. A horizontal docking arm holds the spray head. A rectangular deck plate at the base.
-- Openings: The spray head has nozzles for water output.
-- Joints: The faucet body swivels at the base. The handle pivots for operation.
+-   Chairs: Each chair has two thick cushions: a square seat cushion and a rectangular back cushion. They stand on four short, cylindrical black feet.
+-   Ottomans: Each ottoman has one thick, square cushion on top. There is a recessed, rectangular black handle integrated into one side of the wicker frame for lifting.
+-   Table: The table has a square glass top inset into the wicker frame. Below the top is an open, cubby-like storage area. It stands on four short, cylindrical black feet matching the chairs.
+-   Surface textures and patterns: The primary texture is the tight, consistent weave of the dark brown wicker material across all pieces. The cushions have a subtle, canvas-like fabric texture.
 
 E) CURRENT STATE:
-- Product condition in image: New, clean, and without any visible wear or damage.
-- Any wear, reflections, or characteristics to maintain: The image shows soft highlights on the brushed metallic surface that define its shape, and a subtle drop shadow. These characteristics should be maintained in a professional studio context.
+-   Product condition in image: New, clean, and in perfect condition.
+-   Any wear, reflections, or characteristics to maintain: The clean lines, plumpness of the cushions, and the reflective quality of the glass tabletop should be maintained.
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 STEP 2: CONSTRUCT STUDIO SCENE SPECIFICATIONS
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
 BACKGROUND:
-Color: Light gray (#F5F5F5)
-Texture: Seamless, perfectly smooth, gradient-free
-Type: Infinity curve backdrop with a reflective floor
+-   Color: Light gray (#F5F5F5)
+-   Texture: Seamless, perfectly smooth, gradient-free
+-   Type: Infinity curve backdrop with a reflective floor
 
 PRODUCT POSITIONING:
-Placement: Centered in frame
-Angle: Front-facing 3/4 view, angled slightly to the right to clearly show the handle and spray head controls.
-Distance: 15-20% margin from all frame edges
+-   Placement: The entire 5-piece set is centered in the frame, arranged in a natural conversational layout.
+-   Angle: Front 3/4 angled view, showing the front and side profiles of one chair/ottoman pair, the front of the table, and the other chair/ottoman pair slightly further back.
+-   Distance: 15-20% margin from all frame edges
 
 LIGHTING SETUP:
-Primary: Three-point studio lighting (key + fill + rim)
-Quality: Soft, diffused, professional
-Shadows: Subtle, falling to the back-right opposite key light, 30-40% opacity
-Reflections: Natural floor reflection showing 40-50% opacity of the product base
-Highlights: Gentle specular highlights on the brushed gold surfaces to define the form and texture without overexposure
+-   Primary: Three-point studio lighting (key + fill + rim)
+-   Quality: Soft, diffused, professional
+-   Shadows: Subtle, falling to the back and right opposite the key light, 30-40% opacity
+-   Reflections: Natural floor reflection showing 40-50% opacity of the product base and feet. A soft, non-distracting reflection of the lighting rig should be visible on the glossy glass tabletop.
+-   Highlights: Gentle specular highlights on the glass tabletop and the curved edges of the wicker armrests.
 
 PRODUCT STATE:
-Condition: Pristine, brand new appearance
-Operational status: OFF/CLOSED/RESTING
-Configuration: Handle in the upright, closed position. The pull-down spray head is fully retracted and securely seated in its docking arm.
+-   Condition: Pristine, brand new appearance. Cushions are perfectly placed, plump, and wrinkle-free.
+-   Operational status: RESTING
+-   Configuration: The furniture set is fully assembled. Cushions are neatly placed on the chairs and ottomans.
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 STEP 3: GENERATE FINAL PROMPT WITH STRICT FORMAT
@@ -72,253 +76,233 @@ STEP 3: GENERATE FINAL PROMPT WITH STRICT FORMAT
 
 Professional studio product photography.
 
-PRODUCT: A commercial-style, single-handle, pull-down kitchen faucet with a high-arc, open-coil spring spout. The main body, handle, deck plate, and spray head have a brushed gold metallic finish. The flexible inner hose, connector piece, and control buttons are matte black. The faucet is mounted on a thin rectangular deck plate. CRITICAL: No visible logos, text, or brand marks are present on the product. The spray head features a small round button and a larger rocker switch for spray control. The handle is a single rectangular lever on the right side.
+PRODUCT: A five-piece patio furniture set consisting of two armchairs, two ottomans, and one side table. The entire set features a dark brown (approx. #3D3531) all-weather wicker in a tight, woven texture. The chairs and ottomans come with thick, plump, off-white (approx. #EDEAE0) fabric cushions. The side table has a dark, glossy, tinted glass top with an open storage shelf underneath. The chairs and table stand on short, cylindrical, matte black feet. The ottomans feature a recessed, matte black handle on one side. CRITICAL: There are no visible brand names, logos, or text on any part of the product.
 
-SCENE: Product isolated and centered on a light gray (#F5F5F5) seamless infinity backdrop. Product positioned at a front-facing 3/4 view, angled slightly to the right.
+SCENE: Product isolated and centered on a light gray (#F5F5F5) seamless infinity backdrop with a reflective floor. The 5-piece set is arranged in a conversational layout and positioned at a front 3/4 angled view to display the design and all components clearly.
 
-LIGHTING: Professional three-point studio lighting with soft diffused key light from the front-left, fill light reducing shadows, and rim light creating edge definition. Soft shadow cast to the back-right at 30-40% opacity. Natural reflection beneath the product on a glossy floor at 40-50% opacity showing the product's base.
+LIGHTING: Professional three-point studio lighting with a soft diffused key light from the front-left, fill light reducing shadows, and rim light creating edge definition. Soft shadow cast to the back-right at 30-40% opacity. Natural reflection beneath the product on the glossy floor at 40-50% opacity showing the underside and feet of the furniture.
 
-STATE: Product in pristine, non-operational condition, with the handle in the closed position and the pull-down spray head fully docked.
+STATE: Product in pristine, non-operational condition, fully assembled with cushions perfectly placed and resting.
 
-TECHNICAL: High-resolution commercial product photography, tack-sharp focus throughout entire product, no depth-of-field blur, neutral white balance (5500K), minimal lens distortion, e-commerce platform ready.
+TECHNICAL: High-resolution commercial product photography, tack-sharp focus throughout the entire product set, no depth-of-field blur, neutral white balance (5500K), minimal lens distortion, e-commerce platform ready.
 
 PRESERVE: Exact product appearance from input image including all logos, text, material finishes, and design details without any alterations.
 
 ---------------------------------------
 
 --- PROMPT 2 ---
-**Strict Protocol Adherence: PASSED**
+An output of the user's request has been generated following the steps of the protocol.
 
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-**STEP 1: ANALYZE INPUT IMAGE (MANDATORY)**
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+**Request-ID:** 20251027_234031_marketing_creative
+**Product:** Patio furniture set
+**Marketing Details:** "Patio set 20% off." - summer sale season, Summer flat sale!, Add summer elements.
 
-**A) PRODUCT COMPLETE DESCRIPTION:**
+***
 
-*   **Exact product type and model:** Commercial-style, high-arc, pull-down kitchen sink faucet with an exposed spring coil gooseneck design.
-*   **Precise color palette:** The main body, handle, and support arm have a gold finish. The flexible hose running through the spring coil is matte black. The buttons on the sprayer head are dark grey/black.
-*   **Material composition:** The faucet body is metal. The inner hose is a flexible rubber or composite material. The control buttons are plastic.
-*   **Texture and finish:** The gold metal has a brushed satin finish, which is non-reflective. The black hose and buttons are matte.
-*   **Exact dimensions and proportions:** This is a tall, high-arc faucet designed to be a prominent feature over a kitchen sink. It features a single-lever handle on the right side and is mounted on a thin, rectangular escutcheon plate (deck plate) for three-hole sink installations.
+### STEP 1: ANALYZE INPUT IMAGE
 
-**B) BRAND PRESERVATION (MUST MAINTAIN):**
+**COMPLETE PRODUCT DESCRIPTION:**
 
-*   **All visible logos:** None visible.
-*   **All text on product:** None visible.
-*   **Brand marks, symbols, badges:** None visible.
-*   **Maintain the same viewing angle/ camera angle:** A similar front-angled, slightly elevated perspective will be used to naturally showcase the product in its environment.
-*   **Color schemes associated with branding:** N/A.
+*   **Product type and specific model:** A 5-piece outdoor conversation set, consisting of two cushioned armchairs, two matching cushioned ottomans, and one square side table.
+*   **All colors (precise shades):** The furniture frames and table are made of a dark brown, almost black, woven wicker. The cushions are a thick, off-white or light cream/beige fabric. The side table has a black, reflective glass top.
+*   **All materials and finishes:** The primary material is a synthetic resin wicker/rattan with a woven texture and a slight sheen. The cushions appear to be a durable, weather-resistant fabric over foam. The side table features a tempered glass top. The feet are small and black.
+*   **Exact proportions and size:** The armchairs are generously sized with wide armrests. The square ottomans are sized to double as footrests or extra seating and align with the height of the chair seats. The side table is a cube shape, lower than the armrests, with an open storage shelf underneath the glass top.
+*   **ALL visible brand text/logos:** There are no visible brand names or logos on the product.
+*   **All design features:** The set is characterized by its dark, woven construction. The chairs have separate seat and back cushions. The ottomans have a single top cushion and a rectangular cutout handle on one side for portability. The side table's design includes a practical lower shelf.
+*   **Unique identifying characteristics:** The specific configuration of two chairs, two ottomans, and a cube-shaped side table with a lower storage shelf. The cutout handles on the ottomans are a distinct feature.
 
-**C) DESIGN FEATURES:**
+### STEP 2: EXTRACT MARKETING SPECIFICATIONS FROM USER INPUT
 
-*   **All buttons, controls, displays, interfaces:** The sprayer head features two controls: a small, round upper button and a larger, vertical rocker-switch below it. A single, solid metal lever on the right side of the base controls water flow and temperature.
-*   **Structural elements:** A prominent, flexible gooseneck is wrapped in a gold-finished metal spring coil. The sprayer head docks into a horizontal support arm. The faucet is mounted on a matching gold, rectangular escutcheon plate.
-*   **Unique design characteristics:** The two-tone design combining the brushed gold finish with the black industrial-style spring and hose is a key feature.
-*   **Any attachments or accessories visible:** The matching escutcheon plate is part of the product assembly.
+*   **TEXT ELEMENTS:**
+    *   Brand Name: [none provided]
+    *   Headline Text: "Summer flat sale!"
+    *   Call-to-Action: "SHOP NOW" (default)
+    *   Footer Text: [none]
+*   **PROMOTIONAL ELEMENTS:**
+    *   Discount/Sale callout: "20% off"
+    *   Badge/Banner needed: YES - "20% OFF"
+*   **SEASONAL/FESTIVE THEME:**
+    *   Theme: Summer
+    *   Specific elements required: "summer elements"
+*   **COMPOSITION STYLE:**
+    *   [X] D - Lifestyle + Overlay (lifestyle scene with promotional graphics)
+*   **SELECTED STYLE:** D - Lifestyle + Overlay
 
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-**STEP 2: DETERMINE SCENE TYPE FROM THEME GUIDELINES**
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+### STEP 3: DEFINE VISUAL DESIGN ELEMENTS
 
-[ ] Option A - Human Interaction
-[X] Option B - Standalone
+*   **BACKGROUND DESIGN:**
+    *   **SELECTED BACKGROUND:** The existing background from the input image will be used: a sunlit stone patio surrounded by lush green and brown foliage and a partial view of a pool. The scene will be enhanced with a warm, golden color grade to amplify the summer atmosphere.
+*   **COLOR PALETTE:**
+    *   Primary color: Warm Sunny Yellow (#FFC300)
+    *   Accent color: Vibrant Coral (#FF7F50)
+    *   Supporting colors: White (#FFFFFF) for text, Dark Brown (#3D2B1F) for text accents.
+*   **DESIGN ELEMENTS TO INCLUDE:**
+    *   [X] Light effects - Soft, golden sun rays emanating from the top left corner.
+    *   [ ] No other elements needed, the focus is on the seasonal overlay.
 
-**Contextual Props:**
-*   A wooden cutting board with a few sprigs of fresh rosemary and a chef's knife resting beside an uncut lemon.
-*   A minimalist white ceramic bottle of hand soap.
-*   A neatly folded, neutral-colored linen dish towel hanging over the edge of the sink basin.
-*   A small, terracotta pot with a basil plant on the windowsill in the background.
+### STEP 4: DEFINE TEXT PLACEMENT & TYPOGRAPHY
 
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-**STEP 3: DEFINE LOGICAL ENVIRONMENT**
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+*   **BRAND NAME:** N/A
+*   **HEADLINE:**
+    *   Text: "Summer flat sale!"
+    *   Position: Upper third, left-aligned, over the background foliage.
+    *   Typography: Modern bold sans-serif.
+    *   Size: Large, prominent.
+    *   Color: White (#FFFFFF).
+    *   Effect: Subtle drop shadow for enhanced readability.
+*   **CALL-TO-ACTION:**
+    *   Text: "SHOP NOW"
+    *   Style: Rounded rectangle button.
+    *   Position: Bottom center.
+    *   Button color: Warm Sunny Yellow (#FFC300).
+    *   Text color: Dark Brown (#3D2B1F).
+    *   Size: Moderate, with a clear, clickable appearance.
+*   **PROMOTIONAL BADGE/BANNER:**
+    *   Text: "20% OFF"
+    *   Style: Circular badge with a subtle sunburst pattern.
+    *   Position: Top right corner.
+    *   Colors: Vibrant Coral (#FF7F50) background with White (#FFFFFF) text.
 
-**SELECTED ENVIRONMENT:** A bright, clean, and modern household kitchen.
+### STEP 5: DEFINE FESTIVE/SEASONAL OVERLAYS
 
-**ENVIRONMENTAL DETAILS:**
+*   **THEME:** Summer
+*   **DESCRIBE EXACT FESTIVE ELEMENTS:** The image will be enhanced with a warm, golden color grade to evoke a sun-drenched feel. Soft, golden sun ray graphics will emanate from the top left corner, casting a gentle light across the scene. Stylized, semi-transparent tropical leaf silhouettes (e.g., monstera, palm) will be placed subtly in the bottom-left and top-right corners to frame the composition without obscuring the product.
 
-*   **Primary surface:** The faucet is installed on a light-colored, white quartz countertop with subtle grey veining, positioned behind a clean, white fireclay undermount kitchen sink.
-*   **Background elements:** A clean, white subway tile backsplash, a wooden windowsill, and the edge of a light grey kitchen cabinet.
-*   **Environmental storytelling:** The scene suggests a fresh, culinary-focused space. The cutting board with herbs and a lemon implies that a meal is being prepared, showcasing the faucet's utility in a food-prep context without it being in operation.
-*   **Depth:** Soft background blur (shallow depth of field), ensuring the faucet remains the sharp, primary focus while the kitchen environment provides authentic context.
+### STEP 6: GENERATE FINAL PROMPT WITH STRICT FORMAT
 
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-**STEP 4: DEFINE LIGHTING & ATMOSPHERE**
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Marketing creative product advertisement image.
 
-**SELECTED:** [X] Natural window light (soft, directional)
+**PRODUCT:** A 5-piece outdoor patio conversation set, including two armchairs, two ottomans, and a side table. The furniture is made from a dark brown, almost black, woven resin wicker. Cushions are a thick, off-white/light cream fabric. The side table is cube-shaped with a black tempered glass top and an open lower shelf for storage. The ottomans feature cutout handles on one side. No brand logos are visible. The product is shown arranged on a stone patio.
 
-**ATMOSPHERIC MOOD:**
+**COMPOSITION STYLE:** D - Lifestyle + Overlay. The original lifestyle scene from the input image is used as the base, with marketing text and summer-themed graphical elements overlaid on top.
 
-*   **Color temperature:** Neutral.
-*   **Overall feeling:** Fresh, clean, and airy.
-*   **Shadow quality:** Soft and natural, cast gently away from the light source.
-*   **Time of day suggestion:** Morning.
+**BACKGROUND:** The original background of a sunlit stone patio with lush green foliage is maintained but enhanced with a warm, golden color grade to create a vibrant, summery mood.
 
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-**STEP 5: GENERATE FINAL PROMPT WITH STRICT FORMAT**
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+**DESIGN ELEMENTS:** Soft, golden sun ray light effects emanating from the top left corner, overlaid subtly on the image.
 
-**Lifestyle product photography, standalone presentation.**
+**COLOR PALETTE:** Primary Warm Sunny Yellow (#FFC300), Accent Vibrant Coral (#FF7F50), Supporting White (#FFFFFF), Dark Brown (#3D2B1F).
 
-**PRODUCT:** A commercial-style, high-arc, pull-down kitchen faucet with a brushed gold satin finish. The faucet features a tall gooseneck wrapped in a matching gold spring coil, with a matte black flexible hose visible within. The pull-down sprayer head has two dark grey/black buttons (one small and round, one larger rocker-switch) and rests in a horizontal support arm. A single-lever handle is on the right, and the entire assembly is mounted on a thin, rectangular, brushed-gold escutcheon plate. The product is in a non-operational, resting state.
+**TEXT ELEMENTS - EXACT PLACEMENT:**
 
-**PRODUCT POSITIONING:** Professionally installed on a countertop, centered behind a kitchen sink. The camera angle is from the front right, capturing the profile of the handle and face of the sprayer.
+Headline text reading "Summer flat sale!" positioned in the upper third, left-aligned, in a modern bold sans-serif font, large prominent size, in White (#FFFFFF) with a subtle drop shadow for readability.
 
-**CONTEXTUAL PROPS:** To the left of the sink, a light wood cutting board holds a few sprigs of fresh rosemary next to a whole lemon and a resting chef's knife. To the right, a simple white ceramic hand soap dispenser sits on the countertop. A clean, beige linen dish towel is neatly draped over the front edge of the sink.
+Call-to-action element reading "SHOP NOW" as a rounded rectangle button positioned at the bottom center, with a Warm Sunny Yellow (#FFC300) background and Dark Brown (#3D2B1F) text.
 
-**ENVIRONMENT:** A modern, airy household kitchen. The faucet is installed in a white quartz countertop with subtle grey veining, set behind a deep white fireclay undermount sink. The background consists of a glossy white subway tile backsplash and a wooden windowsill holding a small terracotta pot with a basil plant, all softly out of focus.
+A circular badge with a sunburst pattern displaying "20% OFF" positioned at the top right corner, with a Vibrant Coral (#FF7F50) background and White (#FFFFFF) text.
 
-**COMPOSITION:** Product is the hero element, positioned according to the rule of thirds. The composition is balanced and clean, with props arranged naturally to create a realistic kitchen scene.
+**FESTIVE OVERLAY:** A warm, golden color grade is applied to the entire image. Soft, golden sun rays emanate from the top left corner. Stylized, semi-transparent tropical palm and monstera leaf silhouettes are placed in the bottom-left and top-right corners to frame the image and enhance the summer theme.
 
-**LIGHTING:** Soft, directional natural light streams in from a nearby window (out of frame), beautifully highlighting the faucet's brushed gold finish and creating gentle, natural shadows. The color temperature is neutral, creating a fresh, clean, and airy atmosphere.
+**LIGHTING & MOOD:** Bright, natural, sun-drenched lighting creating an inviting, warm, and relaxing summer mood.
 
-**TECHNICAL:** Photorealistic lifestyle photography, natural perspective, shallow depth of field to keep the faucet sharp and the background softly blurred, authentic context, e-commerce ready.
+**TECHNICAL:** High-resolution commercial advertising quality, photorealistic product rendering, professional graphic design composition, balanced visual hierarchy (Product → Headline → Badge → CTA), e-commerce marketing ready.
 
-**PRESERVE:** Exact product appearance from the input image with all design details, colors, and finishes maintained without alteration.
+**PRESERVE:** Exact product appearance from the input image with all design details maintained without alteration. Marketing elements enhance but never alter the product itself.
 
 ---------------------------------------
 
 --- PROMPT 3 ---
-An excellent request. Here is the detailed breakdown following the strict protocol.
-
-===== MARKETING CREATIVE IMAGE GENERATION - STRICT PROTOCOL =====
+===== LIFESTYLE IMAGE GENERATION - STRICT PROTOCOL =====
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-**STEP 1: ANALYZE INPUT IMAGE (MANDATORY)**
+STEP 1: ANALYZE INPUT IMAGE (MANDATORY)
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-**COMPLETE PRODUCT DESCRIPTION:**
+A) PRODUCT COMPLETE DESCRIPTION:
 
-*   **Product type and specific model:** Commercial-style, single-handle, pull-down kitchen sink faucet. The specific model is not identified.
-*   **All colors (precise shades):** The main body, handle, coil spring, spray head, and deck plate have a brushed gold finish. The inner flexible hose and the two buttons on the spray head are matte black.
-*   **All materials and finishes:** The faucet appears to be made of metal with a non-reflective, brushed/matte finish. The inner hose is a flexible, rubber-like material.
-*   **Exact proportions and size:** It is a tall, high-arc faucet designed to stand prominently over a kitchen sink. The coil spring is a dominant feature, covering most of the gooseneck spout.
-*   **ALL visible brand text/logos (exact wording, position, clarity):** There are no visible brand names or logos on the product in the provided image.
-*   **All design features:**
-    *   High-arc gooseneck spout with an external, open-coil spring.
-    *   A horizontal docking arm to secure the pull-down spray head.
-    *   The spray head has a control panel on its side with two distinct matte black buttons (likely for stream, spray, and pause functions).
-    *   A single lever handle is positioned on the right side of the faucet's base.
-    *   The faucet is mounted on a rectangular escutcheon plate (deck plate), suggesting compatibility with 1-hole or 3-hole sink configurations.
-*   **Unique identifying characteristics:** The primary characteristic is the industrial-modern aesthetic created by the combination of the brushed gold finish and the prominent black-and-gold open-coil spring design.
+**Exact product type and model:** 5-piece outdoor patio conversation set, consisting of two cushioned armchairs, two cushioned ottomans (leg rests), and one small side table.
 
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-**STEP 2: EXTRACT MARKETING SPECIFICATIONS FROM USER INPUT**
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+**Precise color palette (all colors present):** The main body of the furniture is a very dark brown, almost black, color. The cushions for the chairs and ottomans are a solid off-white or light beige color. The side table has a black glass top.
 
-**TEXT ELEMENTS:**
-*   **Brand Name:** "KOHLER"
-*   **Headline Text:** "New Item"
-*   **Call-to-Action:** "Shop now"
-*   **Footer Text:** [none]
+**Material composition (fabric/metal/plastic/wood/glass/leather):** The furniture frames are made of a synthetic wicker/rattan woven over a metal frame. The cushions appear to be a thick, durable outdoor fabric like canvas or polyester. The side table has a tempered glass top.
 
-**PROMOTIONAL ELEMENTS:**
-*   **Discount/Sale callout:** "30% off"
-*   **Badge/Banner needed:** YES - "in a bright rose/white color widget"
+**Texture and finish (matte/glossy/brushed/woven/smooth):** The furniture frames have a distinct woven texture with a matte finish. The fabric cushions are smooth but have a visible fabric weave texture. The glass top of the side table is smooth and glossy.
 
-**SEASONAL/FESTIVE THEME:**
-*   **Theme:** New Year
-*   **Specific elements required:** [Implied: celebratory elements like sparkles, confetti, elegant lighting]
+**Exact dimensions and proportions:** The armchairs are generously sized with wide, flat armrests and thick back and seat cushions. The ottomans are square, sized to function as leg rests or extra seating, and have a cushion of the same thickness as the chair seats. The side table is a small, square cube shape, slightly lower than the chair armrests, featuring an open shelf space below the tabletop.
 
-**COMPOSITION STYLE:**
-*   [ ] A - Hero Product
-*   [ ] B - Multi-Instance
-*   [ ] C - Feature Showcase
-*   [X] D - Lifestyle + Overlay (lifestyle scene with promotional graphics)
+B) BRAND PRESERVATION (MUST MAINTAIN):
 
-**SELECTED STYLE:** D - Lifestyle + Overlay
+**All visible logos (position, size, clarity level):** None visible.
+**All text on product (exact wording, even if partially visible or blurry):** None visible.
+**Brand marks, symbols, badges:** None visible.
+**Maintain the same viewing angle/ camera angle as in the input product image if possible:** The request requires a new scene, but the product should be presented from a similar front three-quarter view to best display its features.
+**Color schemes associated with branding:** Not applicable.
+
+C) DESIGN FEATURES:
+
+**All buttons, controls, displays, interfaces:** Not applicable.
+**Structural elements (handles, wheels, stands, feet, lids):** The chairs have short, black, block-style feet. The ottomans have rectangular, black, inset handles on their sides for easy moving. The side table has an open lower shelf for storage.
+**Unique design characteristics:** The boxy, modern design with a tightly woven rattan pattern is a key characteristic. The combination of dark frames with light cushions is a defining feature.
+**Any attachments or accessories visible:** The set includes the two chairs, two ottomans, and one side table as a complete unit.
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-**STEP 3: DEFINE VISUAL DESIGN ELEMENTS**
+STEP 2: DETERMINE SCENE TYPE FROM THEME GUIDELINES
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-**BACKGROUND DESIGN:**
-*   The product will be set in a bright, clean, and modern lifestyle kitchen scene. The background will feature a white marble or light quartz countertop and an undermount stainless steel or white fireclay basin. The background will be slightly out of focus (soft bokeh effect) to keep the main focus on the faucet and the marketing graphics.
-*   **SELECTED BACKGROUND:** Soft-focus, high-end kitchen with a basin.
+The guidelines specify a "happy family enjoying the pool and resting on the furniture... with two small kids and parents." This requires human models interacting with the product.
 
-**COLOR PALETTE:**
-*   **Primary color:** Bright Rose (#FF6B99) for promotional widgets.
-*   **Accent color:** Champagne Gold (#F7E7CE) for festive elements and potentially headline text.
-*   **Supporting colors:** White (#FFFFFF) for text, Charcoal Gray (#333333) for brand name text.
+STATE YOUR CHOICE: [X] Option A - Human Interaction
 
-**DESIGN ELEMENTS TO INCLUDE:**
-*   **[X] Gradient overlay:** A subtle white-to-transparent vertical gradient with 15% opacity applied to the rightmost 25% of the image, providing a clean area for the brand name.
-*   **[X] Light effects:** Soft, out-of-focus bokeh lights and subtle gold sparkle effects to convey the New Year theme.
-
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-**STEP 4: DEFINE TEXT PLACEMENT & TYPOGRAPHY**
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-
-**BRAND NAME:**
-*   **Text:** "KOHLER"
-*   **Position:** Top right, placed over the white gradient overlay.
-*   **Typography:** Sleek uppercase sans-serif (e.g., Montserrat Bold).
-*   **Size:** Medium.
-*   **Color:** Charcoal Gray (#333333).
-*   **Effect:** None.
-
-**HEADLINE:**
-*   **Text:** "New Item"
-*   **Position:** Top left.
-*   **Typography:** An elegant, fancy script font (e.g., Playfair Display Italic, or a flowing script like "Magnolia Sky").
-*   **Size:** Large, prominent.
-*   **Color:** White, with a subtle champagne gold glow.
-*   **Effect:** Soft glow.
-
-**CALL-TO-ACTION:**
-*   **Text:** "Shop now"
-*   **Style:** A small, clean, rounded rectangle button.
-*   **Position:** Bottom right corner.
-*   **Button color:** Bright Rose (#FF6B99).
-*   **Text color:** White (#FFFFFF).
-*   **Size:** Small but clearly defined and legible.
-
-**PROMOTIONAL BADGE/BANNER:**
-*   **Text:** "30% off"
-*   **Style:** A circular badge/widget.
-*   **Position:** Positioned slightly below and to the right of the "New Item" headline in the upper left quadrant.
-*   **Colors:** Bright Rose (#FF6B99) background with bold white text.
+**Define human subject:**
+*   **Type:** A family unit: one man, one woman, and two small children (one boy, one girl).
+*   **Approximate age:** Parents in their mid-to-late 30s. Children are approximately 5 and 7 years old.
+*   **Ethnicity/appearance:** Diverse, natural, and relatable appearance (e.g., Caucasian or Hispanic family).
+*   **Clothing:** Parents in stylish but comfortable poolside attire (e.g., man in linen shorts and a t-shirt, woman in a sundress over a swimsuit). Kids in colorful swimsuits or shorts and t-shirts, possibly with slightly damp hair from the pool.
+*   **Expression:** Relaxed, happy, and genuinely joyful. Warm smiles.
+*   **Pose detail:** The father is lounging in one armchair, smiling, with his feet up on the matching leg rest. The mother is sitting on the second armchair, leaning forward slightly to talk to her daughter, who is sitting on the edge of the other leg rest. The son is standing near the pool's edge in the background, visible but not a primary focus.
+*   **Eye direction:** The father is looking towards his wife and daughter. The mother and daughter are looking at each other, sharing a happy moment.
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-**STEP 5: DEFINE FESTIVE/SEASONAL OVERLAYS (if applicable)**
+STEP 3: DEFINE LOGICAL ENVIRONMENT
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-**FESTIVE OVERLAY (New Year):**
-*   **Elements:** Delicate, festive overlay of falling champagne gold and silver confetti/sparkles, primarily in the upper half of the image. Soft, glowing bokeh light effects scattered in the background to create a celebratory and magical atmosphere.
-*   **Colors:** Champagne gold, silver, soft white.
-*   **Placement:** These elements will be subtly integrated into the scene, appearing both in front of and behind the faucet to create depth, but without obscuring key product details or text.
+SELECTED ENVIRONMENT: A clean, modern, and sunny residential poolside patio.
+
+ENVIRONMENTAL DETAILS:
+*   **Primary surface:** The furniture is placed on light-colored stone or concrete pavers next to a swimming pool.
+*   **Background elements:** In the background, there is the sparkling blue water of an in-ground swimming pool, lush green landscaping with tropical plants, and a partial view of a modern house.
+*   **Environmental storytelling:** A brightly colored pool floaty is visible in the pool. A tall glass of iced lemonade sits on the side table next to the father. A neatly folded, colorful beach towel is draped over the back of the mother's chair. This suggests a fun, relaxing day of swimming has been happening.
+*   **Depth:** Soft background blur (bokeh) to keep the family and the furniture as the sharp, main focus.
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-**STEP 6: GENERATE FINAL PROMPT WITH STRICT FORMAT**
+STEP 4: DEFINE LIGHTING & ATMOSPHERE
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-Marketing creative product advertisement image for an Instagram post.
+LIGHTING TYPE:
+[ ] Natural window light (soft, directional)
+[ ] Golden hour sunlight (warm, low-angle)
+[X] Bright daylight (even, clear)
+[ ] Soft overcast (diffused, no harsh shadows)
+[ ] Warm interior lighting (cozy, ambient)
 
-**PRODUCT:** A tall, commercial-style pull-down kitchen faucet. The entire body, single-lever handle, coil spring, spray head, and rectangular deck plate are finished in brushed gold. It features a high-arc, open-coil spring spout with a flexible matte black hose running through it. The pull-down spray head is brushed gold with a side-mounted control panel containing two matte black buttons. The product has no visible brand logos on it.
+SELECTED: Bright daylight
 
-**COMPOSITION STYLE:** Lifestyle + Overlay. The faucet is professionally installed and centered in a bright, modern kitchen, mounted over a clean undermount basin set into a white marble countertop. The background is softly blurred. A subtle, vertical white-to-transparent gradient at 15% opacity is applied to the right side of the image.
+ATMOSPHERIC MOOD:
+*   **Color temperature:** Cool to Neutral, enhancing the blue of the pool and the freshness of the scene.
+*   **Overall feeling:** Fresh, happy, serene, and aspirational.
+*   **Shadow quality:** Soft and natural, indicating bright but not harsh overhead sun.
+*   **Time of day suggestion:** Midday or early afternoon.
 
-**BACKGROUND:** A soft-focus, high-end kitchen scene with a white marble countertop and a sink basin. The overall atmosphere is bright and aspirational.
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+STEP 5: GENERATE FINAL PROMPT WITH STRICT FORMAT
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-**DESIGN ELEMENTS:** Soft, out-of-focus bokeh light effects are scattered in the background.
+Lifestyle product photography with human interaction.
 
-**COLOR PALETTE:** Primary Bright Rose (#FF6B99), Accent Champagne Gold (#F7E7CE), Supporting White (#FFFFFF) and Charcoal Gray (#333333).
+PRODUCT: A 5-piece outdoor patio conversation set, including two armchairs and two matching leg-rest ottomans with dark brown woven synthetic rattan frames and thick, off-white fabric cushions. The set also includes a matching dark brown woven side table with a black glass top and an open storage shelf beneath. The chairs have short, black block feet, and the ottomans feature black inset handles on their sides. Product in non-operational, resting state. High product fidelity of the two chairs and two leg rests must be maintained.
 
-**TEXT ELEMENTS - EXACT PLACEMENT:**
+HUMAN SUBJECT: A family of four. A father in his late 30s, Caucasian, wearing khaki shorts and a light blue t-shirt. A mother in her late 30s, Caucasian, with a white sundress over her swimsuit. A 7-year-old daughter in a pink swimsuit and a 5-year-old son in blue swim trunks. The father is relaxing in one armchair with his feet propped up on the leg rest, holding a glass and smiling contentedly towards his family. The mother is sitting in the second armchair, turned slightly towards her daughter, smiling warmly. The daughter is sitting on the second leg rest, looking up at her mother. The young son is visible in the soft-focus background near the pool.
 
-*   **Brand name text reading "KOHLER"** positioned at the top right corner over the gradient overlay, in a sleek uppercase sans-serif font, medium size, in Charcoal Gray color.
-*   **Headline text reading "New Item"** positioned at the top left, in a large, prominent, fancy elegant script font, colored white with a subtle champagne gold glow.
-*   **A circular widget** positioned below the headline in the upper left quadrant, with a Bright Rose background displaying the text **"30% off"** in bold white font.
-*   **Call-to-action element reading "Shop now"** as a small rounded rectangle button positioned at the bottom right corner, with a Bright Rose background and white text.
+PRODUCT INTERACTION: The family is naturally arranged around and on the furniture set, using it for relaxation and connection. Their poses demonstrate the comfort and function of the chairs and leg rests.
 
-**FESTIVE OVERLAY:** A celebratory New Year theme is applied. Delicate, falling champagne gold and silver confetti sparkles are subtly overlaid across the top half of the image, creating a magical and festive mood without obscuring the product or text.
+ENVIRONMENT: A modern, sunny poolside patio with light-colored stone pavers. The furniture is set up near the edge of a sparkling blue in-ground swimming pool. The background features lush green foliage, tropical plants, and a partial view of a modern home. Environmental storytelling includes a glass of lemonade on the side table, a colorful beach towel draped over one chair, and a pool floaty in the water, suggesting a day of family fun.
 
-**LIGHTING & MOOD:** Bright, clean, and celebratory studio lighting. The mood is premium, festive, and exciting.
+COMPOSITION: The product and the family interacting with it are the primary focus, occupying about 40% of the frame. The composition is balanced, creating a candid and inviting family scene. Rule of thirds is applied, placing the family off-center.
 
-**TECHNICAL:** High-resolution commercial advertising quality, photorealistic, professional graphic design composition for an Instagram post. Balanced visual hierarchy (Product → Headline/Offer → Brand → CTA). E-commerce marketing ready.
+LIGHTING: Bright, clear daylight. A cool-to-neutral color temperature to create a fresh, clean atmosphere. The lighting creates a happy and serene mood with soft, natural shadows, resulting in a realistic and inviting ambiance.
 
-**PRESERVE:** Exact product appearance from the input image with all its specific design details, colors, and finishes maintained without alteration. The marketing and festive elements are overlaid on the lifestyle scene, enhancing but not altering the product itself.
+TECHNICAL: Photorealistic lifestyle photography, natural perspective, soft background blur keeping the family and product in sharp focus, authentic moment, e-commerce ready.
+
+PRESERVE: Exact product appearance from the input image with all design details, including the dark brown woven texture, off-white cushion color, inset ottoman handles, and side table design, maintained without alteration.
 
 ---------------------------------------
 
