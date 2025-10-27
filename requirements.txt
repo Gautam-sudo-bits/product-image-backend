@@ -143,7 +143,6 @@ pyreadline3==3.5.4
 python-dateutil==2.9.0.post0
 python-dotenv==1.1.1
 pytorchvideo @ git+https://github.com/facebookresearch/pytorchvideo.git@6cdc929315aab1b5674b6dcf73b16ec99147735f
-pywin32==311
 PyYAML==6.0.3
 referencing==0.36.2
 regex==2025.9.18
