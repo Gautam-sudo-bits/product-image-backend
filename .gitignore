@@ -14,3 +14,4 @@ dump/
 .vscode/
 
 .checkpoints/
+*.mp4
