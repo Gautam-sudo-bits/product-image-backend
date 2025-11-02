@@ -25,6 +25,17 @@ if os.getenv("GOOGLE_APPLICATION_CREDENTIALS"):
     os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = os.getenv("GOOGLE_APPLICATION_CREDENTIALS")
 
 # ===========================
+# UNSPLASH API (for testing)
+# ===========================
+UNSPLASH_ACCESS_KEY = os.getenv("UNSPLASH_ACCESS_KEY", "")
+UNSPLASH_SECRET_KEY = os.getenv("UNSPLASH_SECRET_KEY", "")
+
+TEST_IMAGES_FOLDER = "test_images_edit_pipeline"
+TEST_OUTPUTS_FOLDER = "test_outputs_edit_pipeline"
+# Testing configuration
+USE_UNSPLASH_FALLBACK = True 
+
+# ===========================
 # GCS Configuration
 # ===========================
 GCS_BUCKET_NAME = os.getenv("GCS_BUCKET_NAME")
@@ -37,7 +48,7 @@ TEXT_MODEL = "gemini-2.5-pro"
 VIDEO_MODEL = "veo-3.1-generate-preview"
 
 # ===========================
-# TESTING & COST CONTROL FLAGS
+# TESTING & COST CONTROL FLAGS for video
 # ===========================
 
 # NOTE: Temp files are ALWAYS deleted for deployment (ignoring this flag for cleanup)
@@ -56,12 +67,8 @@ USE_LOWER_RESOLUTION = True  # Set to True for "720p" (saves ~30% credits)
 # Video Configuration
 # ===========================
 # Cost-optimized durations
-DEFAULT_TOTAL_DURATION = 16  # Reduced from 40s (60% cost savings)
+DEFAULT_TOTAL_DURATION = 15  # Reduced from 40s (60% cost savings)
 DEFAULT_SEGMENT_DURATION = 8  # 2 segments instead of 5
-
-# Alternative configurations (uncomment to use)
-# DEFAULT_TOTAL_DURATION = 24  # 3 segments
-# DEFAULT_SEGMENT_DURATION = 8
 
 DEFAULT_TRANSITION_DURATION = 1.0  # Reduced from 1.5s
 
@@ -93,9 +100,48 @@ MAX_PROMPT_LENGTH = 500  # Concise prompts work better
 OPTIMAL_PROMPT_LENGTH = 400  # Target length
 
 # ===========================
+# VIDEO EXTENSION SETTINGS (VEO 3.1)
+# ===========================
+ENABLE_VIDEO_EXTENSION = True  # Set True to use cumulative video extension
+
+# Extension parameters (only used if ENABLE_VIDEO_EXTENSION = True)
+EXTENSION_BASE_DURATION = 8  # Initial video length in seconds
+EXTENSION_INCREMENT = 7   # Each extension adds 7 seconds (Veo 3.1 limit)
+EXTENSION_COUNT = 1      # Number of times to extend (max 20 per docs = 148s total)
+
+# Model selection for extension
+# NOTE: Reddit user tested with "veo-3.1-fast-generate-preview"
+# You want to use "veo-3.1-generate-preview" (non-fast)
+# If extension fails, try enabling this flag to use fast model
+USE_FAST_MODEL_FOR_EXTENSION = False  
+
+def get_extension_model():
+    """Get the model to use for extension mode"""
+    if ENABLE_VIDEO_EXTENSION and USE_FAST_MODEL_FOR_EXTENSION:
+        return "veo-3.1-fast-generate-preview"
+    return VIDEO_MODEL  # Uses your default veo-3.1-generate-preview
+
+def get_effective_duration():
+    """Calculate actual video duration based on mode"""
+    if ENABLE_VIDEO_EXTENSION:
+        total = EXTENSION_BASE_DURATION + (EXTENSION_INCREMENT * EXTENSION_COUNT)
+        print(f"📏 Extension mode: {EXTENSION_BASE_DURATION}s base + {EXTENSION_COUNT} extensions = {total}s total")
+        return total
+    return DEFAULT_TOTAL_DURATION
+
+# Validation
+if ENABLE_VIDEO_EXTENSION:
+    if EXTENSION_COUNT < 1 or EXTENSION_COUNT > 20:
+        raise ValueError("EXTENSION_COUNT must be 1-20 (Veo limit)")
+    
+    max_total = EXTENSION_BASE_DURATION + (EXTENSION_INCREMENT * EXTENSION_COUNT)
+    if max_total > 148:
+        raise ValueError(f"Total duration {max_total}s exceeds Veo 3.1 limit of 148s")
+
+# ===========================
 # Cost Tracking (Optional)
 # ===========================
-# Approximate Veo 3.1 costs (as of 2024)
+# Approximate Veo 3.1 costs
 COST_PER_SECOND_1080P = 0.10  # $0.10 per second
 COST_PER_SECOND_720P = 0.07   # $0.07 per second
 

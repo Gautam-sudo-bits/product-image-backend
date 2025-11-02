@@ -221,19 +221,183 @@ class VeoPromptGenerator:
         return "image/png"
     
     def _build_instruction(self, num_segments, product_overview, brand_guidelines, segment_duration):
-        """Your long, effective instruction - UNCHANGED"""
+      with open('templates/veo_master_instruction.txt', 'r') as f:
+          template = f.read()
+      
+      return template.format(
+          product_overview=product_overview,
+          brand_guidelines=brand_guidelines,
+          num_segments=num_segments,
+          segment_duration=segment_duration
+      )
         
-        safety_note = ""
-        if not ALLOW_PEOPLE_IN_VIDEO:
-            safety_note = """
-CRITICAL SAFETY RULE:
-- Never show people, hands, or product in operation
-- Static product showcase only with camera movement
-- Include "negative prompt: no people, no hands, not in use" in each veo_prompt
 """
-        
-        return f"""
 ---------------------------------------------------------
+Objective: To generate a structured JSON timeline prompt for VEO 3.1 that creates a dynamic, visually stunning product advertisement. The core principle is to maintain a static or minimally-moving product (the "hero") while using sophisticated camera movements, scene transitions, and lighting to create visual excitement and highlight key features.
+
+Core Strategy: This template primarily utilizes an Image-to-Video (I2V) workflow. The provided product [Image(s)] will be used as the primary reference for VEO 3.1 (reference_image) to ensure absolute product fidelity and consistency. The text prompt's role is to direct the action, camera, lighting, and environment around the visually-anchored product.
+
+Inputs:
+Product overview: {product_overview}
+Brand_guidelines: {brand_guidelines}
+Assume the best input fiels when unspecified.
+
+
+Based on a comprehensive, line-by-line analysis of all provided articles, website links, and the sample video, I have synthesized the critical creative and technical instructions into the following detailed template.
+This template is designed to guide a large language model (LLM) in generating a high-fidelity, cinematic-grade JSON prompt for VEO 3.1, ensuring strict product adherence and brand consistency.
+VEO 3.1 Product Ad Generation - Master Instruction Template
+Objective: To generate a structured JSON timeline prompt for VEO 3.1 that creates a dynamic, visually stunning product advertisement. The core principle is to maintain a static or minimally-moving product (the "hero") while using sophisticated camera movements, scene transitions, and lighting to create visual excitement and highlight key features.
+Core Strategy: This template primarily utilizes an Image-to-Video (I2V) workflow. The provided product [Image(s)] will be used as the primary reference for VEO 3.1 (reference_image) to ensure absolute product fidelity and consistency. The text prompt's role is to direct the action, camera, lighting, and environment around the visually-anchored product.
+Level 1: Global Ad Parameters (metadata)
+This section defines the overall project and brand identity. The LLM should populate this using the user's [Product overview] and [User specific requests/ Brand guidelines].
+code
+JSON
+{
+  "metadata": {
+    "prompt_name": "[Product Name] - Cinematic Product Ad",
+    "brand_name": "[Brand Name]",
+    "target_audience": "[Inferred Target Audience from Product Overview]",
+    "overall_duration_target": "12-15 seconds",
+    "aspect_ratio": "9:16 (# Default for social media ads, adjustable.)",
+    "base_style_guide": {
+      "visual_style": "Hyperrealistic, cinematic, 4K, product photography aesthetic",
+      "visual_tone": "[Select 2-3: Sleek, Modern, Organic, Minimalist, Industrial, Elegant, Vibrant, Earthy]",
+      "color_palette": "Dominated by [Primary Product/Brand Colors], with complementary [Accent Colors] and [Neutral Tones] for the background.",
+      "lighting_theme": "Primarily [e.g., Soft, natural studio lighting] with moments of [e.g., Dramatic, high-contrast lighting] to highlight features.",
+      "overall_mood": "[Select 2-3: Sophisticated, Energizing, Serene, Confident, Inspiring, Luxurious]"
+    },
+    "audio_master": {
+      "music_style": "[e.g., Upbeat, minimalist electronic track with a driving beat]",
+      "sound_design_elements": "Subtle, crisp sound effects (SFX) synchronized with actions and text overlays (e.g., soft clicks, whooshes, shimmering sounds)."
+    },
+    "negative_prompts": [
+      "No people", "No hands", "No distracting background elements", "blurry", "distorted product", "inaccurate logos", "unnatural motion", "on-screen text", "subtitles"
+    ]
+  },
+'''Level 2: Scene-by-Scene Breakdown (timeline)
+This is an array of "scene" objects. For a typical 12-15 second ad, 3-4 scenes are optimal. The LLM should strategically break down the product's features and narrative into this sequence.
+code
+JSON
+"timeline": [
+Scene 1: The Hook (0-3 seconds)
+Objective: Grab attention and introduce the product in its environment.
+code
+JSON:'''
+{
+      "scene_number": 1,
+      "duration": "3s",
+      "reference_image": "[Primary Product Image URL]",
+      "description": "An extreme close-up of the [Specific Part of Product], showcasing its [Material/Texture] texture. The product is placed on a [Background Surface, e.g., polished concrete, reclaimed wood, marble slab]. The environment is a clean, minimalist studio setting with [Supporting Organic Elements, e.g., a single monstera leaf, scattered coffee beans, a sprig of lavender].",
+      "camera_setup": {
+        "shot_type": "Extreme Close-Up (ECU)",
+        "camera_movement": "A slow, smooth pull-back (dolly out) to gradually reveal the product's full form.",
+        "lens_effects": "Shallow depth of field (DoF) to keep the focus sharp on the product while softly blurring the background."
+      },
+      "ambiance": {
+        "lighting": "Soft, diffused studio light from a single key source, creating gentle highlights and shadows on the product's surface.",
+        "atmosphere": "Clean, pristine, and focused."
+      },
+      "audio": {
+        "music": "Music track begins with a subtle, intriguing synth pad or intro beat.",
+        "sfx": "A soft, ambient whoosh sound synchronized with the camera pull-back."
+      }
+    },
+'''Scene 2: Feature Highlight 1 (3-7 seconds)
+Objective: Showcase a key feature using dynamic camera work and a text overlay.
+code
+JSON:'''
+{
+      "scene_number": 2,
+      "duration": "4s",
+      "reference_image": "[Primary Product Image URL]",
+      "description": "The product remains perfectly centered and static. A cutaway or cross-section view of the product is revealed to demonstrate its [Key Feature 1, e.g., 'Signature 360° Airflow Technology']. The background remains consistent but may subtly shift in lighting.",
+      "camera_setup": {
+        "shot_type": "Medium Shot (MS)",
+        "camera_movement": "A crisp, 360-degree orbit shot (arc shot) around the static product. The movement is smooth and technically precise.",
+        "lens_effects": "Clean, deep focus to ensure both the product and the cutaway details are sharp."
+      },
+      "ambiance": {
+        "lighting": "Lighting shifts to become more technical and bright, precisely illuminating the internal components or feature being shown.",
+        "atmosphere": "Informative, technical, impressive."
+      },
+      "overlay_text": {
+        "text": "[Name of Key Feature 1, e.g., SMOKELESS FLAME]",
+        "timing": "Appears at 1s into the scene, fades out by 3.5s.",
+        "font_style": "Bold, clean, sans-serif.",
+        "animation": "A quick, subtle fade-in and scale-up animation."
+      },
+      "audio": {
+        "music": "The beat drops or a new melodic layer is introduced, increasing energy.",
+        "sfx": "A sharp, satisfying 'click' or 'chime' as the text overlay appears."
+      }
+    },
+'''Scene 3: Feature Highlight 2 / Dynamic Motion (7-11 seconds)
+Objective: Create visual excitement and highlight a second benefit or the product in a dynamic context.
+code
+JSON:'''
+{
+      "scene_number": 3,
+      "duration": "4s",
+      "reference_image": "[Supporting Product Image URL, if available]",
+      "description": "The product is now shown from a dramatic low angle. The background shifts to a more evocative setting, like [Appropriate Environmental Context, e.g., 'on a bed of volcanic rocks', 'in front of a misty backdrop', 'surrounded by splashing water droplets in slow motion'].",
+      "camera_setup": {
+        "shot_type": "Low-Angle Shot",
+        "camera_movement": "A dramatic, slow crane shot that starts low and rises smoothly, adding a heroic and epic feel to the product.",
+        "lens_effects": "Subtle lens flare may appear as the camera moves past the key light."
+      },
+      "ambiance": {
+        "lighting": "Dramatic, high-contrast 'chiaroscuro' lighting, creating strong highlights and deep shadows, emphasizing the product's form.",
+        "atmosphere": "Powerful, premium, and captivating."
+      },
+      "overlay_text": {
+        "text": "[Second Key Feature or Benefit, e.g., LIFETIME WARRANTY]",
+        "timing": "Appears at 1.5s into the scene, fades out by 3.5s.",
+        "font_style": "Elegant, slightly lighter weight sans-serif.",
+        "animation": "Text smoothly slides in from the bottom."
+      },
+      "audio": {
+        "music": "Music swells to a crescendo, becoming more orchestral or epic.",
+        "sfx": "A deep, resonant 'bass drop' or a slow-motion 'whoosh' to match the on-screen elements."
+      }
+    },
+'''Scene 4: The Outro / Call to Action (11-14 seconds)
+Objective: End with a clean, memorable shot of the product and brand logo.
+code
+JSON:'''
+{
+      "scene_number": 4,
+      "duration": "3s",
+      "reference_image": "[Primary Product Image URL]",
+      "description": "A final, perfect, eye-level wide shot of the [Product Name] on its original clean surface. The shot is stable, centered, and flawlessly presented.",
+      "camera_setup": {
+        "shot_type": "Wide Shot (WS)",
+        "camera_movement": "Static shot (fixed camera), no movement. The composition is perfectly balanced and symmetrical.",
+        "lens_effects": "Clean focus, no distortion."
+      },
+      "ambiance": {
+        "lighting": "Returns to the clean, bright, commercial studio lighting from Scene 1.",
+        "atmosphere": "Confident, clear, and premium."
+      },
+      "overlay_text": {
+        "text": "[Brand Name Logo]",
+        "timing": "Appears at 0.5s into the scene, holds till end.",
+        "font_style": "Official brand logo.",
+        "animation": "Clean fade-in."
+      },
+      "audio": {
+        "music": "Music resolves with a clean final beat or fades out smoothly.",
+        "sfx": "A final, subtle 'click' or 'shimmer' as the logo appears, then silence."
+      }
+    }
+  ]
+}
+
+""".strip()
+
+# version 2 prompt version from LMARENA GPT 5 modified.
+
+"""
+-------------------------------------------
 You are generating a Veo 3.1 prompt in JSON form for a fast-paced roundtable (turntable-style) product commercial. Output only a JSON array with exactly {{num_segments}} objects (one per 8-second segment). No extra text.
 
 Inputs:
@@ -377,7 +541,7 @@ Output constraints:
 - Keep the same product instance across segments (duplicate product_lock each time).
 
 End of instructions. Output only the JSON array.
-""".strip()
+"""
 # version 1 prompt version gpt 5 high LMARENA
 """
 ----------------------------------------

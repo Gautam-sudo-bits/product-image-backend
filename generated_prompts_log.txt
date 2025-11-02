@@ -1,4 +1,4 @@
---- LOG FOR GENERATION REQUEST 20251027_234031 ---
+--- LOG FOR GENERATION REQUEST 20251101_065908 ---
 
 --- PROMPT 1 ---
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
@@ -6,69 +6,81 @@ STEP 1: ANALYZE INPUT IMAGE (MANDATORY)
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
 A) PRODUCT IDENTITY:
-The product is a five-piece outdoor patio furniture conversation set. The set consists of two armchairs, two matching ottomans, and one square side table. The design features a modern, blocky silhouette with a woven texture.
+A modern, minimalist countertop espresso machine. The design is characterized by a clean, blocky main body with softly rounded corners on the upper front panel.
 
 B) PHYSICAL ATTRIBUTES:
 Precise colors:
--   Wicker Frame: Dark brown, almost espresso color (approx. hex #3D3531).
--   Cushions: Off-white or light beige fabric (approx. hex #EDEAE0).
--   Tabletop: Dark, tinted, reflective glass, likely black or dark brown.
--   Furniture Feet/Handles: Matte black.
+- Main body: Matte white (approx. #FDFDFD)
+- Controls: Glossy black button faces (#000000) with polished chrome trim rings. Textured matte black side knob (#1C1C1C).
+- Accents: Polished chrome/stainless steel (#D0D0D0) for the portafilter head, steam wand, drip tray grate, and top cup-warming rails.
+- Portafilter Handle: Glossy white (#FFFFFF).
+- Water Reservoir: Translucent dark gray plastic.
 
 Material finishes:
--   Frame: Matte, textured all-weather wicker/rattan with a woven pattern.
--   Cushions: Matte, woven fabric finish, appears to be a durable outdoor material.
--   Tabletop: Glossy, smooth, reflective glass.
--   Feet/Handles: Matte plastic or powder-coated metal.
+- Main body: Matte finish.
+- Drip tray, rails, portafilter, steam wand: Highly reflective, polished metal (chrome/stainless steel).
+- Buttons: Glossy plastic faces with metallic rings.
+- Side knob & steam wand grip: Textured, matte rubber or plastic.
+- Portafilter handle: Smooth, glossy plastic or ceramic.
 
 Shape and form factor:
--   Chairs: Rectangular and robust with wide, flat armrests and a slightly angled back.
--   Ottomans: Square, cube-like shape.
--   Table: Square, cube-like shape with an open storage shelf below the top surface.
-
-Dimensions and proportions:
-The chairs are generously sized for comfort. The ottomans are sized to function as footrests and are approximately the same height as the chair seats. The side table is slightly lower than the chair armrests.
+- Compact, rectangular design for countertop use. The main body is a solid block, with a separate, vertically oriented water tank attached to the right-rear side.
 
 C) BRAND ELEMENTS (CRITICAL - PRESERVE EXACTLY):
--   Any visible logos: None visible.
--   Any text/labels on product: None visible.
--   Any badges, stickers, brand marks: None visible.
+Any visible logos: No visible brand names or logos.
+Any text/labels on product: The four front buttons have icons instead of text:
+- Far left button: Power symbol (circle with a vertical line at the top).
+- Second button from left: Single espresso cup icon.
+- Third button from left: Double espresso cup icon.
+- Far right button: Steam icon (three wavy vertical lines).
+Any badges, stickers, brand marks: None.
 
 D) COMPONENT DETAILS:
--   Chairs: Each chair has two thick cushions: a square seat cushion and a rectangular back cushion. They stand on four short, cylindrical black feet.
--   Ottomans: Each ottoman has one thick, square cushion on top. There is a recessed, rectangular black handle integrated into one side of the wicker frame for lifting.
--   Table: The table has a square glass top inset into the wicker frame. Below the top is an open, cubby-like storage area. It stands on four short, cylindrical black feet matching the chairs.
--   Surface textures and patterns: The primary texture is the tight, consistent weave of the dark brown wicker material across all pieces. The cushions have a subtle, canvas-like fabric texture.
+Buttons, knobs, controls, screens:
+- Four circular push-buttons arranged horizontally on the upper front panel.
+- One large, cylindrical, textured rotary knob on the right side of the machine.
+- No screen is visible.
+
+Handles, legs, stands, attachments:
+- A chrome-plated portafilter with a double spout and a solid white handle.
+- A chrome-plated steam wand on the right side, with a black rubberized grip piece.
+- The machine sits on a flat base that is integral to the main body.
+- Two chrome rails run front-to-back on the top surface.
+
+Openings, vents, ports, connectors:
+- Group head for the portafilter is located centrally under the front panel.
+- A removable stainless steel drip tray with a perforated grate forms the base platform.
+- A removable translucent water reservoir is located on the right side of the machine.
 
 E) CURRENT STATE:
--   Product condition in image: New, clean, and in perfect condition.
--   Any wear, reflections, or characteristics to maintain: The clean lines, plumpness of the cushions, and the reflective quality of the glass tabletop should be maintained.
+Product condition in image: The machine appears new and clean.
+Any wear, reflections, or characteristics to maintain: The polished chrome parts have soft, diffused reflections. The machine is shown actively brewing espresso, but the protocol requires a non-operational state.
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 STEP 2: CONSTRUCT STUDIO SCENE SPECIFICATIONS
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
 BACKGROUND:
--   Color: Light gray (#F5F5F5)
--   Texture: Seamless, perfectly smooth, gradient-free
--   Type: Infinity curve backdrop with a reflective floor
+Color: Light gray (#F5F5F5)
+Texture: Seamless, perfectly smooth, gradient-free
+Type: Infinity curve backdrop
 
 PRODUCT POSITIONING:
--   Placement: The entire 5-piece set is centered in the frame, arranged in a natural conversational layout.
--   Angle: Front 3/4 angled view, showing the front and side profiles of one chair/ottoman pair, the front of the table, and the other chair/ottoman pair slightly further back.
--   Distance: 15-20% margin from all frame edges
+Placement: Centered in frame
+Angle: Front-facing 3/4 view (showing the front buttons, side knob, portafilter, and steam wand)
+Distance: 15-20% margin from all frame edges
 
 LIGHTING SETUP:
--   Primary: Three-point studio lighting (key + fill + rim)
--   Quality: Soft, diffused, professional
--   Shadows: Subtle, falling to the back and right opposite the key light, 30-40% opacity
--   Reflections: Natural floor reflection showing 40-50% opacity of the product base and feet. A soft, non-distracting reflection of the lighting rig should be visible on the glossy glass tabletop.
--   Highlights: Gentle specular highlights on the glass tabletop and the curved edges of the wicker armrests.
+Primary: Three-point studio lighting (key + fill + rim)
+Quality: Soft, diffused, professional
+Shadows: Subtle, falling to the back and right, opposite the key light, 30-40% opacity
+Reflections: Natural floor reflection showing 40-50% opacity of product base
+Highlights: Gentle specular highlights on the chrome and glossy surfaces without overexposure
 
 PRODUCT STATE:
--   Condition: Pristine, brand new appearance. Cushions are perfectly placed, plump, and wrinkle-free.
--   Operational status: RESTING
--   Configuration: The furniture set is fully assembled. Cushions are neatly placed on the chairs and ottomans.
+Condition: Pristine, brand new appearance
+Operational status: OFF/RESTING (no power, no brewing, no steam)
+Configuration: Portafilter is locked into the group head. Steam wand is in its resting position. Drip tray is clean and empty. No cup is present.
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 STEP 3: GENERATE FINAL PROMPT WITH STRICT FORMAT
@@ -76,233 +88,219 @@ STEP 3: GENERATE FINAL PROMPT WITH STRICT FORMAT
 
 Professional studio product photography.
 
-PRODUCT: A five-piece patio furniture set consisting of two armchairs, two ottomans, and one side table. The entire set features a dark brown (approx. #3D3531) all-weather wicker in a tight, woven texture. The chairs and ottomans come with thick, plump, off-white (approx. #EDEAE0) fabric cushions. The side table has a dark, glossy, tinted glass top with an open storage shelf underneath. The chairs and table stand on short, cylindrical, matte black feet. The ottomans feature a recessed, matte black handle on one side. CRITICAL: There are no visible brand names, logos, or text on any part of the product.
+PRODUCT: A modern countertop espresso machine with a matte white main body and a rectangular form factor. The top front corners are softly rounded. It features a removable translucent dark gray water reservoir on the right side. CRITICAL: The front panel has four horizontally-aligned circular buttons with glossy black faces and polished chrome trim rings. The button icons, from left to right, are: Power symbol, single cup icon, double cup icon, and a steam icon (three wavy vertical lines). A large, textured matte black rotary knob is on the right side panel. The machine includes a polished chrome portafilter with a double spout and a glossy white handle. A polished chrome steam wand with a black rubber grip is on the right. The base consists of a removable, polished stainless steel drip tray with a perforated grate. Two polished chrome rails are on the top surface.
 
-SCENE: Product isolated and centered on a light gray (#F5F5F5) seamless infinity backdrop with a reflective floor. The 5-piece set is arranged in a conversational layout and positioned at a front 3/4 angled view to display the design and all components clearly.
+SCENE: Product isolated and centered on a light gray (#F5F5F5) seamless infinity backdrop. Product positioned at a front-facing 3/4 view.
 
-LIGHTING: Professional three-point studio lighting with a soft diffused key light from the front-left, fill light reducing shadows, and rim light creating edge definition. Soft shadow cast to the back-right at 30-40% opacity. Natural reflection beneath the product on the glossy floor at 40-50% opacity showing the underside and feet of the furniture.
+LIGHTING: Professional three-point studio lighting with soft diffused key light from the front-left, fill light reducing shadows, and rim light creating edge definition. Soft shadow cast to the back-right at 30-40% opacity. Natural reflection beneath the product on a glossy floor at 40-50% opacity showing the product's underside.
 
-STATE: Product in pristine, non-operational condition, fully assembled with cushions perfectly placed and resting.
+STATE: Product in pristine, non-operational condition, powered off. The portafilter is attached to the group head, the steam wand is in its resting position, and the drip tray is clean and empty. No cups or accessories are present.
 
-TECHNICAL: High-resolution commercial product photography, tack-sharp focus throughout the entire product set, no depth-of-field blur, neutral white balance (5500K), minimal lens distortion, e-commerce platform ready.
+TECHNICAL: High-resolution commercial product photography, tack-sharp focus throughout entire product, no depth-of-field blur, neutral white balance (5500K), minimal lens distortion, e-commerce platform ready.
 
-PRESERVE: Exact product appearance from input image including all logos, text, material finishes, and design details without any alterations.
+PRESERVE: Exact product appearance from input image including all icons, text, material finishes, and design details without any alterations.
 
 ---------------------------------------
 
 --- PROMPT 2 ---
-An output of the user's request has been generated following the steps of the protocol.
+**Request-ID: 20251101_065908_lifestyle**
 
-**Request-ID:** 20251027_234031_marketing_creative
-**Product:** Patio furniture set
-**Marketing Details:** "Patio set 20% off." - summer sale season, Summer flat sale!, Add summer elements.
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+**STEP 1: ANALYZE INPUT IMAGE (MANDATORY)**
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-***
+**A) PRODUCT COMPLETE DESCRIPTION:**
 
-### STEP 1: ANALYZE INPUT IMAGE
+*   **Exact product type and model:** A compact, semi-automatic countertop espresso machine with a modern, minimalist design.
+*   **Precise color palette:** The main body is matte white. The portafilter, grouphead, steam wand, drip tray surface, and cup warmer rails are polished chrome/stainless steel. The four control buttons, the large steam knob, and the steam wand grip are matte black. The portafilter handle is glossy white. The water reservoir on the right is a translucent, slightly smoked grey plastic.
+*   **Material composition:** The main body is plastic or painted metal. The functional components like the steam wand and drip tray are stainless steel. The buttons, knob, and reservoir are plastic.
+*   **Texture and finish:** The white body has a smooth, matte finish. The chrome/steel elements are highly polished and reflective. The black steam knob features a knurled, textured grip for easy handling. The glossy white handle is smooth.
+*   **Exact dimensions and proportions:** A compact, rectangular machine suitable for a countertop, with a boxy main housing featuring softly rounded corners. Its height is approximately 1.5 times its width.
 
-**COMPLETE PRODUCT DESCRIPTION:**
+**B) BRAND PRESERVATION (MUST MAINTAIN):**
 
-*   **Product type and specific model:** A 5-piece outdoor conversation set, consisting of two cushioned armchairs, two matching cushioned ottomans, and one square side table.
-*   **All colors (precise shades):** The furniture frames and table are made of a dark brown, almost black, woven wicker. The cushions are a thick, off-white or light cream/beige fabric. The side table has a black, reflective glass top.
-*   **All materials and finishes:** The primary material is a synthetic resin wicker/rattan with a woven texture and a slight sheen. The cushions appear to be a durable, weather-resistant fabric over foam. The side table features a tempered glass top. The feet are small and black.
-*   **Exact proportions and size:** The armchairs are generously sized with wide armrests. The square ottomans are sized to double as footrests or extra seating and align with the height of the chair seats. The side table is a cube shape, lower than the armrests, with an open storage shelf underneath the glass top.
-*   **ALL visible brand text/logos:** There are no visible brand names or logos on the product.
-*   **All design features:** The set is characterized by its dark, woven construction. The chairs have separate seat and back cushions. The ottomans have a single top cushion and a rectangular cutout handle on one side for portability. The side table's design includes a practical lower shelf.
-*   **Unique identifying characteristics:** The specific configuration of two chairs, two ottomans, and a cube-shaped side table with a lower storage shelf. The cutout handles on the ottomans are a distinct feature.
+*   **All visible logos:** There are no visible brand names or logos.
+*   **All text on product:** There is no text. The four front buttons feature universal icons. From left to right: a power symbol, a single-cup icon, a double-cup icon, and a steam/hot water icon.
+*   **Brand marks, symbols, badges:** The four specific circular buttons with their icons are a key design element to preserve.
+*   **Maintain the same viewing angle/ camera angle:** The prompt will aim for a similar front-three-quarters view to showcase the front controls and side components.
+*   **Color schemes associated with branding:** White, chrome, and black.
 
-### STEP 2: EXTRACT MARKETING SPECIFICATIONS FROM USER INPUT
+**C) DESIGN FEATURES:**
 
-*   **TEXT ELEMENTS:**
-    *   Brand Name: [none provided]
-    *   Headline Text: "Summer flat sale!"
-    *   Call-to-Action: "SHOP NOW" (default)
-    *   Footer Text: [none]
-*   **PROMOTIONAL ELEMENTS:**
-    *   Discount/Sale callout: "20% off"
-    *   Badge/Banner needed: YES - "20% OFF"
-*   **SEASONAL/FESTIVE THEME:**
-    *   Theme: Summer
-    *   Specific elements required: "summer elements"
-*   **COMPOSITION STYLE:**
-    *   [X] D - Lifestyle + Overlay (lifestyle scene with promotional graphics)
-*   **SELECTED STYLE:** D - Lifestyle + Overlay
+*   **All buttons, controls, displays, interfaces:** A front panel with four round, black, slightly concave push-buttons with white illuminated icons. A large, textured black rotary knob is located on the right side of the machine, appearing to have an integrated pressure gauge on its face.
+*   **Structural elements:** A stainless steel drip tray with a perforated cover at the base. A prominent chrome grouphead for the portafilter. A removable, translucent vertical water tank on the right-hand side. Two parallel chrome rails on top serve as a cup warming rack.
+*   **Unique design characteristics:** A clean, uncluttered aesthetic combining retro-inspired elements (like the white handle) with a modern, boxy form.
+*   **Any attachments or accessories visible:** A chrome portafilter with a double spout and a distinctive glossy white handle. A chrome steam wand with a small black grip is mounted on the right.
 
-### STEP 3: DEFINE VISUAL DESIGN ELEMENTS
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+**STEP 2: DETERMINE SCENE TYPE FROM THEME GUIDELINES**
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-*   **BACKGROUND DESIGN:**
-    *   **SELECTED BACKGROUND:** The existing background from the input image will be used: a sunlit stone patio surrounded by lush green and brown foliage and a partial view of a pool. The scene will be enhanced with a warm, golden color grade to amplify the summer atmosphere.
-*   **COLOR PALETTE:**
-    *   Primary color: Warm Sunny Yellow (#FFC300)
-    *   Accent color: Vibrant Coral (#FF7F50)
-    *   Supporting colors: White (#FFFFFF) for text, Dark Brown (#3D2B1F) for text accents.
-*   **DESIGN ELEMENTS TO INCLUDE:**
-    *   [X] Light effects - Soft, golden sun rays emanating from the top left corner.
-    *   [ ] No other elements needed, the focus is on the seasonal overlay.
+The guidelines request a "cafe shop environment appropriately set," which focuses on the product within a specific setting without mentioning human interaction.
 
-### STEP 4: DEFINE TEXT PLACEMENT & TYPOGRAPHY
+**STATE YOUR CHOICE:** [ ] Option A - Human Interaction [X] Option B - Standalone
 
-*   **BRAND NAME:** N/A
-*   **HEADLINE:**
-    *   Text: "Summer flat sale!"
-    *   Position: Upper third, left-aligned, over the background foliage.
-    *   Typography: Modern bold sans-serif.
-    *   Size: Large, prominent.
-    *   Color: White (#FFFFFF).
-    *   Effect: Subtle drop shadow for enhanced readability.
-*   **CALL-TO-ACTION:**
-    *   Text: "SHOP NOW"
-    *   Style: Rounded rectangle button.
-    *   Position: Bottom center.
-    *   Button color: Warm Sunny Yellow (#FFC300).
-    *   Text color: Dark Brown (#3D2B1F).
-    *   Size: Moderate, with a clear, clickable appearance.
-*   **PROMOTIONAL BADGE/BANNER:**
-    *   Text: "20% OFF"
-    *   Style: Circular badge with a subtle sunburst pattern.
-    *   Position: Top right corner.
-    *   Colors: Vibrant Coral (#FF7F50) background with White (#FFFFFF) text.
+**Define contextual props:**
+*   A high-quality, coffee-colored ceramic cappuccino cup and saucer, placed to the left of the machine.
+*   A small, polished stainless steel milk frothing pitcher sitting next to the cup.
+*   A bag of artisanal coffee beans with a simple, modern paper label, standing upright in the soft-focus background.
+*   A neatly folded, dark grey barista cloth resting on the counter near the machine.
 
-### STEP 5: DEFINE FESTIVE/SEASONAL OVERLAYS
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+**STEP 3: DEFINE LOGICAL ENVIRONMENT**
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-*   **THEME:** Summer
-*   **DESCRIBE EXACT FESTIVE ELEMENTS:** The image will be enhanced with a warm, golden color grade to evoke a sun-drenched feel. Soft, golden sun ray graphics will emanate from the top left corner, casting a gentle light across the scene. Stylized, semi-transparent tropical leaf silhouettes (e.g., monstera, palm) will be placed subtly in the bottom-left and top-right corners to frame the composition without obscuring the product.
+**SELECTED ENVIRONMENT:** The service counter of a bright, modern, and clean independent coffee shop.
 
-### STEP 6: GENERATE FINAL PROMPT WITH STRICT FORMAT
+**ENVIRONMENTAL DETAILS:**
+*   **Primary surface:** A light-colored, polished concrete countertop with subtle texture.
+*   **Background elements:** A clean, white subway tile backsplash; a floating oak wood shelf above holding a few stacked white mugs and a small green potted plant (like a succulent); a hint of a black metal-framed menu board on the wall in the soft-focus background.
+*   **Environmental storytelling:** The setting is pristine and organized, ready for morning service. The presence of the milk pitcher, high-quality cup, and artisanal beans reinforces the machine's function and suggests a focus on quality coffee, all while the machine is in a clean, resting state.
+*   **Depth:** A shallow depth of field, keeping the espresso machine and immediate props sharp while the background elements are softly and pleasingly blurred.
 
-Marketing creative product advertisement image.
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+**STEP 4: DEFINE LIGHTING & ATMOSPHERE**
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-**PRODUCT:** A 5-piece outdoor patio conversation set, including two armchairs, two ottomans, and a side table. The furniture is made from a dark brown, almost black, woven resin wicker. Cushions are a thick, off-white/light cream fabric. The side table is cube-shaped with a black tempered glass top and an open lower shelf for storage. The ottomans feature cutout handles on one side. No brand logos are visible. The product is shown arranged on a stone patio.
+**LIGHTING TYPE:**
+[X] Natural window light (soft, directional)
 
-**COMPOSITION STYLE:** D - Lifestyle + Overlay. The original lifestyle scene from the input image is used as the base, with marketing text and summer-themed graphical elements overlaid on top.
+**SELECTED:** Natural window light (soft, directional) coming from the side to create soft, natural shadows and highlight the machine's different textures and finishes.
 
-**BACKGROUND:** The original background of a sunlit stone patio with lush green foliage is maintained but enhanced with a warm, golden color grade to create a vibrant, summery mood.
+**ATMOSPHERIC MOOD:**
+*   **Color temperature:** Neutral with a hint of warmth.
+*   **Overall feeling:** Fresh, professional, artisanal, and inviting.
+*   **Shadow quality:** Soft and natural.
+*   **Time of day suggestion:** Morning.
 
-**DESIGN ELEMENTS:** Soft, golden sun ray light effects emanating from the top left corner, overlaid subtly on the image.
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+**STEP 5: GENERATE FINAL PROMPT WITH STRICT FORMAT**
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-**COLOR PALETTE:** Primary Warm Sunny Yellow (#FFC300), Accent Vibrant Coral (#FF7F50), Supporting White (#FFFFFF), Dark Brown (#3D2B1F).
+**Lifestyle product photography, standalone presentation.**
 
-**TEXT ELEMENTS - EXACT PLACEMENT:**
+**PRODUCT:** A compact semi-automatic countertop espresso machine with a matte white rectangular body and rounded corners. It features a polished chrome grouphead, steam wand, and drip tray cover. On the front are four round black control buttons with icons (power, single cup, double cup, steam). A large, black, knurled steam knob is on the right side. The machine is fitted with a chrome portafilter that has a double spout and a glossy white handle. A translucent, smoked grey plastic water reservoir is attached to the right side, and two chrome rails sit on top. Product in non-operational, resting state.
 
-Headline text reading "Summer flat sale!" positioned in the upper third, left-aligned, in a modern bold sans-serif font, large prominent size, in White (#FFFFFF) with a subtle drop shadow for readability.
+**PRODUCT POSITIONING:** The machine is placed on a counter, angled in a front-three-quarters view, showcasing the front buttons, side knob, and portafilter.
 
-Call-to-action element reading "SHOP NOW" as a rounded rectangle button positioned at the bottom center, with a Warm Sunny Yellow (#FFC300) background and Dark Brown (#3D2B1F) text.
+**CONTEXTUAL PROPS:** To the left of the machine, a coffee-colored ceramic cappuccino cup and saucer are neatly placed. Next to it sits a small, polished stainless steel milk frothing pitcher. In the background, a bag of artisanal coffee beans with a minimalist label is partially visible. A folded dark grey barista cloth rests on the counter.
 
-A circular badge with a sunburst pattern displaying "20% OFF" positioned at the top right corner, with a Vibrant Coral (#FF7F50) background and White (#FFFFFF) text.
+**ENVIRONMENT:** The product is set on a light-colored, polished concrete countertop inside a modern, airy coffee shop. The background consists of a white subway tile backsplash and a floating oak shelf holding stacked mugs and a small potted succulent. The environment is clean and organized, suggesting the start of a morning service.
 
-**FESTIVE OVERLAY:** A warm, golden color grade is applied to the entire image. Soft, golden sun rays emanate from the top left corner. Stylized, semi-transparent tropical palm and monstera leaf silhouettes are placed in the bottom-left and top-right corners to frame the image and enhance the summer theme.
+**COMPOSITION:** Product as the hero element in the foreground, framed using the rule of thirds. The contextual environment supports the product's story of making high-quality coffee.
 
-**LIGHTING & MOOD:** Bright, natural, sun-drenched lighting creating an inviting, warm, and relaxing summer mood.
+**LIGHTING:** Soft, directional natural window light coming from the side. The color temperature is neutral-warm, creating a fresh, professional, and inviting atmosphere with soft, natural shadows.
 
-**TECHNICAL:** High-resolution commercial advertising quality, photorealistic product rendering, professional graphic design composition, balanced visual hierarchy (Product → Headline → Badge → CTA), e-commerce marketing ready.
+**TECHNICAL:** Photorealistic lifestyle photography, natural perspective, shallow depth of field with a soft background blur, authentic context, e-commerce ready.
 
-**PRESERVE:** Exact product appearance from the input image with all design details maintained without alteration. Marketing elements enhance but never alter the product itself.
+**PRESERVE:** Exact product appearance from the input image, including the matte white finish, chrome details, glossy white handle, and the specific icons on the four black buttons, all maintained without alteration.
 
 ---------------------------------------
 
 --- PROMPT 3 ---
-===== LIFESTYLE IMAGE GENERATION - STRICT PROTOCOL =====
-
+===== MARKETING CREATIVE IMAGE GENERATION - STRICT PROTOCOL =====
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 STEP 1: ANALYZE INPUT IMAGE (MANDATORY)
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-
-A) PRODUCT COMPLETE DESCRIPTION:
-
-**Exact product type and model:** 5-piece outdoor patio conversation set, consisting of two cushioned armchairs, two cushioned ottomans (leg rests), and one small side table.
-
-**Precise color palette (all colors present):** The main body of the furniture is a very dark brown, almost black, color. The cushions for the chairs and ottomans are a solid off-white or light beige color. The side table has a black glass top.
-
-**Material composition (fabric/metal/plastic/wood/glass/leather):** The furniture frames are made of a synthetic wicker/rattan woven over a metal frame. The cushions appear to be a thick, durable outdoor fabric like canvas or polyester. The side table has a tempered glass top.
-
-**Texture and finish (matte/glossy/brushed/woven/smooth):** The furniture frames have a distinct woven texture with a matte finish. The fabric cushions are smooth but have a visible fabric weave texture. The glass top of the side table is smooth and glossy.
-
-**Exact dimensions and proportions:** The armchairs are generously sized with wide, flat armrests and thick back and seat cushions. The ottomans are square, sized to function as leg rests or extra seating, and have a cushion of the same thickness as the chair seats. The side table is a small, square cube shape, slightly lower than the chair armrests, featuring an open shelf space below the tabletop.
-
-B) BRAND PRESERVATION (MUST MAINTAIN):
-
-**All visible logos (position, size, clarity level):** None visible.
-**All text on product (exact wording, even if partially visible or blurry):** None visible.
-**Brand marks, symbols, badges:** None visible.
-**Maintain the same viewing angle/ camera angle as in the input product image if possible:** The request requires a new scene, but the product should be presented from a similar front three-quarter view to best display its features.
-**Color schemes associated with branding:** Not applicable.
-
-C) DESIGN FEATURES:
-
-**All buttons, controls, displays, interfaces:** Not applicable.
-**Structural elements (handles, wheels, stands, feet, lids):** The chairs have short, black, block-style feet. The ottomans have rectangular, black, inset handles on their sides for easy moving. The side table has an open lower shelf for storage.
-**Unique design characteristics:** The boxy, modern design with a tightly woven rattan pattern is a key characteristic. The combination of dark frames with light cushions is a defining feature.
-**Any attachments or accessories visible:** The set includes the two chairs, two ottomans, and one side table as a complete unit.
+**EXPLICIT ANALYSIS:**
+*   **COMPLETE PRODUCT DESCRIPTION:** A modern, compact home espresso machine is captured mid-brew, with espresso pouring into a small clear glass cup.
+*   **Product type and specific model:** Home espresso machine, unknown model.
+*   **All colors (precise shades):** The main body is matte white. The drip tray, portafilter metal, and steam wand are polished chrome/stainless steel. The portafilter handle is white. The control knob on the side and the steam wand grip are matte black. The water reservoir is a translucent grey plastic. The espresso is a rich caramel brown.
+*   **All materials and finishes:** Painted metal or high-quality plastic for the body, stainless steel, chrome, rubber/plastic for controls, and clear glass for the cup.
+*   **Exact proportions and size:** A compact countertop appliance, with a boxy main unit and a slender water reservoir on the right.
+*   **ALL visible brand text/logos:** There are no visible brand names or logos on the product itself. The four front buttons have standard icons for power, single shot, double shot, and steam.
+*   **All design features:** The design is minimalist and modern, featuring a clean white rectangular body with rounded corners, four circular front buttons with chrome rings, a large black textured rotary knob on the right side, a chrome steam wand, and a stainless steel drip tray. A clear water tank is visible at the rear right.
+*   **Unique identifying characteristics:** The combination of the stark white body, white portafilter handle, and the prominent black side control knob gives it a distinctive, clean aesthetic.
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-STEP 2: DETERMINE SCENE TYPE FROM THEME GUIDELINES
+STEP 2: EXTRACT MARKETING SPECIFICATIONS FROM USER INPUT
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-
-The guidelines specify a "happy family enjoying the pool and resting on the furniture... with two small kids and parents." This requires human models interacting with the product.
-
-STATE YOUR CHOICE: [X] Option A - Human Interaction
-
-**Define human subject:**
-*   **Type:** A family unit: one man, one woman, and two small children (one boy, one girl).
-*   **Approximate age:** Parents in their mid-to-late 30s. Children are approximately 5 and 7 years old.
-*   **Ethnicity/appearance:** Diverse, natural, and relatable appearance (e.g., Caucasian or Hispanic family).
-*   **Clothing:** Parents in stylish but comfortable poolside attire (e.g., man in linen shorts and a t-shirt, woman in a sundress over a swimsuit). Kids in colorful swimsuits or shorts and t-shirts, possibly with slightly damp hair from the pool.
-*   **Expression:** Relaxed, happy, and genuinely joyful. Warm smiles.
-*   **Pose detail:** The father is lounging in one armchair, smiling, with his feet up on the matching leg rest. The mother is sitting on the second armchair, leaning forward slightly to talk to her daughter, who is sitting on the edge of the other leg rest. The son is standing near the pool's edge in the background, visible but not a primary focus.
-*   **Eye direction:** The father is looking towards his wife and daughter. The mother and daughter are looking at each other, sharing a happy moment.
-
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-STEP 3: DEFINE LOGICAL ENVIRONMENT
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-
-SELECTED ENVIRONMENT: A clean, modern, and sunny residential poolside patio.
-
-ENVIRONMENTAL DETAILS:
-*   **Primary surface:** The furniture is placed on light-colored stone or concrete pavers next to a swimming pool.
-*   **Background elements:** In the background, there is the sparkling blue water of an in-ground swimming pool, lush green landscaping with tropical plants, and a partial view of a modern house.
-*   **Environmental storytelling:** A brightly colored pool floaty is visible in the pool. A tall glass of iced lemonade sits on the side table next to the father. A neatly folded, colorful beach towel is draped over the back of the mother's chair. This suggests a fun, relaxing day of swimming has been happening.
-*   **Depth:** Soft background blur (bokeh) to keep the family and the furniture as the sharp, main focus.
+*   **[NEW] CREATIVE VIBE / TARGET AUDIENCE:**
+    *   [X] A - MINIMAL & PROFESSIONAL: The user request for a "Premium look visual" and a "Coffee related theme" for a high-end kitchen appliance aligns perfectly with this vibe. The focus is on elegance, quality, and a sophisticated feel.
+*   **TEXT ELEMENTS:**
+    *   **Brand Name:** "Cafe De Latte"
+    *   **Headline Text:** [none provided]
+    *   **Call-to-Action:** "Order now" (corrected from "Orde now")
+    *   **Footer Text:** [none]
+*   **PROMOTIONAL ELEMENTS:**
+    *   **Discount/Sale callout:** "Sale 30% off"
+    *   **Badge/Banner needed:** YES - "Sale 30% off"
+*   **SEASONAL/FESTIVE THEME:**
+    *   **Theme:** None
+*   **[UPDATED] COMPOSITION STYLE:**
+    *   **SELECTED STYLE:** A - Hero Product (single large product, 60-70% of frame)
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-STEP 4: DEFINE LIGHTING & ATMOSPHERE
+STEP 3: DEFINE VISUAL DESIGN ELEMENTS
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-
-LIGHTING TYPE:
-[ ] Natural window light (soft, directional)
-[ ] Golden hour sunlight (warm, low-angle)
-[X] Bright daylight (even, clear)
-[ ] Soft overcast (diffused, no harsh shadows)
-[ ] Warm interior lighting (cozy, ambient)
-
-SELECTED: Bright daylight
-
-ATMOSPHERIC MOOD:
-*   **Color temperature:** Cool to Neutral, enhancing the blue of the pool and the freshness of the scene.
-*   **Overall feeling:** Fresh, happy, serene, and aspirational.
-*   **Shadow quality:** Soft and natural, indicating bright but not harsh overhead sun.
-*   **Time of day suggestion:** Midday or early afternoon.
+*   **[UPDATED] BACKGROUND DESIGN:**
+    *   --- VIBE IS 'MINIMAL & PROFESSIONAL' ---
+    *   **SELECTED BACKGROUND:** A premium, dark charcoal background (#221F1F) with a subtle, soft spotlight effect behind the product. The surface has a faint, elegant texture like dark slate or brushed concrete. To incorporate the "Coffee related theme," a few whole coffee beans are artfully scattered in the foreground and background with a shallow depth of field, making them soft and out of focus.
+*   **[UPDATED] COLOR PALETTE:**
+    *   --- VIBE IS 'MINIMAL & PROFESSIONAL' ---
+    *   **SELECTED PALETTE:**
+        *   **Primary:** Dark Charcoal (#221F1F)
+        *   **Accent:** Premium Gold (#C8A464)
+        *   **Supporting:** Crisp White (#FFFFFF), Muted Grey (#A0A0A0)
+*   **[UPDATED] DESIGN ELEMENTS TO INCLUDE:**
+    *   --- FOR 'MINIMAL & PROFESSIONAL' VIBE ---
+        *   **Soft light effects (glow/spotlight):** A key light illuminates the espresso machine, making the white body pop against the dark background.
+        *   **Architectural shadow drama:** The machine casts a soft, realistic shadow on the dark surface, grounding it in the scene.
+        *   **Subtle texture:** A faint slate texture on the background surface adds a premium tactile quality.
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-STEP 5: GENERATE FINAL PROMPT WITH STRICT FORMAT
+STEP 4: DEFINE TEXT PLACEMENT & TYPOGRAPHY
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+*   **[UPDATED] TYPOGRAPHY:**
+    *   --- VIBE IS 'MINIMAL & PROFESSIONAL' ---
+        *   **Brand/Sale Text:** Sleek uppercase sans-serif (e.g., Montserrat Bold).
+        *   **CTA:** Clean sans-serif (e.g., Lato).
+*   **[UPDATED] TEXT PLACEMENT & EFFECTS:**
+    *   **BRAND NAME:**
+        *   **Text:** "Cafe De Latte"
+        *   **Position:** Top center, above the product.
+        *   **Effects:** No effects. Uses a clean, elegant sans-serif font in a muted grey color (#A0A0A0) and a smaller size to be sophisticated and not distracting.
+    *   **CALL-TO-ACTION:**
+        *   **Text:** "Order now"
+        *   **Style:** Minimal underlined text.
+        *   **Position:** Bottom left corner, as requested.
+        *   **Colors & Size:** Crisp white (#FFFFFF), clear and readable size.
+    *   **PROMOTIONAL BADGE/BANNER:**
+        *   **Style:** Angled Banner.
+        *   **Text:** "Sale 30% off"
+        *   **Position:** Slanting across the top right corner.
+        *   **Colors:** A solid premium gold (#C8A464) banner with the text in crisp white (#FFFFFF) for a high-contrast, luxurious look.
 
-Lifestyle product photography with human interaction.
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+STEP 5: DEFINE FESTIVE/SEASONAL OVERLAYS (if applicable)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+*   Not applicable.
 
-PRODUCT: A 5-piece outdoor patio conversation set, including two armchairs and two matching leg-rest ottomans with dark brown woven synthetic rattan frames and thick, off-white fabric cushions. The set also includes a matching dark brown woven side table with a black glass top and an open storage shelf beneath. The chairs have short, black block feet, and the ottomans feature black inset handles on their sides. Product in non-operational, resting state. High product fidelity of the two chairs and two leg rests must be maintained.
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+STEP 6: GENERATE FINAL PROMPT WITH STRICT FORMAT
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Marketing creative product advertisement image. VIBE: Minimal & Professional style.
 
-HUMAN SUBJECT: A family of four. A father in his late 30s, Caucasian, wearing khaki shorts and a light blue t-shirt. A mother in her late 30s, Caucasian, with a white sundress over her swimsuit. A 7-year-old daughter in a pink swimsuit and a 5-year-old son in blue swim trunks. The father is relaxing in one armchair with his feet propped up on the leg rest, holding a glass and smiling contentedly towards his family. The mother is sitting in the second armchair, turned slightly towards her daughter, smiling warmly. The daughter is sitting on the second leg rest, looking up at her mother. The young son is visible in the soft-focus background near the pool.
+PRODUCT: A modern, compact home espresso machine with a matte white body, chrome details, and a white portafilter handle. The machine is actively brewing a rich, caramel-colored espresso into a small, clear glass cup placed on its stainless steel drip tray.
 
-PRODUCT INTERACTION: The family is naturally arranged around and on the furniture set, using it for relaxation and connection. Their poses demonstrate the comfort and function of the chairs and leg rests.
+COMPOSITION STYLE: Hero Product layout, with the single espresso machine centered and occupying approximately 60-70% of the frame, viewed from a front three-quarter angle.
 
-ENVIRONMENT: A modern, sunny poolside patio with light-colored stone pavers. The furniture is set up near the edge of a sparkling blue in-ground swimming pool. The background features lush green foliage, tropical plants, and a partial view of a modern home. Environmental storytelling includes a glass of lemonade on the side table, a colorful beach towel draped over one chair, and a pool floaty in the water, suggesting a day of family fun.
+BACKGROUND: A premium, dark charcoal (#221F1F) surface with a faint, elegant texture like dark slate. A few whole coffee beans are artfully scattered and out of focus in the foreground and background to subtly enhance the coffee theme.
 
-COMPOSITION: The product and the family interacting with it are the primary focus, occupying about 40% of the frame. The composition is balanced, creating a candid and inviting family scene. Rule of thirds is applied, placing the family off-center.
+DESIGN ELEMENTS: The machine casts a soft, realistic shadow on the surface below it, grounding the product in the scene.
 
-LIGHTING: Bright, clear daylight. A cool-to-neutral color temperature to create a fresh, clean atmosphere. The lighting creates a happy and serene mood with soft, natural shadows, resulting in a realistic and inviting ambiance.
+COLOR PALETTE: A sophisticated and premium palette of dark charcoal, premium gold (#C8A464), and crisp white.
 
-TECHNICAL: Photorealistic lifestyle photography, natural perspective, soft background blur keeping the family and product in sharp focus, authentic moment, e-commerce ready.
+TEXT ELEMENTS - EXACT PLACEMENT & STYLE:
+Brand name text reading "Cafe De Latte" at the top center, using a clean sans-serif font, small size, in a muted grey color.
+Call-to-action reading "Order now" as minimal underlined text at the bottom left corner, in crisp white.
+Promotional angled banner at the top right corner, slanting downwards. The banner has a solid premium gold background with text inside reading "Sale 30% off" in a bold, uppercase sans-serif font in white.
 
-PRESERVE: Exact product appearance from the input image with all design details, including the dark brown woven texture, off-white cushion color, inset ottoman handles, and side table design, maintained without alteration.
+LIGHTING & MOOD: Clean & Premium studio lighting with a soft key light that beautifully illuminates the white product, making it stand out against the dark, moody background and creating a luxurious and focused mood.
+
+TECHNICAL: High-resolution commercial advertising quality, photorealistic product rendering, professional graphic design, balanced visual hierarchy, perfect for an Instagram post.
+
+PRESERVE: Exact product appearance from the input image must be perfectly maintained. Marketing elements enhance but never alter the product itself.
 
 ---------------------------------------
 

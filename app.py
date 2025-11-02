@@ -133,36 +133,128 @@ def generate_video_endpoint():
             shutil.rmtree(temp_dir, ignore_errors=True)
             print(f"🗑️ Cleaned up temp directory: {temp_dir}")
 
-
-@app.route('/api/get-prompt', methods=['GET'])
-def get_prompt_endpoint():
+@app.route('/api/edit-image', methods=['POST'])
+def edit_image_endpoint():
     """
-    Retrieve the latest generated prompt from JSON file
-    Controlled by ENABLE_PROMPT_VIEW flag in config
+    Image edit endpoint - accepts operation_id instead of free text
+    UPDATED: Now supports multiple images
     """
-    if not ENABLE_PROMPT_VIEW:
-        return jsonify({"error": "Prompt viewing is disabled"}), 403
-    
     try:
-        prompt_file_path = Path(PROMPT_DISPLAY_FILE)
+        # Get uploaded images (can be single or multiple)
+        image_files = request.files.getlist('images')
         
-        if not prompt_file_path.exists():
-            return jsonify({"error": "No prompts available yet"}), 404
+        # Fallback to single 'image' for backward compatibility
+        if not image_files:
+            single_image = request.files.get('image')
+            if single_image:
+                image_files = [single_image]
         
-        with open(prompt_file_path, 'r', encoding='utf-8') as f:
-            prompt_data = json.load(f)
+        # Validate at least one image
+        if not image_files or len(image_files) == 0:
+            return jsonify({"error": "At least one image file is required"}), 400
         
-        return jsonify({
-            "status": "success",
-            "prompt_data": prompt_data
-        })
+        # Validate files are not empty
+        valid_images = [img for img in image_files if img.filename != '']
+        if len(valid_images) == 0:
+            return jsonify({"error": "No valid images selected"}), 400
         
-    except json.JSONDecodeError:
-        return jsonify({"error": "Invalid prompt file format"}), 500
+        # Get operation_id (required)
+        operation_id = request.form.get('operation_id', '').strip()
+        if not operation_id:
+            return jsonify({
+                "error": "operation_id is required. Select an operation from the dropdown."
+            }), 400
+        
+                # Get operation_id (required)
+        operation_id = request.form.get('operation_id', '').strip()
+        if not operation_id:
+            return jsonify({
+                "error": "operation_id is required. Select an operation from the dropdown."
+            }), 400
+        
+        # Validate operation_id
+        try:
+            operation_id = int(operation_id)
+            if operation_id < 1 or operation_id > 38:
+                raise ValueError("Invalid range")
+        except ValueError:
+            return jsonify({
+                "error": f"Invalid operation_id: {operation_id}. Must be 1-38."
+            }), 400
+        
+        # Get optional operation details
+        operation_details = request.form.get('operation_details', '').strip()
+        
+        print(f"\n{'='*70}")
+        print(f"📥 EDIT IMAGE REQUEST")
+        print(f"{'='*70}")
+        print(f"🆔 Operation ID: {operation_id}")
+        print(f"📸 Images: {len(valid_images)}")
+        if operation_details:
+            print(f"📝 User Details: {operation_details[:100]}...")
+        print(f"{'='*70}\n")
+        
+        # Import edit pipeline
+        from image_edit_pipeline import edit_product_image
+        
+        # Process images
+        edited_urls = []
+        operation_name = None
+        
+        for idx, image_file in enumerate(valid_images):
+            print(f"\n🖼️ Processing image {idx + 1}/{len(valid_images)}: {image_file.filename}")
+            
+            # Read image bytes
+            image_bytes = image_file.read()
+            
+            # Process single image
+            result = edit_product_image(
+                image_bytes=image_bytes,
+                operation_id=operation_id,
+                operation_details=operation_details if operation_details else None
+            )
+            
+            if result["success"]:
+                edited_urls.append(result["edited_image_url"])
+                if operation_name is None:
+                    operation_name = result["operation_name"]
+                print(f"   ✅ Edited: {result['edited_image_url']}")
+            else:
+                print(f"   ❌ Failed: {result.get('error', 'Unknown error')}")
+                # Continue with other images even if one fails
+        
+        # Check if at least one succeeded
+        if len(edited_urls) > 0:
+            response_data = {
+                "status": "success",
+                "operation_name": operation_name,
+                "total_images": len(valid_images),
+                "successful_edits": len(edited_urls)
+            }
+            
+            # Return single URL or array based on count
+            if len(edited_urls) == 1:
+                response_data["edited_image_url"] = edited_urls[0]
+            else:
+                response_data["edited_image_urls"] = edited_urls
+                response_data["edited_image_url"] = edited_urls[0]  # First one for backward compatibility
+            
+            print(f"\n✅ Edit successful!")
+            print(f"   Operation: {operation_name}")
+            print(f"   Images processed: {len(edited_urls)}/{len(valid_images)}\n")
+            
+            return jsonify(response_data)
+        else:
+            return jsonify({
+                "error": "All image edits failed",
+                "total_attempted": len(valid_images)
+            }), 500
+    
     except Exception as e:
-        print(f"Error reading prompt file: {e}")
-        return jsonify({"error": "Failed to retrieve prompt"}), 500
-
+        print(f"\n❌ Error in edit endpoint: {e}")
+        import traceback
+        traceback.print_exc()
+        return jsonify({"error": str(e)}), 500
 
 @app.route('/health', methods=['GET'])
 def health_check():
@@ -172,6 +264,7 @@ def health_check():
         "service": "Product Creative Generator",
         "features": {
             "image_generation": True,
+            "image_editing": True,
             "video_generation": True,
             "prompt_view": ENABLE_PROMPT_VIEW
         }

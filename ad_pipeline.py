@@ -97,33 +97,71 @@ def generate_product_video(
         
         image_gcs_uris = [gcs_manager.upload_image(img) for img in image_paths]
         
-        # STEP 3: Generate videos
-        print("\n" + "=" * 70)
-        print("STEP 3: GENERATING VIDEO SEGMENTS")
-        print("=" * 70)
+        # ===== EXTENSION MODE FORK =====
+        from config import ENABLE_VIDEO_EXTENSION, EXTENSION_BASE_DURATION, EXTENSION_COUNT, EXTENSION_INCREMENT
         
-        video_gcs_uris = video_generator.generate_segments(
-            prompts=simple_prompts,
-            image_gcs_uris=image_gcs_uris
-        )
+        if ENABLE_VIDEO_EXTENSION:
+            # EXTENSION MODE: Single video with cumulative extensions
+            print("\n" + "=" * 70)
+            print("STEP 3: GENERATING VIDEO WITH EXTENSIONS (REDDIT METHOD)")
+            print("=" * 70)
+            print("⚠️ Extension mode: Bypassing multi-segment pipeline")
+            print("📌 Using first image and first prompt only")
+            
+            final_video_uri = video_generator.generate_with_extension(
+                prompt_obj=simple_prompts[0],  # Use first prompt
+                image_gcs_uri=image_gcs_uris[0],  # Use first image
+                base_duration=EXTENSION_BASE_DURATION,
+                extension_count=EXTENSION_COUNT,
+                extension_increment=EXTENSION_INCREMENT
+            )
+            
+            if not final_video_uri:
+                return {"success": False, "error": "Extension mode generation failed"}
+            
+            print(f"\n✅ Extended video ready: {final_video_uri}")
+            
+            # No merging needed - we have one extended video
+            from config import get_effective_duration
+            final_duration = get_effective_duration()
+            
+            # Upload to final location (optional - already in GCS)
+            final_video_info = {
+                "gcs_uri": final_video_uri,
+                "public_url": final_video_uri,  # or generate signed URL
+                "duration": final_duration
+            }
+            
+        else:
+            # NORMAL MODE: Multi-segment generation + merge
+            print("\n" + "=" * 70)
+            print("STEP 3: GENERATING VIDEO SEGMENTS")
+            print("=" * 70)
+            
+            video_gcs_uris = video_generator.generate_segments(
+                prompts=simple_prompts,
+                image_gcs_uris=image_gcs_uris
+            )
+            
+            if not video_gcs_uris:
+                return {"success": False, "error": "No segments generated"}
+            
+            print(f"\n✅ {len(video_gcs_uris)}/{len(simple_prompts)} segments ready")
+            
+            # STEP 4: Merge
+            print("\n" + "=" * 70)
+            print("STEP 4: MERGING SEGMENTS")
+            print("=" * 70)
+            
+            final_video_info = video_merger.merge_with_transitions(
+                video_gcs_uris=video_gcs_uris,
+                output_filename=f"final_product_video_{total_duration}s.mp4"
+            )
+            
+            if not final_video_info:
+                return {"success": False, "error": "Merge failed"}
         
-        if not video_gcs_uris:
-            return {"success": False, "error": "No segments generated"}
-        
-        print(f"\n✅ {len(video_gcs_uris)}/{len(simple_prompts)} segments ready")
-        
-        # STEP 4: Merge
-        print("\n" + "=" * 70)
-        print("STEP 4: MERGING SEGMENTS")
-        print("=" * 70)
-        
-        final_video_info = video_merger.merge_with_transitions(
-            video_gcs_uris=video_gcs_uris,
-            output_filename=f"final_product_video_{total_duration}s.mp4"
-        )
-        
-        if not final_video_info:
-            return {"success": False, "error": "Merge failed"}
+        # ===== END FORK =====
         
         # CRITICAL: Force cleanup of any remaining temp files
         _force_cleanup_temp_files()
@@ -131,21 +169,27 @@ def generate_product_video(
         print("\n" + "=" * 70)
         print("🎉 VIDEO GENERATION COMPLETE")
         print("=" * 70)
-        print(f"📁 All files organized in: {gcs_manager.request_folder}")
-        print(f"🎬 Segments folder: {gcs_manager.segments_folder}")
+        
+        mode_label = "EXTENSION" if ENABLE_VIDEO_EXTENSION else "MULTI-SEGMENT"
+        print(f"🎬 Mode: {mode_label}")
+        
+        if not ENABLE_VIDEO_EXTENSION:
+            print(f"📁 All files organized in: {gcs_manager.request_folder}")
+            print(f"🎬 Segments folder: {gcs_manager.segments_folder}")
+        
         print(f"📹 Final video: {final_video_info['public_url']}")
         print("=" * 70)
 
         return {
             "success": True,
-            "mode": "full_generation",
+            "mode": "extension" if ENABLE_VIDEO_EXTENSION else "full_generation",
             "final_video_url": final_video_info["public_url"],
             "gcs_uri": final_video_info["gcs_uri"],
-            "request_folder": gcs_manager.request_folder,
+            "request_folder": gcs_manager.request_folder if not ENABLE_VIDEO_EXTENSION else "N/A",
             "request_id": gcs_manager.request_id,
-            "segments_folder": gcs_manager.segments_folder,
-            "segment_count": len(video_gcs_uris),
-            "duration": total_duration,
+            "segments_folder": gcs_manager.segments_folder if not ENABLE_VIDEO_EXTENSION else "N/A",
+            "segment_count": 1 if ENABLE_VIDEO_EXTENSION else len(video_gcs_uris),
+            "duration": final_video_info.get("duration", total_duration),
         }
         
     except Exception as e:
@@ -211,19 +255,28 @@ def _force_cleanup_temp_files():
             print(f"🧪 TESTING_MODE: Kept {len(kept_finals)} final video(s) locally")
 
 if __name__ == "__main__":
-    test_image_paths = [r"E:\product-image-backend\test_images\snow_blower.png",
-    r"E:\product-image-backend\test_images\snow_blower_1.png",
-    r"E:\product-image-backend\test_images\snow_blower_2.png"]
+    test_image_paths = [r"E:\product-image-backend\test_images\faucet_plantex.png"]
+    #r"E:\product-image-backend\test_images\snow_blower_1.png",
+    #r"E:\product-image-backend\test_images\snow_blower_2.png"]
     
     test_product_overview = """
-Winter is no match for the Toro 60v Power Max e24 two stage snow blower. We combine our no compromises steel built construction with up to three ports to give you the muscle to power through the toughest snow. Big driveway no worries. We can easily clear up to 24 car spaces on one charge and with a third battery slot, you can add another 4 to 15 car spaces. With our 24 inches wide clearing width and 20 inch intake height, you will make quick work of even the deepest snow. The innovative quick stick control allows you to change the steel chute direction and chute deflector with a single, smooth motion. Convenient one hand operation levers allow single handed use, freeing the other hand to change speeds or the chute control without stopping. The exclusive anti clogging system monitors snow intake to reduce clogging and maximize clearing efficiency. Toro uses bolts that are 2x stronger than the competition's shear pins. The blower is also equipped with hardened gears in your auger gearbox, in other words, no shear pins to replace. Ideal for concrete, asphalt and gravel surfaces.
-Identical to the gas two stage in every way, except the gas
-Night Vision have a brighter and broader view with the panoramic LED lighting
-Clears up to 20 car spaces in up to 10 inches of snow with the included 10.0Ah battery.
-Quickly and easily cut through snow with total speed control, 6 speeds forward and 2 speeds reverse
-Minimizes clogging and routes heavy snow away from chute and back into the auger
-With Toros quick stick chute control, you can aim for the exact spot where you want to put snow while keeping it from blowing into your face
+𝐏𝐢𝐥𝐥𝐚𝐫 𝐓𝐚𝐩𝐬: 𝐄𝐚𝐬𝐲 𝐔𝐬𝐞: Pillar taps are ideal for use with both wash basins and sinks, offering flexibility in bathroom and kitchen designs. Their installation on the countertop provides easy access and convenient water control, enhancing the overall user experience.
+𝐆𝐞𝐫𝐦𝐚𝐧 𝐀𝐞𝐫𝐚𝐭𝐨𝐫: The German aerator in this washbasin tap provides splash-free water. It is also easily removable for cleaning. The aerator helps to save water, which can lower your water bill.
+𝐅𝐨𝐚𝐦 𝐅𝐥𝐨𝐰 - The foam flow in this basin tap ensures a smooth and streamlined flow of water. This makes the tap more efficient and helps to prevent splashing. The silver finish of the tap adds a– modern touch to your bathroom.
+𝐒𝐩𝐢𝐧𝐝𝐥𝐞: This washbasin faucet features a Brass spindle that prevents leaks and resists wear. The exterior finish is also corrosion-resistant, ideal for tough water conditions. This double defense ensures long life and saves on future plumbing costs.
+𝐏𝐚𝐜𝐤𝐚𝐠𝐞 𝐂𝐨𝐧𝐭𝐚𝐢𝐧𝐬 : The package includes 1-piece pillar cock tap (Short Body-Quarter Turn Tap), free Teflon tape.
+𝐄𝐟𝐟𝐨𝐫𝐭𝐥𝐞𝐬𝐬 𝐌𝐚𝐢𝐧𝐭𝐞𝐧𝐚𝐧𝐜𝐞: This pillar tap for wash basin is easy to clean. Simply wipe it with a clean towel; no detergent is needed. These taps are designed for a stress-free experience.
+𝐏𝐥𝐚𝐧𝐭𝐞𝐱: 𝐃𝐞𝐝𝐢𝐜𝐚𝐭𝐞𝐝 𝐭𝐨 𝐲𝐨𝐮𝐫 𝐡𝐚𝐩𝐩𝐢𝐧𝐞𝐬𝐬: At Plantex, we prioritize your complete contentment. Our products are designed to ensure that you have the best experience possible when it comes to upgrading your home. For any questions or assistance, please feel free to contact us.
 """
+    """
+    Winter is no match for the Toro 60v Power Max e24 two stage snow blower. We combine our no compromises steel built construction with up to three ports to give you the muscle to power through the toughest snow. Big driveway no worries. We can easily clear up to 24 car spaces on one charge and with a third battery slot, you can add another 4 to 15 car spaces. With our 24 inches wide clearing width and 20 inch intake height, you will make quick work of even the deepest snow. The innovative quick stick control allows you to change the steel chute direction and chute deflector with a single, smooth motion. Convenient one hand operation levers allow single handed use, freeing the other hand to change speeds or the chute control without stopping. The exclusive anti clogging system monitors snow intake to reduce clogging and maximize clearing efficiency. Toro uses bolts that are 2x stronger than the competition's shear pins. The blower is also equipped with hardened gears in your auger gearbox, in other words, no shear pins to replace. Ideal for concrete, asphalt and gravel surfaces.
+    Identical to the gas two stage in every way, except the gas
+    Night Vision have a brighter and broader view with the panoramic LED lighting
+    Clears up to 20 car spaces in up to 10 inches of snow with the included 10.0Ah battery.
+    Quickly and easily cut through snow with total speed control, 6 speeds forward and 2 speeds reverse
+    Minimizes clogging and routes heavy snow away from chute and back into the auger
+    With Toros quick stick chute control, you can aim for the exact spot where you want to put snow while keeping it from blowing into your face
+    """
     
     test_brand_guidelines = "Brand colors: Toro red, black, metallic gray. Modern. Add These Features as text: 'Toughened Steel Body', '10.0Ah Battery' "
     

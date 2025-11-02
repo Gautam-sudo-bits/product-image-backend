@@ -15,3 +15,5 @@ dump/
 
 .checkpoints/
 *.mp4
+
+/test_images
